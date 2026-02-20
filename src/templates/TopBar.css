@@ -1,4 +1,4 @@
-.topbar {
+#topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,7 +6,7 @@
     padding: 30px 20px;
 }
 
-.home-btn {
+#home-btn {
     text-decoration: none;
     color: white;
     margin-left: 15px;
@@ -16,11 +16,11 @@
     transition: background 0.3s;
 }
 
-.home-btn:hover {
+#home-btn:hover {
     background-color: #34495e;
 }
 
-.login-btn {
+#login-btn {
     text-decoration: none;
     color: white;
     margin-left: 15px;
@@ -30,15 +30,15 @@
     transition: background 0.3s;
 }
 
-.login-btn:hover {
+#login-btn:hover {
     background-color: #34495e;
 }
 
-.register-btn {
+#register-btn {
     text-decoration: none;
     background-color: #3498db;
 }
 
-.register-btn:hover {
+#register-btn:hover {
     background-color: #2980b9;
 }
