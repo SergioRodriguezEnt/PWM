@@ -1,4 +1,4 @@
-.bottombar {
+#bottombar {
     position: fixed; /* Siempre en el fondo */
     bottom: 0;
     left: 0;
