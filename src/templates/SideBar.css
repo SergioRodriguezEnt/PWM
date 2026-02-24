@@ -4,7 +4,7 @@
     left: 0;
     height: 100vh;
     width: 4%;
-    background-color: gray;
+    background-color: darkgray;
     color: white;
     padding: 20px 0;
     display: flex;
@@ -12,6 +12,27 @@
     gap: 30px;
     align-items: center;
     box-sizing: border-box;
+}
+
+.square,
+.circle,
+.last-square {
+    justify-content: center;
+    overflow: hidden; /* important for circle cropping */
+}
+
+#sidebar img {
+    width: 100%;     /* control icon size */
+    height: 100%;
+    object-fit: fill; /* usually better than fill for icons */
+}
+
+button {
+    width: 105%;
+    background-color: darkgray;
+    padding: 0;
+    border-radius: 40%;
+    aspect-ratio: 1/1;
 }
 
 .square{
