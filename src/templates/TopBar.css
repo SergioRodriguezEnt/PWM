@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: darkcyan;
+    background-color: lightgray;
     padding: 30px 20px;
 }
 
@@ -12,12 +12,12 @@
     margin-left: 15px;
     padding: 8px 12px;
     border-radius: 5px;
-    background-color: #24394e;
+    background-color: gray;
     transition: background 0.3s;
 }
 
 #home-btn:hover {
-    background-color: #34495e;
+    background-color: darkgray;
 }
 
 #login-btn {
@@ -26,19 +26,19 @@
     margin-left: 15px;
     padding: 8px 12px;
     border-radius: 5px;
-    background-color: #24394e;
+    background-color: gray;
     transition: background 0.3s;
 }
 
 #login-btn:hover {
-    background-color: #34495e;
+    background-color: darkgray;
 }
 
 #register-btn {
     text-decoration: none;
-    background-color: #3498db;
+    background-color: gray;
 }
 
 #register-btn:hover {
-    background-color: #2980b9;
+    background-color: darkgray;
 }
