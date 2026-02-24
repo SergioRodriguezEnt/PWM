@@ -26,5 +26,4 @@ body {
     height: 150px;     /* Igual que el width */
     border-radius: 50%; /* Hace que sea un círculo */
     object-fit: cover;  /* Ajusta la imagen sin deformarla */
-    border: 4px solid #3498db; /* Borde opcional */
 }
