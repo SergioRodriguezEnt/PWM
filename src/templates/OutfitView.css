@@ -2,83 +2,72 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-color: #3d6e63;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.contenedor-blanco {
-    background-color: white;
+/* La tarjeta gris sobre la página */
+.tarjeta-gris {
+    background-color: #dcdcdc; /* Gris claro de la imagen */
     width: 90%;
-    max-width: 1100px;
-    padding: 60px;
+    max-width: 850px;
+    padding: 30px;
+    border-radius: 12px;
     display: flex;
-    justify-content: center;
-    border-radius: 4px;
-}
-
-.tarjeta-principal {
-    background-color: #dcdcdc;
-    width: 100%;
-    border-radius: 15px;
-    padding: 40px;
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    gap: 30px;
+    /* Sombra suave para que se note que está "sobre" el fondo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .columna-izquierda {
-    flex: 1.2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Estilo para la imagen con aspas */
-.imagen-aspas {
+.imagen-principal {
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: 8px;
-    background-color: #a35050; /* Color de respaldo */
+    border-radius: 4px;
 }
 
-.pie-foto {
+.autor-info {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
 }
 
-.circulo-rojo {
-    width: 25px;
-    height: 25px;
-    background-color: #a35050;
+.circulo {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
     border-radius: 50%;
 }
 
 .columna-derecha {
-    flex: 1;
-    color: #333;
+    flex: 1.1;
 }
 
-.columna-derecha h2 {
+.bloque-texto h2 {
     margin-top: 0;
-    font-size: 22px;
+    font-size: 1.2rem;
+    color: #222;
 }
 
-.espaciado-titulo {
-    margin-top: 60px;
-}
-
-.columna-derecha p {
-    font-size: 15px;
+.bloque-texto p {
+    font-size: 0.85rem;
     line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 900px) {
-    .tarjeta-principal { flex-direction: column; }
+.segundo-titulo {
+    margin-top: 40px !important;
+}
+
+/* Ajuste para tablets y móviles */
+@media (max-width: 768px) {
+    .tarjeta-gris {
+        flex-direction: column;
+        margin: 20px;
+    }
 }
