@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d9d9d9;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.contenedor {
+    width: 300px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.imagen-placeholder {
+    width: 90px;
+    height: 110px;
+    background-color: #bfbfbf;
+    margin: 0 auto 20px auto;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario input {
+    padding: 8px;
+    border: none;
+    background-color: #bfbfbf;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Botón rosa */
+.boton {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: #636060;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.boton:hover {
+    background-color: #4c4849;
+}
