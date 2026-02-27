@@ -26,7 +26,7 @@
 }
 
 .barra-roja {
-    background-color: #a35050; /* Rojo oscuro */
+    background-color: #4c4849; /* Rojo oscuro */
     color: #000;
     padding: 12px 15px;
     font-size: 14px;
@@ -36,7 +36,7 @@
 
 /* Estilos del Botón Rosa */
 .boton-rosa {
-    background-color: #e6b9b9; /* Rosa de la imagen */
+    background-color: gray; /* Rosa de la imagen */
     color: #000;
     border: none; /* Quitamos el borde por defecto */
     padding: 12px;
@@ -48,7 +48,7 @@
 }
 
 .boton-rosa:hover {
-    background-color: #d9a8a8; /* Un poco más oscuro al pasar el ratón */
+    background-color: gray; /* Un poco más oscuro al pasar el ratón */
 }
 
 .boton-rosa:active {

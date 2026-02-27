@@ -4,14 +4,13 @@
 
 /* La tarjeta gris sobre la página */
 .tarjeta-gris {
-    background-color: #dcdcdc; /* Gris claro de la imagen */
+    background-color: #dcdcdc;
     width: 90%;
     max-width: 850px;
     padding: 30px;
     border-radius: 12px;
     display: flex;
     gap: 30px;
-    /* Sombra suave para que se note que está "sobre" el fondo */
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -61,13 +60,5 @@
 }
 
 .segundo-titulo {
-    margin-top: 40px !important;
-}
-
-/* Ajuste para tablets y móviles */
-@media (max-width: 768px) {
-    .tarjeta-gris {
-        flex-direction: column;
-        margin: 20px;
-    }
+    margin-top: 40px;
 }

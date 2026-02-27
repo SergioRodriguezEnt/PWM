@@ -1,57 +1,54 @@
-/* Reset básico */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Centrar en pantalla */
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
-
-/* Contenedor */
-.contenedor {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-}
-
-/* Barra de búsqueda */
+/* Barra estilo Google */
 .barra-busqueda {
     display: flex;
-    width: 100%;
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background-color: white;
+    align-items: center;
+    width: min(90%, 600px);
+    background: white;
+    border-radius: 999px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
 }
 
-/* Input */
+/* Hover tipo Google */
+.barra-busqueda:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+/* Icono lupa */
+.icono {
+    font-size: 18px;
+    margin-right: 10px;
+    opacity: 0.6;
+}
+
+/* Input limpio */
 .barra-busqueda input {
     flex: 1;
-    padding: 12px 20px;
     border: none;
     outline: none;
     font-size: 16px;
 }
 
-/* Botón */
+/* Botón estilo Google */
 .barra-busqueda button {
-    padding: 0 20px;
     border: none;
-    background-color: #7b7f83;
+    background: #1a73e8;
     color: white;
-    font-size: 18px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 14px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.2s;
 }
 
 .barra-busqueda button:hover {
-    background-color: #424242;
+    background: #1557b0;
 }

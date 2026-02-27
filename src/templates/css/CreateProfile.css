@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Contenedor del formulario */
+.contenedor-formulario {
+    background-color: #dcdcdc;
+    width: 90%;
+    max-width: 100%;
+    padding: 8%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+}
+
+/* Grupo de campos */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.campo-grupo label {
+    font-size: 100%;
+    color: #000;
+    font-weight: normal;
+}
+
+/* Barra roja */
+.barra-roja {
+    background-color: #4c4849;
+    color: #000;
+    padding: 2.4% 3%;
+    font-size: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Botón rosa */
+.boton-rosa {
+    background-color: gray;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 2.4%;
+    font-size: 100%;
+    width: 70%;
+    margin: 4% auto 0 auto;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boton-rosa:hover {
+    background-color: gray;
+}
+
+.boton-rosa:active {
+    transform: scale(0.98);
+}
