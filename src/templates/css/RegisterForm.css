@@ -26,36 +26,31 @@
 }
 
 .barra-roja {
-    background-color: #a35050; /* Rojo oscuro de tu foto */
+    background-color: lightgray;
     color: #000;
     padding: 12px 15px;
     font-size: 14px;
     width: 100%;
-    border-radius: 0; /* Rectangular como pediste */
-
-    /* Ajustes para que el input parezca un bloque sólido */
-    border: none;
-    outline: none;
-    font-family: inherit;
+    border-radius: 0; /* Rectangular como en la foto */
 }
 
 /* Estilos del Botón Rosa */
 .boton-rosa {
-    background-color: #e6b9b9; /* Rosa de la imagen */
+    background-color: gray; /* Rosa de la imagen */
     color: #000;
-    border: none;
+    border: none; /* Quitamos el borde por defecto */
     padding: 12px;
     font-size: 14px;
     width: 70%;
     margin: 20px auto 0 auto; /* Centrado horizontal */
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s; /* Pequeña animación */
 }
 
 .boton-rosa:hover {
-    background-color: #d9a8a8;
+    background-color: darkgray; /* Un poco más oscuro al pasar el ratón */
 }
 
 .boton-rosa:active {
-    transform: scale(0.98);
+    transform: scale(0.98); /* Efecto de hundirse al pulsar */
 }
