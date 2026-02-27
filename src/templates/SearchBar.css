@@ -1,0 +1,57 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centrar en pantalla */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor */
+.contenedor {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+/* Barra de búsqueda */
+.barra-busqueda {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+/* Input */
+.barra-busqueda input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Botón */
+.barra-busqueda button {
+    padding: 0 20px;
+    border: none;
+    background-color: #7b7f83;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.barra-busqueda button:hover {
+    background-color: #424242;
+}
