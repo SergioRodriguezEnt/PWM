@@ -1,0 +1,29 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centrar en pantalla */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor */
+.contenedor {
+    text-align: center;
+}
+
+/* Imagen circular */
+.foto-circular {
+    width: 150px;      /* Tamaño */
+    height: 150px;     /* Igual que el width */
+    border-radius: 50%; /* Hace que sea un círculo */
+    object-fit: cover;  /* Ajusta la imagen sin deformarla */
+}
