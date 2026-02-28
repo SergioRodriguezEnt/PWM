@@ -2,16 +2,14 @@
     box-sizing: border-box;
 }
 
-/* La tarjeta gris sobre la página */
 .tarjeta-gris {
-    background-color: #dcdcdc; /* Gris claro de la imagen */
+    background-color: #dcdcdc;
     width: 90%;
     max-width: 850px;
-    padding: 30px;
+    padding: 3.5%;
     border-radius: 12px;
     display: flex;
-    gap: 30px;
-    /* Sombra suave para que se note que está "sobre" el fondo */
+    gap: 3.5%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
@@ -30,17 +28,31 @@
 .autor-info {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    font-size: 14px;
+    gap: 2%;
+    margin-top: 1rem;
+    font-size: 0.875rem;
     color: #444;
 }
 
-.circulo {
-    width: 20px;
-    height: 20px;
-    background-color: grey;
+.boton-autor {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    font-size: 0.9rem;
+    color: #333;
+    padding: 0;
+}
+
+.boton-autor img {
+    width: 13%;
+    height: 13%;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .columna-derecha {
@@ -62,12 +74,4 @@
 
 .segundo-titulo {
     margin-top: 40px !important;
-}
-
-/* Ajuste para tablets y móviles */
-@media (max-width: 768px) {
-    .tarjeta-gris {
-        flex-direction: column;
-        margin: 20px;
-    }
 }

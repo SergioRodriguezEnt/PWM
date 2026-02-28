@@ -3,20 +3,20 @@
 }
 
 .contenedor-formulario {
-    background-color: #dcdcdc; /* Fondo gris */
+    background-color: #dcdcdc;
     width: 90%;
     max-width: 600px;
-    padding: 40px;
+    padding: 6%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 3%;
 }
 
 .campo-grupo {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 1%;
 }
 
 .campo-grupo label {
@@ -26,29 +26,27 @@
 }
 
 .barra-roja {
-    background-color: #a35050; /* Rojo oscuro */
+    background-color: #a35050;
     color: #000;
-    padding: 12px 15px;
+    padding: 3% 4%;
     font-size: 14px;
     width: 100%;
-    border-radius: 0; /* Rectangular como en la foto */
+    border-radius: 0;
 
-    /* ESTO PERMITE QUE EL INPUT SE VEA COMO TU DISEÑO ORIGINAL */
-    border: none;       /* Quita el borde de "caja" */
-    outline: none;      /* Quita el borde azul al hacer clic */
-    font-family: inherit; /* Usa la misma letra que el resto */
+    border: none;
+    outline: none;
+    font-family: inherit;
     display: block;
 }
 
-/* Estilos del Botón Rosa */
 .boton-rosa {
-    background-color: #e6b9b9; /* Rosa de la imagen */
+    background-color: #e6b9b9;
     color: #000;
     border: none;
-    padding: 12px;
+    padding: 3%;
     font-size: 14px;
     width: 70%;
-    margin: 20px auto 0 auto; /* Centrado horizontal */
+    margin: 5% auto 0 auto;
     cursor: pointer;
     transition: background-color 0.2s;
 }
