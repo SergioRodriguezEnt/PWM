@@ -1,18 +1,15 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* HEADER */
 .header {
     display: flex;
     align-items: center;
     width: 100%;
 }
 
-/* SECCIÓN */
 .seccion {
     display: flex;
     width: 100%;

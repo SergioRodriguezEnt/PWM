@@ -4,8 +4,9 @@
     height: 100vh;
 }
 
-#register-form {
+#main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
