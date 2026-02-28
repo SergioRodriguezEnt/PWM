@@ -34,7 +34,7 @@
 .avatar-circulo {
     width: 17%;
     aspect-ratio: 1/1;
-    background-color: #a35050;
+    background-color: gray;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -81,7 +81,7 @@
 }
 
 .input-estilizado {
-    background-color: #e0e0e0;
+    background-color: lightgray;
     border: none;
     padding: 2% 3%;
     border-radius: 10px;
@@ -110,7 +110,7 @@
 }
 
 .boton-accion {
-    background-color: #a35050;
+    background-color: gray;
     color: white;
     border: none;
     padding: 2% 4%;

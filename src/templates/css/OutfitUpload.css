@@ -64,7 +64,7 @@ h3 {
 .boton {
     display: inline-block;
     padding: 0.8rem 2.5rem;
-    background-color: #a67474;
+    background-color: darkgray;
     color: #000;
     font-size: 1rem;
     text-decoration: none;
@@ -72,5 +72,5 @@ h3 {
 }
 
 .boton:hover {
-    background-color: #8f6262;
+    background-color: gray;
 }
