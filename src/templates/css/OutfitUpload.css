@@ -64,13 +64,23 @@ h3 {
 .boton {
     display: inline-block;
     padding: 0.8rem 2.5rem;
-    background-color: darkgray;
-    color: #000;
+    background-color: gray;
+    color: white;
     font-size: 1rem;
     text-decoration: none;
     border-radius: 10px;
+    cursor: pointer;
+
+
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: center;
+    border: none;
 }
 
 .boton:hover {
-    background-color: gray;
+    background-color: darkgray;
+}
+
+.boton:active {
+    transform: scale(0.98);
 }
