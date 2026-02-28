@@ -3,7 +3,7 @@
 }
 
 .contenedor-formulario {
-    background-color: #dcdcdc; /* Fondo gris */
+    background-color: #dcdcdc;
     width: 90%;
     max-width: 600px;
     padding: 40px;
@@ -31,26 +31,25 @@
     padding: 12px 15px;
     font-size: 14px;
     width: 100%;
-    border-radius: 0; /* Rectangular como en la foto */
+    border-radius: 0;
 }
 
-/* Estilos del Botón Rosa */
 .boton-rosa {
-    background-color: gray; /* Rosa de la imagen */
+    background-color: gray;
     color: #000;
-    border: none; /* Quitamos el borde por defecto */
+    border: none;
     padding: 12px;
     font-size: 14px;
     width: 70%;
-    margin: 20px auto 0 auto; /* Centrado horizontal */
+    margin: 20px auto 0 auto;
     cursor: pointer;
-    transition: background-color 0.2s; /* Pequeña animación */
+    transition: background-color 0.2s;
 }
 
 .boton-rosa:hover {
-    background-color: darkgray; /* Un poco más oscuro al pasar el ratón */
+    background-color: darkgray;
 }
 
 .boton-rosa:active {
-    transform: scale(0.98); /* Efecto de hundirse al pulsar */
+    transform: scale(0.98);
 }

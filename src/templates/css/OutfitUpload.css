@@ -2,59 +2,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-body {
-    background-color: #d9d9d9;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-}
 
 .contenedor {
-    width: 300px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h3 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-weight: normal;
+    font-size: 1.5em;
+    text-align: left;
 }
 
-.imagen-placeholder {
-    width: 90px;
-    height: 110px;
-    background-color: #bfbfbf;
-    margin: 0 auto 20px auto;
+.imagen-proyecto {
+    display: block;
+    width: 45%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin: 0 auto 4vh auto;
+    background-color: #d9d9d9;
+    border-radius: 8px;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-input label {
+    font-size: 0.9em;
+    color: #000;
 }
 
 .formulario input {
-    padding: 8px;
+    padding: 0.8rem 1rem;
     border: none;
-    background-color: #bfbfbf;
-    border-radius: 5px;
-    font-size: 12px;
+    background-color: #dbdbdb;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
 }
 
-/* Botón rosa */
+
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+}
+
 .boton {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    padding: 8px;
-    background-color: #636060;
-    color: white;
-    font-size: 12px;
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: #a67474;
+    color: #000;
+    font-size: 1rem;
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .boton:hover {
-    background-color: #4c4849;
+    background-color: #8f6262;
 }

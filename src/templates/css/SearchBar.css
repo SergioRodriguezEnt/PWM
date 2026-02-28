@@ -1,28 +1,15 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Centrar en pantalla */
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-}
-
-/* Contenedor */
 .contenedor {
     width: 100%;
     max-width: 500px;
     padding: 20px;
 }
 
-/* Barra de búsqueda */
 .barra-busqueda {
     display: flex;
     width: 100%;
@@ -32,7 +19,6 @@ body {
     background-color: white;
 }
 
-/* Input */
 .barra-busqueda input {
     flex: 1;
     padding: 12px 20px;
@@ -41,7 +27,6 @@ body {
     font-size: 16px;
 }
 
-/* Botón */
 .barra-busqueda button {
     padding: 0 20px;
     border: none;
