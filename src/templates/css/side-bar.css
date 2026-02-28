@@ -56,20 +56,18 @@ button.square {
     transition: transform 0.2s;
 }
 
-/* círculo superior */
 .circle {
     width: 67%;
     max-width: 80%;
     border-radius: 50%;
 }
 
-/* botones cuadrados */
 .square,
 button.square,
 .last-square {
     width: 55%;
     max-width: 75%;
-    border-radius: 12px; /* ← mantenido en px como pediste */
+    border-radius: 12px;
 }
 
 .square img,

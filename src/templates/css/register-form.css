@@ -44,7 +44,9 @@
     margin: 20px auto 0 auto;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    /* Tu configuración de referencia */
+    transition: background-color 0.2s, transform 0.1s;
+    text-align: center;
 }
 
 .boton-rosa:hover {
