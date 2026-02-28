@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-/* ===== CONTENEDOR PRINCIPAL ===== */
 #page {
     margin-left: 6vw;
     min-height: 100vh;
@@ -12,7 +11,6 @@
     flex-direction: column;
 }
 
-/* ===== TOPBAR ===== */
 #topbar {
     display: flex;
     align-items: center;
