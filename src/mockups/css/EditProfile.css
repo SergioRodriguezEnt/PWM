@@ -59,7 +59,7 @@
     background-color: #e0e0e0;
     color: #555;
     padding: 1.5% 3%;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 90%;
 }
 
@@ -84,7 +84,7 @@
     background-color: lightgray;
     border: none;
     padding: 2% 3%;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 100%;
     color: #333;
     width: 100%;
@@ -98,6 +98,7 @@
 
 .textarea-estilizado {
     resize: none;
+    border-radius: 8px;
     height: 20%;
     line-height: 150%;
 }
@@ -124,7 +125,7 @@
 }
 
 .boton-accion:hover {
-    background-color: #8c4444;
+    background-color: darkgray;
 }
 
 .boton-accion:active {

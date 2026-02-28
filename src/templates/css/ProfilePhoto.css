@@ -7,10 +7,11 @@
 .contenedor {
     width: 100%;
     padding: 2%;
+    display: flex;
 }
 
 .foto-circular {
-    width: 3.5%;
+    width: 12%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
