@@ -4,10 +4,9 @@
     padding: 0;
 }
 
-/* ===== CONTENIDO GENERAL ===== */
-/* deja espacio para la sidebar fixed */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 #page {
-    margin-left: 90px; /* mismo max-width de tu sidebar */
+    margin-left: 6vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -17,32 +16,40 @@
 #topbar {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
+    gap: 1.2%;
+    padding: 1.5% 2%;
 }
 
-/* search ocupa todo el ancho */
 #search {
     flex: 1;
 }
 
-/* perfil pegado derecha */
 #profile {
     flex: 0 0 auto;
+    width: 3vw;
 }
 
-/* ===== MAIN CENTRADO ===== */
+#profile img {
+    width: 100%;
+    height: auto;
+}
+
 #main {
     flex: 1;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start; /* ← antes center */
+
+    padding: 2%;
     overflow-y: auto;
 }
 
-/* ===== BOTTOMBAR ===== */
-/* ya es fixed en tu CSS */
+#main > * {
+    width: 100%;
+    max-width: 100%;
+}
+
 #bottom {
     margin-top: auto;
 }
