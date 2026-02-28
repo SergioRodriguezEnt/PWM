@@ -39,6 +39,11 @@
     display: block;
 }
 
+.barra-roja:focus {
+    /*background-color: #f9f9f9;*/
+    border-color: darkgray;
+}
+
 .boton-rosa {
     background-color: gray;
     color: #000;
