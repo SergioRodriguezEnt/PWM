@@ -1,4 +1,3 @@
-
 #layout {
     box-sizing: border-box;
     display: grid;
@@ -10,6 +9,8 @@
 
 #main {
     display: flex;
+    margin-top: 1%;
+    margin-bottom: 1%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -23,7 +24,7 @@ html, body {
     padding: 0;
 }
 
-#main span {
+.main-span {
     font-size: 4vw;
     line-height: 1.6;
 
@@ -34,22 +35,19 @@ html, body {
     max-width: 70%;
 }
 
-#main button {
-    font-size: 1.2rem;
-    padding: 0.8rem 1.6rem;
-    margin-top: 1rem;
-    cursor: pointer;
-}
-
-.btn {
+.main-btn {
     background-color: gray;
     color: #000;
     border: none;
-    padding: 12px;
-    font-size: 14px;
+    font-size: 1.2rem;
     width: 40%;
-    margin: 20px auto 0 auto;
+    padding: 0.8rem 1.6rem;
+    margin: 1rem auto 0 auto;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
+}
+
+#no-user-outfit-searchbar {
+    margin-bottom: 1%;
 }
