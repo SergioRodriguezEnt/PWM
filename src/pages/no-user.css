@@ -53,3 +53,11 @@ html, body {
     cursor: pointer;
     transition: background-color 0.2s;
 }
+
+#no-user-outfit-searchbar {
+    margin-top: 2%
+}
+
+#outfit {
+    margin: 2%
+}
