@@ -1,0 +1,78 @@
+#profile-form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    padding: 5%;
+    border-radius: 20px;
+    margin: 0;
+}
+
+.profile-form-header {
+    margin-bottom: 4%;
+}
+
+.profile-form-h1 {
+    font-size: 200%;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-form-section {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    margin-bottom: 4%;
+}
+
+#photo-btn {
+    width: 17%;
+    aspect-ratio: 1/1;
+    background-color: gray;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.profile-form-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-form-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.profile-form-footer {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    margin-top: 3%;
+}
+
+.profile-form-btn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 2% 4%;
+    border-radius: 10px;
+    font-size: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-form-btn:hover {
+    background-color: darkgray;
+}
+
+.profile-form-btn:active {
+    transform: scale(0.98);
+}

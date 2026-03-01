@@ -22,16 +22,33 @@ html, body {
     padding: 0;
 }
 
-/* Texto dentro del main más grande */
 #main span {
-    font-size: 1.3rem; /* antes tamaño normal */
-    line-height: 1.6;  /* mejora legibilidad */
+    font-size: 4vw;
+    line-height: 1.6;
+
+    margin-top: 3%;
+    padding: 0 5%;
+
+    text-align: center;
+    max-width: 70%;
 }
 
-/* Botón más grande */
 #main button {
-    font-size: 1.2rem;     /* letra más grande */
-    padding: 0.8rem 1.6rem; /* tamaño general */
-    margin-top: 1rem;       /* separarlo del contenido */
+    font-size: 1.2rem;
+    padding: 0.8rem 1.6rem;
+    margin-top: 1rem;
     cursor: pointer;
+}
+
+.btn {
+    background-color: gray;
+    color: #000;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    width: 40%;
+    margin: 20px auto 0 auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }

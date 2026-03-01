@@ -1,0 +1,27 @@
+.form-text-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+}
+
+.display {
+    font-size: 14px;
+    color: #000;
+    font-weight: normal;
+}
+
+.text-field {
+    background-color: lightgray;
+    border: none;
+    padding: 2% 3%;
+    border-radius: 8px;
+    font-size: 100%;
+    color: #333;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.text-field:focus {
+    background-color: #d6d6d6;
+}

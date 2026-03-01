@@ -1,46 +1,35 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 #sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 6vw;
-    min-width: 5%;
-    max-width: 8%;
+    height: 100%;
+    width: 6%;
     background-color: #a0a0a0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 8% 0;
+    gap: 10%;
 }
 
 .sidebar-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    gap: 12%;
+    width: 80%;
+    margin: 10% 5%;
+    gap: 10%;
 }
 
 #sidebar-top {
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
 
 #sidebar-bottom {
     margin-top: auto;
 }
 
-.square,
-.circle,
-.last-square,
-button.square {
+.sidebar-btn {
     aspect-ratio: 1 / 1;
 
     display: flex;
@@ -48,6 +37,7 @@ button.square {
     align-items: center;
 
     border: none;
+    border-radius: 10%;
     padding: 0;
     overflow: hidden;
     cursor: pointer;
@@ -56,34 +46,17 @@ button.square {
     transition: transform 0.2s;
 }
 
-/* círculo superior */
-.circle {
-    width: 67%;
-    max-width: 80%;
+#logo-btn {
     border-radius: 50%;
 }
 
-/* botones cuadrados */
-.square,
-button.square,
-.last-square {
-    width: 55%;
-    max-width: 75%;
-    border-radius: 12px; /* ← mantenido en px como pediste */
-}
-
-.square img,
-.circle img,
-.last-square img {
+.sidebar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.square:hover,
-.circle:hover,
-.last-square:hover,
-button.square:hover {
+.sidebar-btn:hover {
     transform: scale(1.1);
 }
