@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Outfit Page</title>
 
   <script src="/src/xlu-include-file.js"></script>
-  <link rel="stylesheet" href="/src/pages/with-user.css">
+  <link rel="stylesheet" href="/src/pages/with-user.css" />
+  <link rel="stylesheet" href="/src/pages/profile-with-permission.css" />
 </head>
 
 <body>
-
-<div id="sidebar" xlu-include-file="/src/templates/html/side-bar.html"></div>
+<div id="sidebar-mount" xlu-include-file="/src/templates/html/side-bar.html"></div>
 
 <div id="page">
-
-  <div id="topbar">
-    <div id="search" xlu-include-file="/src/templates/html/search-bar.html"></div>
-    <div id="profile" xlu-include-file="/src/templates/html/profile-photo.html"></div>
-  </div>
-
   <main id="main">
-    <div xlu-include-file="/src/templates/html/search-results.html"></div>
+    <section id="content">
+      <div id="content-header">
+        <div id="title-row">
+          <div id="mini-avatar">
+            <img src="/src/resources/aspas.svg" alt="avatar">
+          </div>
+          <h1 id="page-title">lorem ipsum</h1>
+        </div>
+
+        <nav id="subtabs">
+          <a href="#" class="subtab">lorem ipsum</a>
+          <a href="#" class="subtab">lorem ipsum</a>
+        </nav>
+      </div>
+
+      <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
+    </section>
   </main>
 
-  <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
-
+  <footer id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></footer>
 </div>
 
 <script>
   xLuIncludeFile();
 </script>
-
 </body>
 </html>
