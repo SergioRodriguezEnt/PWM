@@ -1,10 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
-.contenedor-formulario {
+#login-form {
     background-color: #dcdcdc;
-    width: 90%;
+    width: 30%;
     max-width: 600px;
     padding: 6%;
     border-radius: 15px;
@@ -13,36 +9,7 @@
     gap: 3%;
 }
 
-.campo-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 1%;
-}
-
-.campo-grupo label {
-    font-size: 14px;
-    color: #000;
-    font-weight: normal;
-}
-
-.barra-roja {
-    background-color: lightgray;
-    border: none;
-    padding: 2% 3%;
-    border-radius: 8px;
-    font-size: 100%;
-    color: #333;
-    width: 100%;
-    outline: none;
-    transition: background-color 0.2s;
-}
-
-.barra-roja:focus {
-    /*background-color: #f9f9f9;*/
-    border-color: darkgray;
-}
-
-.boton-rosa {
+#login-btn {
     background-color: gray;
     color: #000;
     border: none;
@@ -55,10 +22,10 @@
     transition: background-color 0.2s;
 }
 
-.boton-rosa:hover {
+#login-btn:hover {
     background-color: darkgray;
 }
 
-.boton-rosa:active {
+#login-btn:active {
     transform: scale(0.98);
 }
