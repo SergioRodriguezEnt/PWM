@@ -1,7 +1,10 @@
 #layout {
+    box-sizing: border-box;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #main {
@@ -9,4 +12,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+html, body {
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#no-user-outfit-searchbar {
+    margin-top: 2%
+}
+
+#outfit {
+    margin: 2%
 }
