@@ -21,3 +21,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+#no-user-outfit-searchbar {
+    margin-top: 2%
+}
+
+#outfit {
+    margin: 2%
+}
