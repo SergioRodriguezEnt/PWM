@@ -3,38 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Home Page</title>
-
+  
   <script src="/src/xlu-include-file.js"></script>
-  <link rel="stylesheet" href="/src/pages/with-user.css">
+  <link rel="stylesheet" href="/src/pages/with-user.css" />
+  <link rel="stylesheet" href="/src/pages/profile-with-permission.css" />
 </head>
 
 <body>
-<div id="sidebar" xlu-include-file="/src/templates/html/side-bar.html"></div>
+<div id="sidebar-mount" xlu-include-file="/src/templates/html/side-bar.html"></div>
 
 <div id="page">
-
-  <div id="top-section">
-
-    <div id="top-left">
+  <div id="main">
+    
+    <div id="content">
       
-      <div class="profile-small" xlu-include-file="/src/templates/html/profile-photo.html"></div>
-      <span class="top-text">Lorem ipsum</span>
+      <div id="title-row">
+        
+        <div id="photo-div">
+          <img src="/src/resources/aspas.svg" id="mini-avatar" alt="avatar">
+        </div>
+        <h1 id="page-title">lorem ipsum</h1>
+        
+        <div id="profile-photo" xlu-include-file="/src/templates/html/profile-photo.html"></div>
       
+      </div>
+      
+      <div id="subtabs">
+        <button class="subtab">
+          lorem ipsum
+        </button>
+        <button class="subtab">
+          lorem ipsum
+        </button>
+      </div>
+    
     </div>
-
-    <div id="top-right">
-      
-      <div class="profile-small" xlu-include-file="/src/templates/html/profile-photo.html"></div>
-      
-    </div>
-
+    
+    <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
+  
   </div>
-
-  <main id="main-content">
-  </main>
-
   <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
-
 </div>
 
 <script>

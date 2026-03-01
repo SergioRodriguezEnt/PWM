@@ -1,101 +1,38 @@
-#sidebar{
-    width: clamp(72px, 6vw, 96px) !important;
-}
-
-#page{
-    margin-left: clamp(72px, 6vw, 96px) !important;
-    min-height: 100vh;
+#main {
     display: flex;
     flex-direction: column;
-}
-
-#sidebar .sidebar-btn{
-    width: clamp(36px, 3vw, 52px) !important;
-    height: clamp(36px, 3vw, 52px) !important;
-}
-
-#topbar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: clamp(12px, 2vw, 24px);
-    min-height: calc(clamp(48px, 3.6vw, 76px) + 16px);
-}
-
-#topbar-search > *{
-    width: 100%;
-}
-
-#topbar-search .contenedor{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#topbar-search .barra-busqueda{
-    width: 100% !important;
-    max-width: none !important;
-}
-
-
-#profile{
-    width: clamp(500px, 5vw, 110px);
-    height: clamp(72px, 5vw, 110px);
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#profile .contenedor{
-    width: 100%;
-    height: 100%;
-}
-
-#profile .boton-perfil{
-    width: 100% !important;
-    height: 100% !important;
-}
-
-
-#main{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: clamp(12px, 2vw, 24px);
-    overflow-y: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 2%;
+    padding: 0;
 }
 
 #content{
     width: 100%;
     max-width: 1200px;
-}
-
-
-#content-header{
-    padding: 8px 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #title-row{
     display: flex;
     align-items: center;
+    width: 100%;
     gap: 12px;
 }
 
-#mini-avatar{
+#photo-div {
     width: 34px;
     height: 34px;
     border-radius: 50%;
     overflow: hidden;
-    background: #a55;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#mini-avatar img{
+#mini-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -110,28 +47,44 @@
     margin-top: 10px;
     display: flex;
     gap: 22px;
-    padding-left: 46px;
-}
-
-.subtab{
-    font-size: 13px;
-    color: #222;
-    text-decoration: none;
-}
-
-.subtab:hover{
-    text-decoration: underline;
 }
 
 #results{
     width: 100%;
+    box-sizing:border-box;
 }
 
-#results .seccion{
-    padding: 0 !important;
-    gap: clamp(12px, 2vw, 24px) !important;
+#sidebar-extra-btn-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#bottom #bottombar{
-    height: auto !important;
+#sidebar-extra-btn {
+    margin-top: 500%;
+    border: none;
+    outline: none;
+    background: none;
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#extra-btn-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#profile-photo {
+    margin-left: auto;
+    margin-right: 1%;
+    width: 100%
 }

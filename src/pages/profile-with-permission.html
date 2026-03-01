@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,28 +14,41 @@
 <body>
 <div id="sidebar-mount" xlu-include-file="/src/templates/html/side-bar.html"></div>
 
-<div id="page">
-  <main id="main">
-    <section id="content">
-      <div id="content-header">
-        <div id="title-row">
-          <div id="mini-avatar">
-            <img src="/src/resources/aspas.svg" alt="avatar">
-          </div>
-          <h1 id="page-title">lorem ipsum</h1>
-        </div>
+<div id="sidebar-extra-btn-container">
+  <button id="sidebar-extra-btn">
+    <img src="/src/resources/aspas.svg" alt="Edit Profile" id="extra-btn-img">
+  </button>
+</div>
 
-        <nav id="subtabs">
-          <a href="#" class="subtab">lorem ipsum</a>
-          <a href="#" class="subtab">lorem ipsum</a>
-        </nav>
+<div id="page">
+  <div id="main">
+    
+    <div id="content">
+        
+      <div id="title-row">
+        
+        <div id="photo-div">
+          <img src="/src/resources/aspas.svg" id="mini-avatar" alt="avatar">
+        </div>
+        <h1 id="page-title">lorem ipsum</h1>
+        
       </div>
 
-      <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
-    </section>
-  </main>
+      <div id="subtabs">
+        <button class="subtab">
+          lorem ipsum
+        </button>
+        <button class="subtab">
+          lorem ipsum
+        </button>
+      </div>
 
-  <footer id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></footer>
+    </div>
+    
+    <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
+    
+  </div>
+  <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
 </div>
 
 <script>
