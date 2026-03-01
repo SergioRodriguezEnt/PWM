@@ -1,0 +1,37 @@
+#layout {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body {
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Texto dentro del main más grande */
+#main span {
+    font-size: 1.3rem; /* antes tamaño normal */
+    line-height: 1.6;  /* mejora legibilidad */
+}
+
+/* Botón más grande */
+#main button {
+    font-size: 1.2rem;     /* letra más grande */
+    padding: 0.8rem 1.6rem; /* tamaño general */
+    margin-top: 1rem;       /* separarlo del contenido */
+    cursor: pointer;
+}
