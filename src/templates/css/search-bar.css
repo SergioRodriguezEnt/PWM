@@ -1,10 +1,4 @@
-.upload-form {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-}
-
-.barra-busqueda {
+.searchbar-form {
     display: flex;
     width: 100%;
     border-radius: 30px;
@@ -13,7 +7,7 @@
     background-color: white;
 }
 
-.barra-busqueda input {
+.searchbar-input {
     flex: 1;
     padding: 12px 20px;
     border: none;
@@ -21,12 +15,12 @@
     font-size: 16px;
 }
 
-.barra-busqueda label {
+.searchbar-label {
     flex: 1;
     display: flex;
 }
 
-.barra-busqueda button {
+.searchbar-btn {
     padding: 0 20px;
     border: none;
     background-color: #7b7f83;
@@ -36,6 +30,6 @@
     transition: background 0.3s;
 }
 
-.barra-busqueda button:hover {
+.searchbar-btn:hover {
     background-color: #424242;
 }
