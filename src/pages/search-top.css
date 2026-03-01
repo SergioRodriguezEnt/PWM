@@ -1,0 +1,16 @@
+#upload-search-center{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#upload-search-center .contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#topbar #profile .boton-perfil{
+    width: clamp(44px, 4vw, 72px);
+}
