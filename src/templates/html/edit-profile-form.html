@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil de Usuario</title>
+<div id="profile-form">
   <link rel="stylesheet" href="/src/templates/css/edit-profile-form.css">
-</head>
-<body>
 
-<main class="perfil-card">
-
-  <header class="perfil-header">
-    <h1 class="titulo-principal">Lorem ipsum</h1>
+  <header class="profile-form-header">
+    <h1 class="profile-form-h1">
+      Lorem ipsum
+    </h1>
   </header>
 
-  <section class="avatar-seccion">
-    <div class="avatar-circulo">
-      <img src="/src/resources/aspas.svg" alt="Foto de perfil">
-    </div>
-    <button type="button" class="perfil-tag">Ipsum lorem</button>
+  <section class="profile-form-section">
+    
+    <button id="photo-btn" class="profile-form-btn">
+      <img src="/src/resources/aspas.svg" alt="Profile photo" class="profile-form-img">
+    </button>
+    
+    <button id="x-btn" class="profile-form-btn">
+      Lorem ipsum
+    </button>
+    
   </section>
 
-  <form class="perfil-formulario">
-    <div class="campo-grupo">
-      <label for="campo-nombre">lorem ipsum</label>
-      <input type="text" id="campo-nombre" name="nombre" class="input-estilizado" placeholder="lorem ipsum">
-    </div>
+  <form class="profile-form-form">
+    
+    <div id="username-field" xlu-include-file="/src/templates/html/form-text-field.html"></div>
 
-    <div class="campo-grupo">
-      <label for="campo-apellido">lorem ipsum</label>
-      <input type="text" id="campo-apellido" name="apellido" class="input-estilizado" placeholder="lorem ipsum">
-    </div>
+    <div id="xx-field" xlu-include-file="/src/templates/html/form-text-field.html"></div>
 
-    <div class="campo-grupo textarea-grupo">
-      <label for="campo-bio">lorem ipsum</label>
-      <textarea id="campo-bio" name="bio" class="input-estilizado textarea-estilizado">Lorem ipsum dolor sit amet consectetur adipiscing elit lobortis, platea habitasse etiam penatibus vestibulum dictum id, semper litora augue pellentesque est nascetur posuere.</textarea>
-    </div>
-
-    <footer class="form-botones">
-      <a href="login-form.html" class="boton-accion">lorem ipsum</a>
-      <a href="login-form.html" class="boton-accion">lorem ipsum</a>
-    </footer>
+    <div id="description-field" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+    
   </form>
+  
+  <footer class="profile-form-footer">
+    
+    <button id="xx-btn" class="profile-form-btn">
+      lorem ipsum
+    </button>
+    
+    <button id="xxx-btn" class="profile-form-btn">
+      lorem ipsum
+    </button>
+    
+  </footer>
 
-</main>
-</body>
-</html>
+</div>

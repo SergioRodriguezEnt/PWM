@@ -1,67 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-
-.contenedor {
+#upload-form {
     width: 90%;
     max-width: 600px;
     margin: 0 auto;
 }
 
-h3 {
+.upload-form-h3 {
     margin-bottom: 30px;
     font-weight: normal;
     font-size: 1.5em;
     text-align: left;
 }
 
-.imagen-proyecto {
-    display: block;
+#outfit-img-btn {
     width: 45%;
     aspect-ratio: 3 / 4;
-    object-fit: cover;
     margin: 0 auto 4vh auto;
-    background-color: #d9d9d9;
+    background-color: transparent;
     border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
-.formulario {
+.outfit-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.upload-form-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
 
-.grupo-input {
-    display: flex;
-    flex-direction: column;
-}
 
-.grupo-input label {
-    font-size: 0.9em;
-    color: #000;
-}
-
-.formulario input {
-    padding: 0.8rem 1rem;
-    border: none;
-    background-color: #dbdbdb;
-    border-radius: 8px;
-    font-size: 1em;
-    width: 100%;
-}
-
-
-.contenedor-boton {
+#button-container {
     display: flex;
     justify-content: center;
 }
 
-.boton {
+.upload-form-button {
     display: inline-block;
     padding: 0.8rem 2.5rem;
     background-color: gray;
@@ -77,10 +60,10 @@ h3 {
     border: none;
 }
 
-.boton:hover {
+.upload-form-button:hover {
     background-color: darkgray;
 }
 
-.boton:active {
+.upload-form-button:active {
     transform: scale(0.98);
 }

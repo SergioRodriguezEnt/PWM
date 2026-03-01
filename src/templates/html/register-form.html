@@ -1,39 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario con Botón</title>
+<div id="register-form">
   <link rel="stylesheet" href="/src/templates/css/register-form.css">
-</head>
-<body>
+  
+  <form>
+    
+    <div id="x-field" class="campo-grupo" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+    
+    <div id="xx-field" class="campo-grupo" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+    
+    <div id="xxx-field" class="campo-grupo" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+    
+  </form>
 
-<main class="contenedor-formulario">
-  <div class="campo-grupo">
-    <label>Lorem ipsum</label>
-    <label>
-      <input type="text" class="barra-roja" value="Lorem ipsum">
-    </label>
-  </div>
-
-  <div class="campo-grupo">
-    <label>Lorem ipsum</label>
-    <label>
-      <input type="text" class="barra-roja" value="Lorem ipsum">
-    </label>
-  </div>
-
-  <div class="campo-grupo">
-    <label>Lorem ipsum</label>
-    <label>
-      <input type="text" class="barra-roja" value="Lorem ipsum">
-    </label>
-  </div>
-
-  <button type="button" class="boton-rosa">
+  <button class="register-form-btn">
     Lorem ipsum
   </button>
-</main>
-
-</body>
-</html>
+  
+</div>

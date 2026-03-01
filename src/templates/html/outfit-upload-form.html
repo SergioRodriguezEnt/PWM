@@ -1,37 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
+<div id="upload-form">
     <link rel="stylesheet" href="/src/templates/css/outfit-upload-form.css">
-</head>
-<body>
+    
+    <h3 class="upload-form-h3">
+        Lorem ipsum
+    </h3>
 
-<div class="contenedor">
-    <h3>Lorem ipsum</h3>
+    <button id="outfit-img-btn" class="upload-form-button">
+        <img src="/src/resources/aspas.svg" alt="Outfit photo" id="outfit-img">
+    </button>
 
-    <img src="/src/resources/aspas.svg" alt="Foto a subir" class="imagen-proyecto">
-
-    <form class="formulario">
-        <div class="grupo-input">
-            <label>lorem ipsum</label>
-            <label>
-                <input type="text" placeholder="lorem ipsum">
-            </label>
-        </div>
-        <div class="grupo-input">
-            <label>lorem ipsum</label>
-            <label>
-                <input type="text" placeholder="lorem ipsum">
-            </label>
-        </div>
+    <form class="upload-form-form">
+        
+        <div id="outfit-name-field" class="grupo-input" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+        
+        <div id="outfit-description-field" class="grupo-input" xlu-include-file="/src/templates/html/form-text-field.html"></div>
+        
     </form>
 
-    <div class="contenedor-boton">
-        <a href="/src/pages/outfit-with-user.html" class="boton">lorem ipsum</a>
+    <div id="button-container">
+        
+        <button class="upload-form-button">
+            lorem ipsum
+        </button>
+        
     </div>
 
 </div>
-
-</body>
-</html>
