@@ -18,4 +18,5 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.6
         with:
-          prettier_options: --write **/*.{js,css,html,ts}
+          prettier_options: --write **/*.{js,css,html,ts,json}
+          only_changed: True
