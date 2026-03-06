@@ -1,58 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Outfit Page</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Outfit Page</title>
+    <script src="/src/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="/src/pages/with-user.css" />
+    <link rel="stylesheet" href="/src/pages/profile-with-permission.css" />
+  </head>
 
-  <script src="/src/xlu-include-file.js"></script>
-  <link rel="stylesheet" href="/src/pages/with-user.css" />
-  <link rel="stylesheet" href="/src/pages/profile-with-permission.css" />
-</head>
+  <body>
+    <div
+      id="sidebar-mount"
+      xlu-include-file="/src/templates/html/side-bar.html"
+    ></div>
 
-<body>
-<div id="sidebar-mount" xlu-include-file="/src/templates/html/side-bar.html"></div>
-
-<div id="sidebar-extra-btn-container">
-  <button id="sidebar-extra-btn">
-    <img src="/src/resources/aspas.svg" alt="Edit Profile" id="extra-btn-img">
-  </button>
-</div>
-
-<div id="page">
-  <div id="main">
-    
-    <div id="content">
-        
-      <div id="title-row">
-        
-        <div id="photo-div">
-          <img src="/src/resources/aspas.svg" id="mini-avatar" alt="avatar">
-        </div>
-        <h1 id="page-title">lorem ipsum</h1>
-        
-      </div>
-
-      <div id="subtabs">
-        <button class="subtab">
-          lorem ipsum
-        </button>
-        <button class="subtab">
-          lorem ipsum
-        </button>
-      </div>
-
+    <div id="sidebar-extra-btn-container">
+      <button id="sidebar-extra-btn">
+        <img
+          src="/src/resources/aspas.svg"
+          alt="Edit Profile"
+          id="extra-btn-img"
+        />
+      </button>
     </div>
-    
-    <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
-    
-  </div>
-  <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
-</div>
 
-<script>
-  xLuIncludeFile();
-</script>
-</body>
+    <div id="page">
+      <div id="main">
+        <div id="content">
+          <div id="title-row">
+            <div id="photo-div">
+              <img
+                src="/src/resources/aspas.svg"
+                id="mini-avatar"
+                alt="avatar"
+              />
+            </div>
+            <h1 id="page-title">lorem ipsum</h1>
+          </div>
+
+          <div id="subtabs">
+            <button class="subtab">lorem ipsum</button>
+            <button class="subtab">lorem ipsum</button>
+          </div>
+        </div>
+
+        <div
+          id="results"
+          xlu-include-file="/src/templates/html/search-results.html"
+        ></div>
+      </div>
+      <div
+        id="bottom"
+        xlu-include-file="/src/templates/html/bottom-bar.html"
+      ></div>
+    </div>
+
+    <script>
+      xLuIncludeFile();
+    </script>
+  </body>
 </html>

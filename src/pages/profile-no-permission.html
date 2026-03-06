@@ -1,52 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Home Page</title>
-  
-  <script src="/src/xlu-include-file.js"></script>
-  <link rel="stylesheet" href="/src/pages/with-user.css" />
-  <link rel="stylesheet" href="/src/pages/profile-no-permission.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home Page</title>
 
-<body>
-<div id="sidebar-mount" xlu-include-file="/src/templates/html/side-bar.html"></div>
+    <script src="/src/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="/src/pages/with-user.css" />
+    <link rel="stylesheet" href="/src/pages/profile-no-permission.css" />
+  </head>
 
-<div id="page">
-  <div id="main">
-    
-    <div id="content">
-      
-      <div id="title-row">
-        
-        <div id="photo-div">
-          <img src="/src/resources/aspas.svg" id="mini-avatar" alt="avatar">
+  <body>
+    <div
+      id="sidebar-mount"
+      xlu-include-file="/src/templates/html/side-bar.html"
+    ></div>
+
+    <div id="page">
+      <div id="main">
+        <div id="content">
+          <div id="title-row">
+            <div id="photo-div">
+              <img
+                src="/src/resources/aspas.svg"
+                id="mini-avatar"
+                alt="avatar"
+              />
+            </div>
+            <h1 id="page-title">lorem ipsum</h1>
+
+            <div
+              id="boton-perfil"
+              xlu-include-file="/src/templates/html/profile-photo.html"
+            ></div>
+          </div>
+
+          <div id="subtabs">
+            <button class="subtab">lorem ipsum</button>
+            <button class="subtab">lorem ipsum</button>
+          </div>
         </div>
-        <h1 id="page-title">lorem ipsum</h1>
-        
-        <div id="boton-perfil" xlu-include-file="/src/templates/html/profile-photo.html"></div>
-      
-      </div>
-      
-      <div id="subtabs">
-        <button class="subtab">
-          lorem ipsum
-        </button>
-        <button class="subtab">
-          lorem ipsum
-        </button>
-      </div>
-    
-    </div>
-    
-    <div id="results" xlu-include-file="/src/templates/html/search-results.html"></div>
-  
-  </div>
-  <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
-</div>
 
-<script>
-  xLuIncludeFile();
-</script>
-</body>
+        <div
+          id="results"
+          xlu-include-file="/src/templates/html/search-results.html"
+        ></div>
+      </div>
+      <div
+        id="bottom"
+        xlu-include-file="/src/templates/html/bottom-bar.html"
+      ></div>
+    </div>
+
+    <script>
+      xLuIncludeFile();
+    </script>
+  </body>
 </html>

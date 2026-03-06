@@ -1,31 +1,31 @@
 #login-form {
-    background-color: #dcdcdc;
-    width: 30%;
-    max-width: 600px;
-    padding: 6%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
+  background-color: #dcdcdc;
+  width: 30%;
+  max-width: 600px;
+  padding: 6%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
 }
 
 #login-btn {
-    background-color: gray;
-    color: #000;
-    border: none;
-    padding: 3%;
-    font-size: 14px;
-    border-radius: 10px;
-    width: 70%;
-    margin: 5% auto 0 auto;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  background-color: gray;
+  color: #000;
+  border: none;
+  padding: 3%;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 5% auto 0 auto;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 #login-btn:hover {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
 #login-btn:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }

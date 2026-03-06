@@ -1,47 +1,48 @@
 #page {
-    margin-left: 6vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin-left: 6vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #topbar {
-    display: flex;
-    align-items: center;
-    gap: 1.2%;
-    padding: 1.5% 2%;
+  display: flex;
+  align-items: center;
+  gap: 1.2%;
+  padding: 1.5% 2%;
 }
 
 #profile {
-    flex: 0 0 auto;
-    width: 3vw;
+  flex: 0 0 auto;
+  width: 3vw;
 }
 
 #profile img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 #main {
-    flex: 1;
+  flex: 1;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* ← antes center */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* ← antes center */
 
-    padding: 2%;
-    overflow-y: auto;
-    overflow-x: hidden;
+  padding: 2%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #bottom {
-    margin-top: auto;
+  margin-top: auto;
 }
 
-html, body {
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }

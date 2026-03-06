@@ -1,44 +1,45 @@
 .upload-form {
-    width: 100%;
-    padding: 2%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
 }
 
 .boton-perfil {
-    width: 4%;
-    aspect-ratio: 1 / 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 4%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eee;
 
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
-    border: none;
-    text-decoration: none;
-
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  border: none;
+  text-decoration: none;
 }
 
 .boton-perfil:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .boton-perfil:hover .foto-circular {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .boton-perfil:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .foto-circular {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
-    transition: opacity 0.2s;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  transition: opacity 0.2s;
 }
