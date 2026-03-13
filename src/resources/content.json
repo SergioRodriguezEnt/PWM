@@ -28,5 +28,75 @@
       "title": "Otros",
       "items": ["Lorem ipsum", "Lorem Ipsum"]
     }
+  },
+
+  "form-text-field": {
+    "display": "Text field",
+    "placeholder": "Escriba aquí"
+  },
+
+  "login-form": {
+    "user-field": {
+      "display": "User",
+      "placeholder": "Escriba aquí su nombre de usuario"
+    },
+    "password-field": {
+      "display": "Password",
+      "placeholder": "Escriba aquí su contraseña"
+    },
+    "login-btn": "botón"
+  },
+
+  "outfit-upload-form": {
+    "title": "Subir outfit",
+    "outfit-img-btn": "botón",
+    "upload-form-form": {
+      "outfit-name-field": {
+        "display": "Nombre",
+        "placeholder": "Escriba aquí un nombre"
+      },
+      "outfit-description-field": {
+        "display": "Descripción",
+        "placeholder": "Escriba aquí su descripción"
+      }
+    },
+    "upload-form-button": "botón"
+  },
+
+  "outfit-view": {
+    "autor-info": {
+      "boton-autor": "/src/resources/aspas.svg",
+      "nombre-autor": "Autor"
+    },
+
+    "columna-derecha": {
+      "bloque-texto": {
+        "primer-titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+        "segundo-titulo": "Lorem ipsum dolor sit amet, consectetur adipiscing"
+      }
+    },
+
+  "profile-photo": {
+
+  },
+
+  "register-form": {
+
+  },
+
+  "search-bar": {
+
+  },
+
+  "search-results": {
+
+  },
+
+  "side-bar": {
+
+  },
+
+  "top-bar": {
+
   }
 }
