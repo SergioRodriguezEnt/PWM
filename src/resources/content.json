@@ -1,36 +1,32 @@
 {
-  "edit-profile-form" : {
-    "title" : "Editar Perfil",
-    "profile-photo" : "/src/resources/aspas.svg",
-    "username-field" : {
-      "display" : "Nombre",
-      "placeholder" : "Escriba aquí su nombre"
+  "edit-profile-form": {
+    "title": "Editar Perfil",
+    "profile-photo": "/src/resources/aspas.svg",
+    "username-field": {
+      "display": "Nombre",
+      "placeholder": "Escriba aquí su nombre"
     },
-    "xx-field" : {
-      "display" : "Text field",
-      "placeholder" : "aaaaaaaa"
+    "xx-field": {
+      "display": "Text field",
+      "placeholder": "aaaaaaaa"
     },
-    "description-field" : {
+    "description-field": {
       "display": "Descripción",
-      "placeholder" : "Escriba aquí su descripción"
+      "placeholder": "Escriba aquí su descripción"
     },
-    "x-btn" : "botón",
-    "xx-btn" : "botón",
-    "xxx-btn" : "botón"
+    "x-btn": "botón",
+    "xx-btn": "botón",
+    "xxx-btn": "botón"
   },
 
-  "bottom-bar" : {
-    "bottom-bar-section-1" : {
-      "title" : "Media",
-      "items" : [
-        "Contactanos", "Correo", "Teléfono"
-      ]
+  "bottom-bar": {
+    "bottom-bar-section-1": {
+      "title": "Media",
+      "items": ["Contactanos", "Correo", "Teléfono"]
     },
-    "bottom-bar-section-2" : {
-      "title" : "Otros",
-      "items" : [
-        "Lorem ipsum", "Lorem Ipsum"
-      ]
+    "bottom-bar-section-2": {
+      "title": "Otros",
+      "items": ["Lorem ipsum", "Lorem Ipsum"]
     }
   }
 }
