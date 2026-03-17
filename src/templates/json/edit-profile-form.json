@@ -6,14 +6,14 @@
     "placeholder": "Escriba aquí su nombre"
   },
   "xx-field": {
-    "display": "Text field",
-    "placeholder": "aaaaaaaa"
+    "display": "Contraseña",
+    "placeholder": "Escriba aquí su contraseña"
   },
   "description-field": {
     "display": "Descripción",
     "placeholder": "Escriba aquí su descripción"
   },
-  "x-btn": "botón",
-  "xx-btn": "botón",
-  "xxx-btn": "botón"
+  "x-btn": "Seleccionar foto",
+  "xx-btn": "Cancelar",
+  "xxx-btn": "Guardar cambios"
 }
