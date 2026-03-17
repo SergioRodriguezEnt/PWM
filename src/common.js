@@ -1,9 +1,23 @@
 async function loadStructure() {
-  document.querySelectorAll("div").forEach((el) => {
+  return loadStructureForElem(document);
+}
+
+async function loadStructureForElem(htmlElement) {
+  let promises = []
+  htmlElement.querySelectorAll("div").forEach((el) => {
+    if (el === htmlElement) {
+      return;
+    }
     if (needsTemplate(el.id)) {
-      loadHTMLTo(neededTemplate(el.id), el.id);
+      promises.push(loadHTMLandRecurse(el));
     }
   });
+  return Promise.all(promises);
+}
+
+async function loadHTMLandRecurse(el) {
+  await loadHTMLTo(neededTemplate(el.id), el.id);
+  return loadStructureForElem(el);
 }
 
 function needsTemplate(id) {
@@ -29,11 +43,28 @@ async function loadHTML(url) {
   return document.importNode(template.content, true);
 }
 
-function loadDynamicContent(consume) {
-  fetch("/src/resources/content.json")
+function loadDynamicContent(url, loadWith) {
+  return fetch(url)
     .then((response) => response.json())
-    .then((data) => consume(data))
+    .then((data) => loadWith(data))
     .catch((error) => console.error("Error:", error));
+}
+
+async function loadContentForField(fieldId, data) {
+  data = data[fieldId];
+  let fieldElem = document.querySelector(
+      "#".concat(fieldId, "-template-form-text-field"),
+  );
+  Promise.all([
+    loadContentForElem(fieldElem, ".display", "textContent", data, "display"),
+    loadContentForElem(
+        fieldElem,
+        ".text-field",
+        "placeholder",
+        data,
+        "placeholder",
+    ),
+  ]).catch((error) => console.error("Error:", error));
 }
 
 async function loadContentFor(selector, attribute, data, data_name) {

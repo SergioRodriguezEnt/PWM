@@ -14,7 +14,6 @@
       "display": "Descripción",
       "placeholder": "Escriba aquí su descripción"
     },
-    "x-btn": "botón",
     "xx-btn": "botón",
     "xxx-btn": "botón"
   },
@@ -27,6 +26,20 @@
     "bottom-bar-section-2": {
       "title": "Otros",
       "items": ["Lorem ipsum", "Lorem Ipsum"]
+    }
+  },
+
+  "form-text-field" : {
+    "display": "Text field",
+    "placeholder": "Escriba aquí"
+  },
+
+  "users" : {
+    "usuario1": {
+      "name" : "asdasfkasdf",
+      "profile-photo" : "/src/resources/aspas.svg",
+      "password" : 8201849018,
+      "description" : "Just a user"
     }
   }
 }

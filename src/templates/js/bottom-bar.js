@@ -1,9 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  loadDynamicContent(consume);
-});
-
-function consume(data) {
-  data = data["bottom-bar"];
+async function loadBottomBar(data) {
   for (let section of document.querySelectorAll(".bottombar-section")) {
     loadSectionData(section, data);
   }
