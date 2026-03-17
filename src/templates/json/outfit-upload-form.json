@@ -1,8 +1,8 @@
 {
   "title": "Subir outfit",
   "outfit-img-btn": {
-    "src" : "/src/resources/aspas.svg",
-    "alt" : "Outfit photo"
+    "src": "/src/resources/aspas.svg",
+    "alt": "Outfit photo"
   },
   "upload-form-form": {
     "outfit-name-field": {
