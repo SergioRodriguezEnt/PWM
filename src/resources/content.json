@@ -29,17 +29,17 @@
     }
   },
 
-  "form-text-field" : {
+  "form-text-field": {
     "display": "Text field",
     "placeholder": "Escriba aquí"
   },
 
-  "users" : {
+  "users": {
     "usuario1": {
-      "name" : "asdasfkasdf",
-      "profile-photo" : "/src/resources/aspas.svg",
-      "password" : 8201849018,
-      "description" : "Just a user"
+      "name": "asdasfkasdf",
+      "profile-photo": "/src/resources/aspas.svg",
+      "password": 8201849018,
+      "description": "Just a user"
     }
   }
 }

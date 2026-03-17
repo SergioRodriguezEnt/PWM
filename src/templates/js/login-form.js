@@ -1,7 +1,7 @@
 async function loadLoginForm(data) {
-    return Promise.all([
-        loadContentFor("#login-btn", "textContent", data, "login-btn"),
-        loadContentForField("user-field", data),
-        loadContentForField("password-field", data),
-    ]).catch((error) => console.error("Error:", error));
+  return Promise.all([
+    loadContentFor("#login-btn", "textContent", data, "login-btn"),
+    loadContentForField("user-field", data),
+    loadContentForField("password-field", data),
+  ]).catch((error) => console.error("Error:", error));
 }

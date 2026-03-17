@@ -3,7 +3,7 @@ async function loadStructure() {
 }
 
 async function loadStructureForElem(htmlElement) {
-  let promises = []
+  let promises = [];
   htmlElement.querySelectorAll("div").forEach((el) => {
     if (el === htmlElement) {
       return;
@@ -53,16 +53,16 @@ function loadDynamicContent(url, loadWith) {
 async function loadContentForField(fieldId, data) {
   data = data[fieldId];
   let fieldElem = document.querySelector(
-      "#".concat(fieldId, "-template-form-text-field"),
+    "#".concat(fieldId, "-template-form-text-field"),
   );
   Promise.all([
     loadContentForElem(fieldElem, ".display", "textContent", data, "display"),
     loadContentForElem(
-        fieldElem,
-        ".text-field",
-        "placeholder",
-        data,
-        "placeholder",
+      fieldElem,
+      ".text-field",
+      "placeholder",
+      data,
+      "placeholder",
     ),
   ]).catch((error) => console.error("Error:", error));
 }

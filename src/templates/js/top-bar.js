@@ -1,3 +1,1 @@
-async function loadTopBar(data) {
-
-}
+async function loadTopBar(data) {}
