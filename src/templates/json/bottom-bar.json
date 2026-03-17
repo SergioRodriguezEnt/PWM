@@ -1,0 +1,10 @@
+{
+  "bottom-bar-section-1": {
+    "title": "Media",
+    "items": ["Contactanos", "Correo", "Teléfono"]
+  },
+  "bottom-bar-section-2": {
+    "title": "Otros",
+    "items": ["Lorem ipsum", "Lorem Ipsum"]
+  }
+}
