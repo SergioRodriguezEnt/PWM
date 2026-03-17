@@ -73,27 +73,15 @@
     }
   },
 
-  "profile-photo": {
+  "profile-photo": {},
 
-  },
+  "register-form": {},
 
-  "register-form": {
+  "search-bar": {},
 
-  },
+  "search-results": {},
 
-  "search-bar": {
+  "side-bar": {},
 
-  },
-
-  "search-results": {
-
-  },
-
-  "side-bar": {
-
-  },
-
-  "top-bar": {
-
-  }
+  "top-bar": {}
 }
