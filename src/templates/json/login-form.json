@@ -1,0 +1,11 @@
+{
+  "user-field": {
+    "display": "User",
+    "placeholder": "Escriba aquí su nombre de usuario"
+  },
+  "password-field": {
+    "display": "Password",
+    "placeholder": "Escriba aquí su contraseña"
+  },
+  "login-btn": "botón"
+}
