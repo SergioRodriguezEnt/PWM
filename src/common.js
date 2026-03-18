@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   await loadStructure();
   loadDynamicContent();
-})
+});
 
 async function loadStructure() {
   return loadStructureForElem(document);
