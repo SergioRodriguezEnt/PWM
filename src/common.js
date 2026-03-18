@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", async function () {
+  await loadStructure();
+  loadDynamicContent();
+})
+
 async function loadStructure() {
   return loadStructureForElem(document);
 }
@@ -43,11 +48,11 @@ async function loadHTML(url) {
   return document.importNode(template.content, true);
 }
 
-function loadDynamicContent(url, loadWith) {
+function loadDynamicContentFor(url, loadWith) {
   return fetch(url)
     .then((response) => response.json())
     .then((data) => loadWith(data))
-    .catch((error) => console.error("Error:", error));
+    .catch(console.error);
 }
 
 async function loadContentForField(fieldId, data) {
@@ -64,7 +69,7 @@ async function loadContentForField(fieldId, data) {
         data,
         "placeholder",
     ),
-  ]).catch((error) => console.error("Error:", error));
+  ]).catch(console.error);
 }
 
 async function loadContentFor(selector, attribute, data, data_name) {

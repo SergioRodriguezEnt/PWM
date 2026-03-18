@@ -4,32 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Outfit View</title>
-  <script src="/src/xlu-include-file.js"></script>
+  <script src="/src/common.js"></script>
+  <script src="/src/pages/js/outfit-view-with-user.js"></script>
+  <script src="/src/templates/js/side-bar.js"></script>
+  <script src="/src/templates/js/search-bar.js"></script>
+  <script src="/src/templates/js/profile-photo.js"></script>
+  <script src="/src/templates/js/outfit-view.js"></script>
+  <script src="/src/templates/js/bottom-bar.js"></script>
   <link rel="stylesheet" href="/src/pages/css/with-user.css">
   <link rel="stylesheet" href="/src/pages/css/search-top.css">
 </head>
 
 <body>
-<div id="sidebar" xlu-include-file="/src/templates/html/side-bar.html"></div>
+<div id="sidebar-template-side-bar"></div>
 
 <div id="page">
 
   <div id="topbar">
     
-    <div id="upload-search-center" xlu-include-file="/src/templates/html/search-bar.html"></div>
-    <div id="profile" xlu-include-file="/src/templates/html/profile-photo.html"></div>
+    <div id="upload-search-center-template-search-bar"></div>
+    <div id="profile-template-profile-photo"></div>
     
   </div>
 
-  <div id="main" xlu-include-file="/src/templates/html/outfit-view.html"></div>
+  <div id="main-template-outfit-view"></div>
 
-  <div id="bottom" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
+  <div id="bottom-template-bottom-bar"></div>
 
 </div>
-
-<script>
-  xLuIncludeFile();
-</script>
 
 </body>
 </html>

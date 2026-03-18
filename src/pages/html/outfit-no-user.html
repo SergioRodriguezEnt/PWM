@@ -4,30 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Outfit View</title>
-  <script src="/src/xlu-include-file.js"></script>
+  <script src="/src/common.js"></script>
+  <script src="/src/pages/js/outfit-no-user.js"></script>
+  <script src="/src/templates/js/top-bar.js"></script>
+  <script src="/src/templates/js/search-bar.js"></script>
+  <script src="/src/templates/js/outfit-view.js"></script>
+  <script src="/src/templates/js/bottom-bar.js"></script>
+
   <link rel="stylesheet" href="/src/pages/css/no-user.css">
 </head>
 
 <body>
 <div id="layout">
   
-  <div id="no-user-outfit-topbar" xlu-include-file="/src/templates/html/top-bar.html"></div>
+  <div id="no-user-outfit-topbar-template-top-bar"></div>
 
   <div id="main">
     
-    <div id="no-user-outfit-searchbar" xlu-include-file="/src/templates/html/search-bar.html"></div>
+    <div id="no-user-outfit-searchbar-template-search-bar"></div>
     
-    <div id="outfit" xlu-include-file="/src/templates/html/outfit-view.html"></div>
+    <div id="outfit-template-outfit-view"></div>
     
   </div>
 
-  <div id="no-user-outfit-bottombar" xlu-include-file="/src/templates/html/bottom-bar.html"></div>
+  <div id="no-user-outfit-bottombar-template-bottom-bar"></div>
   
 </div>
-
-<script>
-  xLuIncludeFile();
-</script>
 </body>
 
 </html>

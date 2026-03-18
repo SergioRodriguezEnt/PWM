@@ -1,10 +1,4 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  await loadStructure();
-  loadDynamicContent(consume);
-});
-
-function consume(data) {
-  data = data["edit-profile-form"];
+async function loadEditProfileForm(data) {
   Promise.all([
     loadContentFor("h1", "textContent", data, "title"),
     loadContentFor("img", ["src"], data, "profile-photo"),

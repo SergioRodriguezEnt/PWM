@@ -1,0 +1,3 @@
+async function loadOutfitUploadForm(data) {
+
+}

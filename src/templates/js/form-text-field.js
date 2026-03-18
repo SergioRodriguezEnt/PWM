@@ -1,10 +1,3 @@
-document.querySelectorAll(".form-text-field").forEach((el) => {
-    el.addEventListener("DOMContentLoaded", async function () {
-        await loadStructure();
-        loadDynamicContent(consume);
-    });
-});
-
 function consume(data) {
     data = data["form-text-field"];
     Promise.all([
