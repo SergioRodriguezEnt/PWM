@@ -22,9 +22,3 @@
     container-type: inline-size;
     container-name: search-container;
 }
-
-@container search-container (max-width: 600px) {
-    .seccion {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
