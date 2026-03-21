@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   await loadStructure();
   loadDynamicContent();
+  setupTriggers();
 });
 
 async function loadStructure() {
@@ -85,4 +86,11 @@ async function loadContentForElem(
 ) {
   let element = htmlElement.querySelector(selector);
   element[attribute] = data[data_name];
+}
+
+function setBtnRef(htmlElement, selector, href) {
+  let btn = htmlElement.querySelector(selector);
+  btn.addEventListener("click", () => {
+    window.location.href=href
+  });
 }

@@ -7,6 +7,17 @@ function loadDynamicContent() {
     ]).catch(console.error);
 }
 
+function setupTriggers() {
+    Promise.all([
+        setupSideBar(),
+        setupProfile()
+    ]).catch(console.error);
+}
+
 async function loadProfile(data) {
 
+}
+
+async function setupProfile() {
+    setBtnRef(document, "#sidebar-extra-btn", "/PWM/src/pages/html/update.html");
 }

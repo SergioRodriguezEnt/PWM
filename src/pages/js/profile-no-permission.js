@@ -8,6 +8,13 @@ function loadDynamicContent() {
     ]).catch(console.error);
 }
 
+function setupTriggers() {
+    Promise.all([
+        setupSideBar(),
+        setupProfilePhoto(),
+    ]).catch(console.error);
+}
+
 async function loadProfile(data) {
 
 }

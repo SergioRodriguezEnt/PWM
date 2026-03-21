@@ -9,3 +9,7 @@ async function loadEditProfileForm(data) {
     loadContentFor("#xxx-btn", "textContent", data, "xxx-btn"),
   ]).catch((error) => console.error("Error:", error));
 }
+
+async function setupEditProfileForm() {
+
+}

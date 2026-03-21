@@ -5,3 +5,10 @@ function loadDynamicContent() {
         loadDynamicContentFor("/src/templates/json/bottom-bar.json", loadBottomBar)
     ]).catch(console.error);
 }
+
+function setupTriggers() {
+    Promise.all([
+        setupSideBar(),
+        setupEditProfileForm()
+    ]).catch(console.error);
+}

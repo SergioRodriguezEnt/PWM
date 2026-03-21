@@ -7,6 +7,17 @@ function loadDynamicContent() {
     ]).catch(console.error);
 }
 
+function setupTriggers() {
+    Promise.all([
+        setupTopBar(),
+        setupHome()
+    ]).catch(console.error);
+}
+
 async function loadHome(data) {
 
+}
+
+async function setupHome() {
+    setBtnRef(document, "#search-btn", "/PWM/src/pages/html/search-no-user.html");
 }
