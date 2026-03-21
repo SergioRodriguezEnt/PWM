@@ -91,6 +91,6 @@ async function loadContentForElem(
 function setBtnRef(htmlElement, selector, href) {
   let btn = htmlElement.querySelector(selector);
   btn.addEventListener("click", () => {
-    window.location.href=href
+    window.location.href = href;
   });
 }

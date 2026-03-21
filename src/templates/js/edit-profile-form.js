@@ -10,6 +10,4 @@ async function loadEditProfileForm(data) {
   ]).catch((error) => console.error("Error:", error));
 }
 
-async function setupEditProfileForm() {
-
-}
+async function setupEditProfileForm() {}

@@ -7,5 +7,9 @@ async function loadLoginForm(data) {
 }
 
 async function setupLoginForm() {
-  setBtnRef(document, "#login-btn", "/PWM/src/pages/html/search-with-user.html");
+  setBtnRef(
+    document,
+    "#login-btn",
+    "/PWM/src/pages/html/search-with-user.html",
+  );
 }
