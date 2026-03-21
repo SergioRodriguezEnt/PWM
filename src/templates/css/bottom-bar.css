@@ -1,5 +1,11 @@
 #bottombar {
-    container-type:inline-size;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+
+    container-type: inline-size;
     container-name: bottom;
 }
 
@@ -14,19 +20,21 @@
 }
 
 @container bottom (max-width : 500px) {
-    #bottombar {
-        background-color: green;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px;
+    .bottombar-section {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+
+        color: white;
+
     }
 
 }
 
 @container bottom (min-width : 501px) {
-    #bottombar {
+    .bottombar-section {
         background-color: gray;
-        flex-direction: row;
+        flex-direction: column;
         gap: 20px;
         padding: 20px;
     }

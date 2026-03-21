@@ -9,19 +9,22 @@
     gap: 1rem;
 }
 
-@container home (max-width : 800px) {
-    #main {
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-    }
-
+@container home (max-width : 600px) {
     .main-span {
-        max-width: 50%;
+        font-size: 1.8rem;
     }
+}
 
-    .main-btn {
-        align-self: center;
+#home-images {
+    width: 100%;
+    display: block;
+
+    container-type: inline-size;
+    container-name: search-container;
+}
+
+@container search-container (max-width: 600px) {
+    .seccion {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
