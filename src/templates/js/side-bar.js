@@ -8,4 +8,5 @@ async function setupSideBar() {
     "/PWM/src/pages/html/search-with-user.html",
   );
   setBtnRef(document, "#upload-btn", "/PWM/src/pages/html/upload.html");
+  setBtnRef(document, "#settings-btn", "/PWM/src/pages/html/home.html?logout=true");
 }

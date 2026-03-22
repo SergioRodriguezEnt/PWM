@@ -17,5 +17,8 @@ function setupTriggers() {
 async function loadHome(data) {}
 
 async function setupHome() {
+  if (getParam("logout") === "true") {
+    setLocal("user", null);
+  }
   setBtnRef(document, "#search-btn", "/PWM/src/pages/html/search-no-user.html");
 }

@@ -24,7 +24,7 @@ async function setupLoginForm() {
     if (match) {
       setLocal(
         "user",
-        JSON.stringify({ username: match.username, role: match.role }),
+        { username: match.username, role: match.role },
       );
       window.location.href = "/PWM/src/pages/html/search-with-user.html";
     } else {

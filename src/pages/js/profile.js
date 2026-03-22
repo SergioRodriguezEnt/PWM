@@ -23,8 +23,7 @@ function setupTriggers() {
 async function loadProfile(data) {}
 
 async function setupProfile() {
-  let params = new URLSearchParams(window.location.search);
-  let profile_user = params.get("username");
+  let profile_user = getParam("username");
   let user = getLocal("user");
   if (!user) {
     window.location.href = "/PWM/src/pages/html/login.html";

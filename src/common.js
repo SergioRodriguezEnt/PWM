@@ -108,3 +108,7 @@ function setLocal(name, value) {
 function getLocal(name) {
   return JSON.parse(localStorage.getItem(name));
 }
+
+function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
