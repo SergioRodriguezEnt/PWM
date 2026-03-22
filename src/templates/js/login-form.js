@@ -22,10 +22,7 @@ async function setupLoginForm() {
       );
 
     if (match) {
-      setLocal(
-        "user",
-        { username: match.username, role: match.role },
-      );
+      setLocal("user", { username: match.username, role: match.role });
       window.location.href = "/PWM/src/pages/html/search-with-user.html";
     } else {
       alert("Invalid username or password");
