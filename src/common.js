@@ -94,3 +94,15 @@ function setBtnRef(htmlElement, selector, href) {
     window.location.href = href;
   });
 }
+
+function getFieldValue(name) {
+  return document.getElementById(name.concat("-template-form-text-field")).querySelector("input").value;
+}
+
+function setLocal(name, value) {
+  localStorage.setItem(name, JSON.stringify(value));
+}
+
+function getLocal(name) {
+  return JSON.parse(localStorage.getItem(name));
+}

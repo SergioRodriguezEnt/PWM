@@ -7,9 +7,23 @@ async function loadLoginForm(data) {
 }
 
 async function setupLoginForm() {
-  setBtnRef(
-    document,
-    "#login-btn",
-    "/PWM/src/pages/html/search-with-user.html",
-  );
+  document.getElementById("login-btn").addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    let username = getFieldValue("user-field");
+    let password = getFieldValue("password-field");
+
+    console.log(username, password);
+
+    let match = await fetch("/src/resources/users.json")
+        .then(res => res.json())
+        .then(data => data.find(u => u.username === username && u.password === password));
+
+    if (match) {
+      setLocal("user", JSON.stringify({ username: match.username, role: match.role}));
+      window.location.href ="/PWM/src/pages/html/search-with-user.html";
+    } else {
+      alert("Invalid username or password")
+    }
+  });
 }
