@@ -10,7 +10,7 @@ function setupTriggers() {
   let user = getLocal("user");
   if (user) {
     window.location.href = "/PWM/src/pages/html/search-with-user.html";
-    return
+    return;
   }
   Promise.all([setupTopBar(), setupLoginForm()]).catch(console.error);
 }

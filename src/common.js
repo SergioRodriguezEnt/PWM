@@ -96,7 +96,9 @@ function setBtnRef(htmlElement, selector, href) {
 }
 
 function getFieldValue(name) {
-  return document.getElementById(name.concat("-template-form-text-field")).querySelector("input").value;
+  return document
+    .getElementById(name.concat("-template-form-text-field"))
+    .querySelector("input").value;
 }
 
 function setLocal(name, value) {

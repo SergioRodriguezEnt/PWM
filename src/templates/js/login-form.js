@@ -16,14 +16,19 @@ async function setupLoginForm() {
     console.log(username, password);
 
     let match = await fetch("/src/resources/users.json")
-        .then(res => res.json())
-        .then(data => data.find(u => u.username === username && u.password === password));
+      .then((res) => res.json())
+      .then((data) =>
+        data.find((u) => u.username === username && u.password === password),
+      );
 
     if (match) {
-      setLocal("user", JSON.stringify({ username: match.username, role: match.role}));
-      window.location.href ="/PWM/src/pages/html/search-with-user.html";
+      setLocal(
+        "user",
+        JSON.stringify({ username: match.username, role: match.role }),
+      );
+      window.location.href = "/PWM/src/pages/html/search-with-user.html";
     } else {
-      alert("Invalid username or password")
+      alert("Invalid username or password");
     }
   });
 }

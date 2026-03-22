@@ -6,6 +6,6 @@ async function setupProfilePhoto() {
   setBtnRef(
     document,
     ".boton-perfil",
-    "/PWM/src/pages/html/profile.html?username="+user.username,
+    "/PWM/src/pages/html/profile.html?username=" + user.username,
   );
 }
