@@ -12,8 +12,5 @@ function setupTriggers() {
     window.location.href = "/PWM/src/pages/html/search-with-user.html";
     return;
   }
-  Promise.all([
-    setupTopBar(),
-    setupLoginForm(),
-  ]).catch(console.error);
+  Promise.all([setupTopBar(), setupLoginForm()]).catch(console.error);
 }
