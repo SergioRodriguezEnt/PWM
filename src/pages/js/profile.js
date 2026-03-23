@@ -36,8 +36,6 @@ async function setupProfile() {
       "#sidebar-extra-btn",
       "/PWM/src/pages/html/update.html",
     );
-    document
-      .getElementById("boton-perfil")
-      .classList.add("hidden");
+    document.getElementById("boton-perfil").classList.add("hidden");
   }
 }
