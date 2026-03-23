@@ -27,7 +27,7 @@ async function loadStructureForElem(htmlElement) {
 }
 
 function neededTemplate(el) {
-  return [...el.classList].find(c => c.includes('template-'));
+  return [...el.classList].find((c) => c.includes("template-"));
 }
 
 async function loadHTMLandRecurse(el, template) {
@@ -54,7 +54,6 @@ async function loadHTML(url) {
   return document.importNode(template.content, true);
 }
 
-
 // ###########################
 // # CONTENT LOADING SECTION #
 // ###########################
@@ -67,9 +66,7 @@ function loadDynamicContentFor(url, loadWith) {
 
 async function loadContentForField(fieldId, data) {
   data = data[fieldId];
-  let fieldElem = document.querySelector(
-    "#".concat(fieldId),
-  );
+  let fieldElem = document.querySelector("#".concat(fieldId));
   Promise.all([
     loadContentForElem(fieldElem, ".display", "textContent", data, "display"),
     loadContentForElem(
@@ -109,9 +106,7 @@ function setBtnRef(htmlElement, selector, href) {
 }
 
 function getFieldValue(name) {
-  return document
-    .getElementById(name)
-    .querySelector("input").value;
+  return document.getElementById(name).querySelector("input").value;
 }
 
 function setLocal(name, value) {

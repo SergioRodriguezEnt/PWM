@@ -1,35 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Outfit View</title>
+    <script src="/src/common.js"></script>
+    <script src="/src/pages/js/outfit-no-user.js"></script>
+    <script src="/src/templates/js/top-bar.js"></script>
+    <script src="/src/templates/js/search-bar.js"></script>
+    <script src="/src/templates/js/outfit-view.js"></script>
+    <script src="/src/templates/js/bottom-bar.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Outfit View</title>
-  <script src="/src/common.js"></script>
-  <script src="/src/pages/js/outfit-no-user.js"></script>
-  <script src="/src/templates/js/top-bar.js"></script>
-  <script src="/src/templates/js/search-bar.js"></script>
-  <script src="/src/templates/js/outfit-view.js"></script>
-  <script src="/src/templates/js/bottom-bar.js"></script>
+    <link rel="stylesheet" href="/src/pages/css/no-user.css" />
+  </head>
 
-  <link rel="stylesheet" href="/src/pages/css/no-user.css">
-</head>
+  <body>
+    <div id="layout">
+      <div id="no-user-outfit-topbar" class="template-top-bar"></div>
 
-<body>
-<div id="layout">
-  
-  <div id="no-user-outfit-topbar" class="template-top-bar"></div>
+      <div id="main">
+        <div id="no-user-outfit-searchbar" class="template-search-bar"></div>
 
-  <div id="main">
-    
-    <div id="no-user-outfit-searchbar" class="template-search-bar"></div>
-    
-    <div id="outfit" class="template-outfit-view"></div>
-    
-  </div>
+        <div id="outfit" class="template-outfit-view"></div>
+      </div>
 
-  <div id="no-user-outfit-bottombar" class="template-bottom-bar"></div>
-  
-</div>
-</body>
-
+      <div id="no-user-outfit-bottombar" class="template-bottom-bar"></div>
+    </div>
+  </body>
 </html>
