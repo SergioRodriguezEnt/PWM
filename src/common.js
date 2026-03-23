@@ -1,9 +1,13 @@
+//WEB LOADING POINT
 document.addEventListener("DOMContentLoaded", async function () {
   await loadStructure();
   loadDynamicContent();
   setupTriggers();
 });
 
+// ############################
+// # TEMPLATE LOADING SECTION #
+// ############################
 async function loadStructure() {
   return loadStructureForElem(document);
 }
@@ -14,29 +18,30 @@ async function loadStructureForElem(htmlElement) {
     if (el === htmlElement) {
       return;
     }
-    if (needsTemplate(el.id)) {
-      promises.push(loadHTMLandRecurse(el));
+    let template = neededTemplate(el);
+    if (!(template === undefined)) {
+      promises.push(loadHTMLandRecurse(el, template));
     }
   });
   return Promise.all(promises);
 }
 
-async function loadHTMLandRecurse(el) {
-  await loadHTMLTo(neededTemplate(el.id), el.id);
+function neededTemplate(el) {
+  return [...el.classList].find(c => c.includes('template-'));
+}
+
+async function loadHTMLandRecurse(el, template) {
+  await loadHTMLTo(templatePathOf(template), el.id);
   return loadStructureForElem(el);
 }
 
-function needsTemplate(id) {
-  return id.includes("-template-");
-}
-
-function neededTemplate(id) {
-  return id.substring(id.indexOf("-template-") + 10, id.length);
+function templatePathOf(template) {
+  return "/src/templates/html/".concat(template.substring(9).concat(".html"));
 }
 
 async function loadHTMLTo(template, divId) {
   let div = document.getElementById(divId);
-  let node = await loadHTML("/src/templates/html/".concat(template, ".html"));
+  let node = await loadHTML(template);
   div.appendChild(node);
 }
 
@@ -49,6 +54,10 @@ async function loadHTML(url) {
   return document.importNode(template.content, true);
 }
 
+
+// ###########################
+// # CONTENT LOADING SECTION #
+// ###########################
 function loadDynamicContentFor(url, loadWith) {
   return fetch(url)
     .then((response) => response.json())
@@ -59,7 +68,7 @@ function loadDynamicContentFor(url, loadWith) {
 async function loadContentForField(fieldId, data) {
   data = data[fieldId];
   let fieldElem = document.querySelector(
-    "#".concat(fieldId, "-template-form-text-field"),
+    "#".concat(fieldId),
   );
   Promise.all([
     loadContentForElem(fieldElem, ".display", "textContent", data, "display"),
@@ -88,6 +97,10 @@ async function loadContentForElem(
   element[attribute] = data[data_name];
 }
 
+// ################################
+// # TRIGGERS AND STORAGE SECTION #
+// ################################
+
 function setBtnRef(htmlElement, selector, href) {
   let btn = htmlElement.querySelector(selector);
   btn.addEventListener("click", () => {
@@ -97,7 +110,7 @@ function setBtnRef(htmlElement, selector, href) {
 
 function getFieldValue(name) {
   return document
-    .getElementById(name.concat("-template-form-text-field"))
+    .getElementById(name)
     .querySelector("input").value;
 }
 
