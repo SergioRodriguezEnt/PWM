@@ -1,7 +1,7 @@
 //WEB LOADING POINT
 document.addEventListener("DOMContentLoaded", async function () {
   await loadStructure();
-  loadDynamicContent();
+  await loadDynamicContent();
   setupTriggers();
 });
 

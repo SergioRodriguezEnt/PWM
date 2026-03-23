@@ -1,4 +1,4 @@
-.seccion {
+.results {
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
@@ -24,7 +24,7 @@
 }
 
 @media (max-width: 600px) {
-    .seccion {
+    .results {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }

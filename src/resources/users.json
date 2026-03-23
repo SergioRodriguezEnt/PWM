@@ -1,16 +1,22 @@
 [
   {
     "username": "admin",
+    "description": "admin",
+    "profile-photo": "https://picsum.photos/200/150?random=101",
     "password": "admin",
     "role": "admin"
   },
   {
     "username": "user1",
+    "description": "user1",
+    "profile-photo": "https://picsum.photos/200/150?random=102",
     "password": "1234",
     "role": "user"
   },
   {
     "username": "user2",
+    "description": "user2",
+    "profile-photo": "https://picsum.photos/200/150?random=103",
     "password": "1234",
     "role": "user"
   }
