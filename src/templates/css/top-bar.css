@@ -11,6 +11,9 @@
     align-items: center;
     padding: 1% 1%;
     margin: 0;
+
+    container-type: inline-size;
+    container-name: top;
 }
 
 .topbar-div {
@@ -64,4 +67,10 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+@container top (max-width: 500px) {
+    #topbar {
+        justify-content: center;
+    }
 }
