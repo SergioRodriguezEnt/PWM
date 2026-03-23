@@ -1,14 +1,14 @@
 {
   "campo-grupo" : [
-    "x-field" : {
+    {
       "display": "Nombre de usuario",
       "placeholder": "Escriba aquí su nombre de usuario"
     },
-    "xx-field" : {
+    {
       "display": "Contraseña",
       "placeholder": "Escriba aquí su contraseña"
     },
-    "xxx-field" : {
+    {
       "display": "Repita su contraseña",
       "placeholder": "Escriba aquí su contraseña de nuevo"
     }
