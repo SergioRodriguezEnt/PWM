@@ -37,7 +37,7 @@ async function setupProfile() {
       "/PWM/src/pages/html/update.html",
     );
     document
-      .getElementById("boton-perfil-template-profile-photo")
+      .getElementById("boton-perfil")
       .classList.add("hidden");
   }
 }
