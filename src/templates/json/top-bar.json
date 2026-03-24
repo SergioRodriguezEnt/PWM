@@ -1,12 +1,8 @@
 {
-  "topbar-left": {
-    "home-btn": {
-      "src" : "/src/resources/aspas.svg",
-      "alt" : "home"
-    }
+  "home-btn": {
+    "src" : "/src/resources/aspas.svg",
+    "alt" : "home"
   },
-  "topbar-right": {
-    "to-login-btn": "Login",
-    "register-btn": "Register"
-  }
+  "to-login-btn": "Login",
+  "register-btn": "Register"
 }

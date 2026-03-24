@@ -13,7 +13,10 @@ function setupTriggers() {
   );
 }
 
-async function loadHome(data) {}
+async function loadHome(data) {
+  await loadContentFor(".main-span", "textContent", data, "textContent");
+  await loadContentFor("#search-btn", "textContent", data, "search-btn");
+}
 
 async function setupHome() {
   if (getParam("logout") === "true") {
