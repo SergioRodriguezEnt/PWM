@@ -1,7 +1,7 @@
 {
   "home-btn": {
-    "src" : "/src/resources/aspas.svg",
-    "alt" : "home"
+    "src": "/src/resources/aspas.svg",
+    "alt": "home"
   },
   "to-login-btn": "Login",
   "register-btn": "Register"
