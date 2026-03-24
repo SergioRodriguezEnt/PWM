@@ -1,32 +1,26 @@
 {
-  "sidebar-top": {
-    "logo-btn": {
-      "src": "/src/resources/aspas.svg",
-      "alt": "Logo"
-    }
+  "logo-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Logo"
   },
-  "sidebar-center": {
-    "search-btn": {
-      "src": "/src/resources/aspas.svg",
-      "alt": "Búsqueda"
-    },
-    "upload-btn": {
-      "src": "/src/resources/aspas.svg",
-      "alt": "Subida"
-    },
-    "notifications-btn": {
-      "src": "/src/resources/aspas.svg",
-      "alt": "Notificaciones"
-    },
-    "sidebar-extra-btn" : {
-      "src":"/src/resources/aspas.svg",
-      "alt":"Editar perfil"
-    }
+  "search-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Búsqueda"
   },
-  "sidebar-bottom": {
-    "settings-btn": {
-      "src": "/src/resources/aspas.svg",
-      "alt": "Ajustes"
-    }
+  "upload-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Subida"
+  },
+  "notifications-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Notificaciones"
+  },
+  "sidebar-extra-btn" : {
+    "src":"/src/resources/aspas.svg",
+    "alt":"Editar perfil"
+  },
+  "settings-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Ajustes"
   }
 }

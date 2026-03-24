@@ -79,6 +79,15 @@ async function loadContentForField(fieldId, data) {
   ]).catch(console.error);
 }
 
+async function loadContentForBtnImg(id, data) {
+  data = data[id];
+  let elem = document.querySelector("#".concat(id));
+  Promise.all([
+      loadContentForElem(elem, "img", "src", data, "src"),
+      loadContentForElem(elem, "img", "alt", data, "alt"),
+  ]).catch(console.error);
+}
+
 async function loadContentFor(selector, attribute, data, data_name) {
   return loadContentForElem(document, selector, attribute, data, data_name);
 }
@@ -119,4 +128,11 @@ function getLocal(name) {
 
 function getParam(name) {
   return new URLSearchParams(window.location.search).get(name);
+}
+
+async function getUser(name) {
+  return fetch("/src/resources/users.json")
+      .then((res) => res.json())
+      .then((users) => users.filter((user) => user.username === name)[0])
+      .catch(console.error);
 }

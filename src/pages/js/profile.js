@@ -20,7 +20,24 @@ function setupTriggers() {
   ]).catch(console.error);
 }
 
-async function loadProfile(data) {}
+async function loadProfile(data) {
+  let user_name = getParam("username");
+  let user = await getUser(user_name)
+  Promise.all([
+    loadContentFor("#mini-avatar", "src", user, "profile-photo"),
+    loadContentFor("#mini-avatar", "alt", data["mini-avatar"], "alt"),
+    loadContentFor("#page-title", "textContent", user, "username"),
+    loadSubtabs(data["subtabs"]),
+  ]).catch(console.error);
+}
+
+async function loadSubtabs(data) {
+  let subtabs = document.querySelectorAll(".subtab");
+  let subtabData = 0;
+  for (let elem of subtabs) {
+    elem.textContent = data[subtabData++];
+  }
+}
 
 async function setupProfile() {
   let profile_user = getParam("username");

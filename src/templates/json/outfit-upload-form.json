@@ -4,15 +4,13 @@
     "src": "/src/resources/aspas.svg",
     "alt": "Foto de outfit"
   },
-  "upload-form-form": {
-    "outfit-name-field": {
-      "display": "Nombre",
-      "placeholder": "Escriba aquí un nombre"
-    },
-    "outfit-description-field": {
-      "display": "Descripción",
-      "placeholder": "Escriba aquí su descripción"
-    }
+  "outfit-name-field": {
+    "display": "Nombre",
+    "placeholder": "Escriba aquí un nombre"
+  },
+  "outfit-description-field": {
+    "display": "Descripción",
+    "placeholder": "Escriba aquí su descripción"
   },
   "upload-form-button": "Subir"
 }

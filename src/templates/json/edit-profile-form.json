@@ -8,7 +8,7 @@
     "display": "Nombre",
     "placeholder": "Escriba aquí su nombre"
   },
-  "xx-field": {
+  "password-field": {
     "display": "Contraseña",
     "placeholder": "Escriba aquí su contraseña"
   },
@@ -16,7 +16,6 @@
     "display": "Descripción",
     "placeholder": "Escriba aquí su descripción"
   },
-  "x-btn": "Seleccionar foto",
-  "xx-btn": "Cancelar",
-  "xxx-btn": "Guardar cambios"
+  "cancel-btn": "Cancelar",
+  "save-btn": "Guardar cambios"
 }

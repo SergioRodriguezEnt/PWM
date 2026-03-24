@@ -29,10 +29,3 @@ async function setupOutfitView() {
     "/PWM/src/pages/html/profile.html?username=" + root.dataset.user,
   );
 }
-
-async function getUser(name) {
-  return fetch("/src/resources/users.json")
-    .then((res) => res.json())
-    .then((users) => users.filter((user) => user.username === name)[0])
-    .catch(console.error);
-}

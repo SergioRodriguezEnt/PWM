@@ -1,4 +1,13 @@
-async function loadSideBar(data) {}
+async function loadSideBar(data) {
+  Promise.all([
+    loadContentForBtnImg("logo-btn", data),
+    loadContentForBtnImg("search-btn", data),
+    loadContentForBtnImg("upload-btn", data),
+    loadContentForBtnImg("notifications-btn", data),
+    loadContentForBtnImg("sidebar-extra-btn", data),
+    loadContentForBtnImg("settings-btn", data),
+  ]).catch(console.error);
+}
 
 async function setupSideBar() {
   setBtnRef(document, "#logo-btn", "/PWM/src/pages/html/search-with-user.html");

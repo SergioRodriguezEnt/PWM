@@ -1,13 +1,15 @@
 async function loadEditProfileForm(data) {
+  let root = document.getElementById('profile-form');
   Promise.all([
     loadContentFor("h1", "textContent", data, "title"),
-    loadContentFor("img", ["src"], data, "profile-photo"),
+    loadContentForElem(root, "img", "src", data["profile-photo"], "src"),
+    loadContentForElem(root, "img", "alt", data["profile-photo"], "alt"),
     loadContentForField("username-field", data),
-    loadContentForField("xx-field", data),
+    loadContentForField("password-field", data),
     loadContentForField("description-field", data),
-    loadContentFor("#xx-btn", "textContent", data, "xx-btn"),
-    loadContentFor("#xxx-btn", "textContent", data, "xxx-btn"),
-  ]).catch((error) => console.error("Error:", error));
+    loadContentFor("#cancel-btn", "textContent", data, "cancel-btn"),
+    loadContentFor("#save-btn", "textContent", data, "save-btn"),
+  ]).catch(console.error);
 }
 
 async function setupEditProfileForm() {}

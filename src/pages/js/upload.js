@@ -10,5 +10,5 @@ async function loadDynamicContent() {
 }
 
 function setupTriggers() {
-  Promise.all([setupSideBar()]).catch(console.error);
+  Promise.all([setupSideBar(), setupUploadForm()]).catch(console.error);
 }
