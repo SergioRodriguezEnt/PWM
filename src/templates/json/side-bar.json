@@ -2,27 +2,31 @@
   "sidebar-top": {
     "logo-btn": {
       "src": "/src/resources/aspas.svg",
-      "alt": "logo"
+      "alt": "Logo"
     }
   },
   "sidebar-center": {
     "search-btn": {
       "src": "/src/resources/aspas.svg",
-      "alt": "search"
+      "alt": "Búsqueda"
     },
     "upload-btn": {
       "src": "/src/resources/aspas.svg",
-      "alt": "upload"
+      "alt": "Subida"
     },
     "notifications-btn": {
       "src": "/src/resources/aspas.svg",
-      "alt": "notifications"
+      "alt": "Notificaciones"
+    },
+    "sidebar-extra-btn" : {
+      "src":"/src/resources/aspas.svg",
+      "alt":"Editar perfil"
     }
   },
   "sidebar-bottom": {
     "settings-btn": {
       "src": "/src/resources/aspas.svg",
-      "alt": "settings"
+      "alt": "Ajustes"
     }
   }
 }

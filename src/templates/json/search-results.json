@@ -1,22 +1,21 @@
-{
-  "seccion": {
-    "columna" : [
-      {
-        "src" : "/src/resources/aspas.svg",
-        "alt" : "placeholder"
-      },
-      {
-        "src" : "/src/resources/aspas.svg",
-        "alt" : "placeholder"
-      },
-      {
-        "src" : "/src/resources/aspas.svg",
-        "alt" : "placeholder"
-      },
-      {
-        "src" : "/src/resources/aspas.svg",
-        "alt" : "placeholder"
-      }
-    ]
-  }
+"results" : {
+  "columna" : [
+    {
+      "src" : "/src/resources/aspas.svg",
+      "alt" : "Imagen"
+    },
+    {
+      "src" : "/src/resources/aspas.svg",
+      "alt" : "Imagen"
+    },
+    {
+      "src" : "/src/resources/aspas.svg",
+      "alt" : "Imagen"
+    },
+    {
+      "src" : "/src/resources/aspas.svg",
+      "alt" : "Imagen"
+    }
+  ]
 }
+

@@ -4,9 +4,9 @@
       "src": "/src/resources/aspas.svg",
       "alt": "Imagen outfit"
     },
-    "autor-info": {
-      "boton-autor": "/src/resources/aspas.svg",
-      "nombre-autor": "Autor"
+    "boton-autor": {
+      "src": "/src/resources/aspas.svg",
+      "alt": "Autor"
     }
   },
   "columna-derecha": {

@@ -1,6 +1,9 @@
 {
   "title": "Editar Perfil",
-  "profile-photo": "/src/resources/aspas.svg",
+  "profile-photo": {
+    "alt":"Foto de perfil",
+    "src": "/src/resources/aspas.svg"
+  },
   "username-field": {
     "display": "Nombre",
     "placeholder": "Escriba aquí su nombre"

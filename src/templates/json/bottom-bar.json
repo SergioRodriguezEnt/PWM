@@ -5,6 +5,6 @@
   },
   "bottom-bar-section-2": {
     "title": "Otros",
-    "items": ["Lorem ipsum", "Lorem Ipsum"]
+    "items": ["Gestionar las preferencias", "Centro legal"]
   }
 }
