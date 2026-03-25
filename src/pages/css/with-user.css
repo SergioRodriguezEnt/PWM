@@ -45,3 +45,23 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+@media (max-width: 600px) {
+    #search-sidebar {
+        display: none;
+    }
+
+    #page {
+        margin-left: 0;
+    }
+
+    #profile {
+        width: 44px;
+        flex-shrink: 0;
+    }
+
+    #topbar {
+        padding: 2% 3%;
+        overflow: visible;
+    }
+}
