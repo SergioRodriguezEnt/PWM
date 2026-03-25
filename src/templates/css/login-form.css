@@ -15,7 +15,7 @@
 }
 
 #login-title {
-    display: none;
+  display: none;
 }
 
 #login-btn {
@@ -42,21 +42,21 @@
 }
 
 @media (max-width: 600px) {
-    #login-title {
-        display: block;
-        text-align: center;
-        font-size: 3rem;
-        margin-bottom: 12%;
-    }
+  #login-title {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 12%;
+  }
 
-    #login-form {
-        width: 90%;
-        min-height: 50vh;
-        justify-content: flex-start;
-        padding-top: 10%;
-    }
+  #login-form {
+    width: 90%;
+    min-height: 50vh;
+    justify-content: flex-start;
+    padding-top: 10%;
+  }
 
-    #login-form form {
-        gap: 20px;
-    }
+  #login-form form {
+    gap: 20px;
+  }
 }
