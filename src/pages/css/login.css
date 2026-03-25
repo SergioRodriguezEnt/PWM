@@ -1,19 +1,19 @@
 #layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 #main .template-login-form {
-    width: 100%;
-    height: 100%;
-    flex: 1;
+  width: 100%;
+  height: 100%;
+  flex: 1;
 }
