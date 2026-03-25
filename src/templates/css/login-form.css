@@ -1,12 +1,17 @@
 #login-form {
     background-color: #dcdcdc;
-    width: 30%;
-    max-width: 600px;
-    padding: 6%;
+    width: 70%;
+    max-width: none;
+    padding: 4%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 3%;
+}
+
+#login-form input {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #login-btn {
@@ -16,10 +21,12 @@
     padding: 3%;
     font-size: 14px;
     border-radius: 10px;
-    width: 70%;
-    margin: 5% auto 0 auto;
     cursor: pointer;
     transition: background-color 0.2s;
+    align-self: center;
+    display: block;
+    margin: 5% auto 0 auto;
+    width: 40%;
 }
 
 #login-btn:hover {
