@@ -1,17 +1,17 @@
 #login-form {
-    background-color: #dcdcdc;
-    width: 70%;
-    max-width: none;
-    padding: 4%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 3%;
+  background-color: #dcdcdc;
+  width: 70%;
+  max-width: none;
+  padding: 4%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
 }
 
 #login-form input {
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #login-title {
@@ -19,26 +19,26 @@
 }
 
 #login-btn {
-    background-color: gray;
-    color: #000;
-    border: none;
-    padding: 3%;
-    font-size: 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    align-self: center;
-    display: block;
-    margin: 5% auto 0 auto;
-    width: 40%;
+  background-color: gray;
+  color: #000;
+  border: none;
+  padding: 3%;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: center;
+  display: block;
+  margin: 5% auto 0 auto;
+  width: 40%;
 }
 
 #login-btn:hover {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
 #login-btn:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 @media (max-width: 600px) {
