@@ -97,3 +97,26 @@
 .segundo-titulo {
     margin-top: 40px !important;
 }
+
+@media (max-width: 600px) {
+    .tarjeta-gris {
+        width: 90%;
+        margin: 15px auto;
+        margin-left: 2%;
+        padding: 3.5%;
+        flex-direction: column;
+    }
+
+    .columna-izquierda, .columna-derecha {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .bloque-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .bloque-texto p {
+        font-size: 0.9rem;
+    }
+}
