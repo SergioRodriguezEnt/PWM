@@ -1,67 +1,68 @@
 #page {
-    margin-left: 6vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin-left: 6vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 #topbar {
-    display: flex;
-    align-items: center;
-    gap: 1.2%;
-    padding: 1.5% 2%;
+  display: flex;
+  align-items: center;
+  gap: 1.2%;
+  padding: 1.5% 2%;
 }
 
 #profile {
-    flex: 0 0 auto;
-    width: 3vw;
+  flex: 0 0 auto;
+  width: 3vw;
 }
 
 #profile img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 #main {
-    flex: 1;
+  flex: 1;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
-    padding: 2%;
-    overflow-y: auto;
-    overflow-x: hidden;
+  padding: 2%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #bottom {
-    margin-top: auto;
+  margin-top: auto;
 }
 
-html, body {
-    height: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 600px) {
-    #search-sidebar {
-        display: none;
-    }
+  #search-sidebar {
+    display: none;
+  }
 
-    #page {
-        margin-left: 0;
-    }
+  #page {
+    margin-left: 0;
+  }
 
-    #profile {
-        width: 44px;
-        flex-shrink: 0;
-    }
+  #profile {
+    width: 44px;
+    flex-shrink: 0;
+  }
 
-    #topbar {
-        padding: 2% 3%;
-        overflow: visible;
-    }
+  #topbar {
+    padding: 2% 3%;
+    overflow: visible;
+  }
 }
