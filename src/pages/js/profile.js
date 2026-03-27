@@ -51,7 +51,7 @@ async function setupProfile() {
     setBtnRef(
       document,
       "#sidebar-extra-btn",
-      "/PWM/src/pages/html/update.html",
+      "/PWM/src/pages/html/update.html?username="+profile_user,
     );
     document.getElementById("boton-perfil").classList.add("hidden");
   }

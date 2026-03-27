@@ -1,11 +1,15 @@
 {
   "user-field": {
     "display": "Nombre de usuario",
-    "placeholder": "Escriba aquí su nombre de usuario"
+    "placeholder": "Escriba aquí su nombre de usuario",
+    "required": true,
+    "type": "text"
   },
   "password-field": {
     "display": "Contraseña",
-    "placeholder": "Escriba aquí su contraseña"
+    "placeholder": "Escriba aquí su contraseña",
+    "required": true,
+    "type": "password"
   },
   "login-btn": "Iniciar sesión"
 }

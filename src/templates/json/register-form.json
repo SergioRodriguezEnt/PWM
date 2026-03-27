@@ -1,15 +1,21 @@
 {
   "username-field": {
     "display": "Nombre de usuario",
-    "placeholder": "Escriba aquí su nombre de usuario"
+    "placeholder": "Escriba aquí su nombre de usuario",
+    "required": true,
+    "type": "text"
   },
   "password-field": {
     "display": "Contraseña",
-    "placeholder": "Escriba aquí su contraseña"
+    "placeholder": "Escriba aquí su contraseña",
+    "required": true,
+    "type": "password"
   },
   "password-2-field": {
     "display": "Repita su contraseña",
-    "placeholder": "Escriba aquí su contraseña de nuevo"
+    "placeholder": "Escriba aquí su contraseña de nuevo",
+    "required": true,
+    "type": "password"
   },
   "register-form-btn": "Registrarse"
 }

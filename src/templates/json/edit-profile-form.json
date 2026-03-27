@@ -1,20 +1,25 @@
 {
   "title": "Editar Perfil",
   "profile-photo": {
-    "alt":"Foto de perfil",
-    "src": "/src/resources/aspas.svg"
+    "alt":"Foto de perfil"
   },
   "username-field": {
     "display": "Nombre",
-    "placeholder": "Escriba aquí su nombre"
+    "placeholder": "Escriba aquí su nombre",
+    "required": true,
+    "type": "text"
   },
   "password-field": {
     "display": "Contraseña",
-    "placeholder": "Escriba aquí su contraseña"
+    "placeholder": "Escriba aquí su contraseña",
+    "required": true,
+    "type": "password"
   },
   "description-field": {
     "display": "Descripción",
-    "placeholder": "Escriba aquí su descripción"
+    "placeholder": "Escriba aquí su descripción",
+    "required": true,
+    "type": "text"
   },
   "cancel-btn": "Cancelar",
   "save-btn": "Guardar cambios"

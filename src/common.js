@@ -76,6 +76,8 @@ async function loadContentForField(fieldId, data) {
       data,
       "placeholder",
     ),
+      loadContentForElem(fieldElem, "input", "required", data, "required"),
+      loadContentForElem(fieldElem, "input", "type", data, "type"),
   ]).catch(console.error);
 }
 
