@@ -8,5 +8,7 @@ async function loadDynamicContent() {
 }
 
 function setupTriggers() {
-  Promise.all([setupTopBar(), setupSearchBar(), setupSearchResults()]).catch(console.error);
+  Promise.all([setupTopBar(), setupSearchBar(), setupSearchResults()]).catch(
+    console.error,
+  );
 }

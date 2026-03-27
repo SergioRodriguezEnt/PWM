@@ -22,7 +22,7 @@ function setupTriggers() {
 
 async function loadProfile(data) {
   let user_name = getParam("username");
-  let user = await getUser(user_name)
+  let user = await getUser(user_name);
   Promise.all([
     loadContentFor("#mini-avatar", "src", user, "profile-photo"),
     loadContentFor("#mini-avatar", "alt", data["mini-avatar"], "alt"),
@@ -51,7 +51,7 @@ async function setupProfile() {
     setBtnRef(
       document,
       "#sidebar-extra-btn",
-      "/PWM/src/pages/html/update.html?username="+profile_user,
+      "/PWM/src/pages/html/update.html?username=" + profile_user,
     );
     document.getElementById("boton-perfil").classList.add("hidden");
   }

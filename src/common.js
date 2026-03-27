@@ -76,8 +76,8 @@ async function loadContentForField(fieldId, data) {
       data,
       "placeholder",
     ),
-      loadContentForElem(fieldElem, "input", "required", data, "required"),
-      loadContentForElem(fieldElem, "input", "type", data, "type"),
+    loadContentForElem(fieldElem, "input", "required", data, "required"),
+    loadContentForElem(fieldElem, "input", "type", data, "type"),
   ]).catch(console.error);
 }
 
@@ -85,8 +85,8 @@ async function loadContentForBtnImg(id, data) {
   data = data[id];
   let elem = document.querySelector("#".concat(id));
   Promise.all([
-      loadContentForElem(elem, "img", "src", data, "src"),
-      loadContentForElem(elem, "img", "alt", data, "alt"),
+    loadContentForElem(elem, "img", "src", data, "src"),
+    loadContentForElem(elem, "img", "alt", data, "alt"),
   ]).catch(console.error);
 }
 
@@ -134,7 +134,7 @@ function getParam(name) {
 
 async function getUser(name) {
   return fetch("/src/resources/users.json")
-      .then((res) => res.json())
-      .then((users) => users.filter((user) => user.username === name)[0])
-      .catch(console.error);
+    .then((res) => res.json())
+    .then((users) => users.filter((user) => user.username === name)[0])
+    .catch(console.error);
 }

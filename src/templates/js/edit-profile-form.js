@@ -1,5 +1,5 @@
 async function loadEditProfileForm(data) {
-  let root = document.getElementById('profile-form');
+  let root = document.getElementById("profile-form");
   let username = getParam("username");
   let user = await getUser(username);
   Promise.all([
@@ -15,5 +15,9 @@ async function loadEditProfileForm(data) {
 }
 
 async function setupEditProfileForm() {
-  setBtnRef(document, "#cancel-btn", "/PWM/src/pages/html/profile.html?username="+getParam("username"))
+  setBtnRef(
+    document,
+    "#cancel-btn",
+    "/PWM/src/pages/html/profile.html?username=" + getParam("username"),
+  );
 }
