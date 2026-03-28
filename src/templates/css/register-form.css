@@ -1,12 +1,15 @@
 #register-form {
     background-color: #dcdcdc;
-    width: 70%;
     max-width: none;
     padding: 4%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 3%;
+    width: 90%;
+    min-height: 50vh;
+    justify-content: flex-start;
+    padding-top: 6%;
 }
 
 #register-form input {
@@ -14,8 +17,8 @@
     box-sizing: border-box;
 }
 
-#register-title {
-    display: none;
+#register-form form {
+    gap: 20px;
 }
 
 .register-form-btn {
@@ -41,22 +44,9 @@
     transform: scale(0.98);
 }
 
-@media (max-width: 600px) {
-    #register-title {
-        display: block;
-        text-align: center;
-        font-size: 3rem;
-        margin-bottom: 12%;
-    }
-
-    #register-form {
-        width: 90%;
-        min-height: 50vh;
-        justify-content: flex-start;
-        padding-top: 10%;
-    }
-
-    #register-form form {
-        gap: 20px;
-    }
+#register-title {
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4%;
 }
