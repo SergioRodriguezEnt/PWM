@@ -23,7 +23,7 @@
   display: block;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
   .results {
     grid-template-columns: repeat(2, 1fr) !important;
   }
