@@ -1,10 +1,20 @@
+/* src/pages/css/no-user.css */
 #layout {
   box-sizing: border-box;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
 }
 
 #main {
@@ -13,24 +23,20 @@
   justify-content: flex-start;
   max-width: 900px;
   width: 90%;
-  margin: 1% auto;
+  margin: var(--space-4) auto;
 }
 
-html,
-body {
-  height: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
+/* Fixed: was 4vw which becomes unreadably large on wide screens */
 .main-span {
-  font-size: 4vw;
-  line-height: 1.6;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-primary);
 
-  margin-top: 3%;
-  padding: 0 5%;
+  margin-top: var(--space-6);
+  padding: 0 var(--space-5);
 
   text-align: center;
   max-width: 70%;
@@ -38,20 +44,33 @@ body {
 }
 
 .main-btn {
-  background-color: gray;
-  color: #000;
+  background-color: var(--color-brown-dark);
+  color: var(--color-text-on-dark);
   border: none;
-  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
   width: 40%;
-  padding: 0.8rem 1.6rem;
-  margin: 1rem auto 0 auto;
-  border-radius: 10px;
+  min-width: 160px;
+  padding: var(--space-3) var(--space-6);
+  margin: var(--space-5) auto 0;
+  border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition:
+          background-color var(--transition-fast),
+          transform var(--transition-fast);
   align-self: center;
 }
 
+.main-btn:hover {
+  background-color: var(--color-interactive-hover);
+}
+
+.main-btn:active {
+  transform: scale(0.98);
+}
+
 #no-user-outfit-searchbar {
-  margin-bottom: 1%;
+  margin-bottom: var(--space-4);
   width: 100%;
 }

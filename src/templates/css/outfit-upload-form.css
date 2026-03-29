@@ -1,3 +1,4 @@
+/* src/templates/css/outfit-upload-form.css */
 #upload-form {
   width: 90%;
   max-width: 600px;
@@ -5,23 +6,35 @@
 }
 
 .upload-form-h3 {
-  margin-bottom: 30px;
-  font-weight: normal;
-  font-size: 1.5em;
-  text-align: left;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-6);
 }
 
 #outfit-img-btn {
   width: 45%;
-  aspect-ratio: 3 / 4;
-  margin: 0 auto 4vh auto;
-  background-color: transparent;
-  border-radius: 8px;
+  aspect-ratio: 2 / 3;
+  margin: 0 auto var(--space-6);
+  background-color: var(--color-cream-mid);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
+  border: 2px dashed var(--color-border);
+  cursor: pointer;
+  transition:
+          border-color var(--transition-fast),
+          background-color var(--transition-fast);
+}
+
+#outfit-img-btn:hover {
+  border-color: var(--color-brown-mid);
+  background-color: var(--color-cream-dark);
 }
 
 .outfit-img {
@@ -34,8 +47,8 @@
 .upload-form-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
 #button-container {
@@ -44,24 +57,26 @@
 }
 
 .upload-form-button {
-  display: inline-block;
-  padding: 0.8rem 2.5rem;
-  background-color: gray;
-  color: white;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-8);
+  background-color: var(--color-brown-dark);
+  color: var(--color-text-on-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
   text-decoration: none;
-  border-radius: 10px;
-  cursor: pointer;
-
-  transition:
-    background-color 0.2s,
-    transform 0.1s;
-  text-align: center;
+  border-radius: var(--radius-md);
   border: none;
+  cursor: pointer;
+  transition:
+          background-color var(--transition-fast),
+          transform var(--transition-fast);
 }
 
 .upload-form-button:hover {
-  background-color: darkgray;
+  background-color: var(--color-interactive-hover);
 }
 
 .upload-form-button:active {
@@ -69,22 +84,11 @@
 }
 
 @media (max-width: 600px) {
-  #outfit-name-field label,
-  #outfit-description-field label {
-    font-size: 1.05rem;
-  }
-
-  #outfit-name-field input,
-  #outfit-name-field textarea,
-  #outfit-description-field input,
-  #outfit-description-field textarea {
-    font-size: 1rem;
-    padding: 7px 9px;
-    min-height: 38px;
+  #outfit-img-btn {
+    width: 65%;
   }
 
   .upload-form-button {
-    font-size: 1.05rem;
-    padding: 9px 2.5rem;
+    width: 100%;
   }
 }

@@ -1,3 +1,4 @@
+/* src/pages/css/login.css */
 #layout {
   display: flex;
   flex-direction: column;
@@ -9,7 +10,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--space-8);
+  background-color: var(--color-bg);
 }
 
 #main .template-login-form {
@@ -21,37 +23,6 @@
 @media (max-width: 1023px) {
   #main {
     align-items: flex-start;
-    padding-top: 3rem;
-  }
-
-  #login-title {
-    font-size: 1.4rem;
-    margin-bottom: 3%;
-  }
-
-  #login-form {
-    width: 70%;
-    min-height: auto;
-    padding-top: 4%;
-    gap: 8%;
-  }
-
-  #login-form .form-text-field {
-    gap: 6px;
-  }
-
-  #login-form .display {
-    font-size: 1rem;
-  }
-
-  #login-form .text-field {
-    padding: 4% 3%;
-    font-size: 1.1rem;
-    border-radius: 10px;
-  }
-
-  #login-form .login-form-btn {
-    margin-top: 3%;
-    padding: 2%;
+    padding-top: var(--space-10);
   }
 }

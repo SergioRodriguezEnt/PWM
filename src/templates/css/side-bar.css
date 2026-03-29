@@ -1,53 +1,62 @@
+/* src/templates/css/side-bar.css */
 #sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 6%;
-  background-color: #a0a0a0;
+  min-width: 56px;
+  max-width: 80px;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border-light);
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10%;
+  gap: 0;
+  z-index: 100;
 }
 
 .sidebar-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  margin: 10% 5%;
-  gap: 10%;
+  width: 100%;
+  padding: var(--space-3) var(--space-2);
+  gap: var(--space-2);
 }
 
 #sidebar-top {
-  margin-bottom: 10%;
+  padding-top: var(--space-4);
 }
 
 #sidebar-bottom {
   margin-top: auto;
+  padding-bottom: var(--space-4);
 }
 
 .sidebar-btn {
-  aspect-ratio: 1 / 1;
+  width: 44px;
+  height: 44px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: none;
-  border-radius: 10%;
+  border-radius: var(--radius-md);
   padding: 0;
   overflow: hidden;
   cursor: pointer;
   background-color: transparent;
 
-  transition: transform 0.2s;
+  transition:
+          background-color var(--transition-fast),
+          transform var(--transition-fast);
 }
 
 #logo-btn {
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .sidebar-img {
@@ -58,44 +67,47 @@
 }
 
 .sidebar-btn:hover {
-  transform: scale(1.1);
+  background-color: var(--color-cream-dark);
+  transform: scale(1.08);
+}
+
+.sidebar-btn:active {
+  transform: scale(0.95);
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+/* ── Mobile: bottom bar ───────────────────────────────────── */
 @media (max-width: 768px) {
   #sidebar {
-    /* De columna lateral a barra inferior */
     top: auto;
     bottom: 0;
     left: 0;
     height: auto;
     width: 100%;
+    min-width: unset;
+    max-width: unset;
 
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    gap: 0;
-    padding: 6px 0;
+    padding: var(--space-2) 0;
 
-    /* Sombra para separarse del contenido */
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    border-right: none;
+    border-top: 1px solid var(--color-border-light);
+    box-shadow: 0 -2px 12px rgba(28, 22, 16, 0.06);
   }
 
-  /* Los tres divs se ponen en fila también */
   .sidebar-div {
-    display: flex;
     flex-direction: row;
     flex: 1;
     justify-content: center;
-    width: auto;
-    margin: 0;
+    padding: 0;
     gap: 0;
   }
 
-  /* El logo (top) y el settings (bottom) ya no necesitan márgenes especiales */
   #sidebar-top {
     display: none;
   }
@@ -107,15 +119,14 @@
 
   #sidebar-bottom {
     margin-top: 0;
+    padding-bottom: 0;
   }
 
-  /* Botones un poco más pequeños y cuadrados */
   .sidebar-btn {
     width: 44px;
     height: 44px;
   }
 
-  /* Ocultar upload y notifications en móvil */
   #logo-btn,
   #notifications-btn {
     display: none;
