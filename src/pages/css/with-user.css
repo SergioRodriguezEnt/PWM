@@ -48,12 +48,9 @@ body {
 }
 
 @media (max-width: 1023px) {
-  #search-sidebar {
-    display: none;
-  }
-
   #page {
     margin-left: 0;
+    padding-bottom: 50px;
   }
 
   #profile {

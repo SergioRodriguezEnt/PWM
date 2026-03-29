@@ -64,3 +64,60 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 768px) {
+  #sidebar {
+    /* De columna lateral a barra inferior */
+    top: auto;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    padding: 6px 0;
+
+    /* Sombra para separarse del contenido */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Los tres divs se ponen en fila también */
+  .sidebar-div {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    width: auto;
+    margin: 0;
+    gap: 0;
+  }
+
+  /* El logo (top) y el settings (bottom) ya no necesitan márgenes especiales */
+  #sidebar-top {
+    display: none;
+  }
+
+  #sidebar-center {
+    flex: 3;
+    justify-content: space-evenly;
+  }
+
+  #sidebar-bottom {
+    margin-top: 0;
+  }
+
+  /* Botones un poco más pequeños y cuadrados */
+  .sidebar-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Ocultar upload y notifications en móvil */
+  #logo-btn,
+  #notifications-btn {
+    display: none;
+  }
+}
