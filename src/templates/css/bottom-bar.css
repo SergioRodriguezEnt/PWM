@@ -1,4 +1,3 @@
-/* src/templates/css/bottom-bar.css */
 #bottombar {
   display: flex;
   gap: var(--space-8);
