@@ -1,4 +1,3 @@
-/* src/pages/css/no-user.css */
 #layout {
   box-sizing: border-box;
   display: grid;
@@ -27,7 +26,6 @@ body {
   margin: var(--space-4) auto;
 }
 
-/* Fixed: was 4vw which becomes unreadably large on wide screens */
 .main-span {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 3vw, 2.5rem);

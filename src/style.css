@@ -1,15 +1,8 @@
-/* =============================================================
-   PWM — Global Design System
-   Import this file first in every HTML page:
-   <link rel="stylesheet" href="/src/global.css" />
-   ============================================================= */
-
-/* ── Google Fonts ─────────────────────────────────────────── */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap");
 
-/* ── Color Tokens ─────────────────────────────────────────── */
+
 :root {
-  /* Primary warm palette */
+
   --color-ink: #1c1814;
   --color-brown-dark: #7a4e3a;
   --color-brown-mid: #645545;
@@ -20,7 +13,6 @@
   --color-cream-light: #f7f3ec;
   --color-cream-base: #fbf8f4;
 
-  /* Semantic aliases */
   --color-bg: var(--color-cream-base);
   --color-surface: var(--color-cream-light);
   --color-surface-alt: var(--color-cream-mid);
@@ -35,36 +27,30 @@
   --color-interactive: var(--color-brown-dark);
   --color-interactive-hover: #5e3b2c;
 
-  /* ── Typography ─────────────────────────────────────────── */
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
 
-  /* Scale */
-  --text-xs: 0.75rem; /* 12px — labels, tags     */
-  --text-sm: 0.875rem; /* 14px — captions, small  */
-  --text-base: 0.9375rem; /* 15px — body copy        */
-  --text-md: 1rem; /* 16px — subheadings      */
-  --text-lg: 1.25rem; /* 20px — card titles      */
-  --text-xl: 1.75rem; /* 28px — page headings    */
-  --text-2xl: 3rem; /* 48px — display / hero   */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 3rem;
 
-  /* Weight */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-bold: 600;
 
-  /* Line heights */
   --leading-tight: 1.1;
   --leading-snug: 1.35;
   --leading-normal: 1.6;
 
-  /* Letter spacing */
   --tracking-tight: -0.01em;
   --tracking-normal: 0;
   --tracking-wide: 0.05em;
   --tracking-wider: 0.08em;
 
-  /* ── Spacing ─────────────────────────────────────────────── */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -75,24 +61,20 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
 
-  /* ── Border radius ───────────────────────────────────────── */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-xl: 20px;
   --radius-full: 9999px;
 
-  /* ── Shadows ─────────────────────────────────────────────── */
   --shadow-sm: 0 2px 8px rgba(28, 22, 16, 0.06);
   --shadow-md: 0 4px 16px rgba(28, 22, 16, 0.1);
   --shadow-lg: 0 8px 28px rgba(28, 22, 16, 0.14);
 
-  /* ── Transitions ─────────────────────────────────────────── */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
 }
 
-/* ── Base reset & defaults ───────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -113,7 +95,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Headings ────────────────────────────────────────────── */
 h1,
 h2,
 h3,
@@ -150,7 +131,6 @@ p {
   line-height: var(--leading-normal);
 }
 
-/* ── Buttons ─────────────────────────────────────────────── */
 button {
   font-family: var(--font-body), serif;
   font-size: var(--text-sm);
@@ -168,7 +148,6 @@ button:active {
   transform: scale(0.98);
 }
 
-/* Primary button — used for main CTAs */
 .btn-primary {
   background-color: var(--color-brown-dark);
   color: var(--color-text-on-dark);
@@ -179,7 +158,6 @@ button:active {
   background-color: var(--color-interactive-hover);
 }
 
-/* Secondary button — used for cancel, back */
 .btn-secondary {
   background-color: var(--color-cream-dark);
   color: var(--color-text-primary);
@@ -190,7 +168,6 @@ button:active {
   background-color: var(--color-sand);
 }
 
-/* Ghost button — used for nav items */
 .btn-ghost {
   background-color: transparent;
   color: var(--color-text-primary);
@@ -202,7 +179,6 @@ button:active {
   background-color: var(--color-surface);
 }
 
-/* ── Inputs ──────────────────────────────────────────────── */
 input,
 textarea,
 select {
@@ -228,7 +204,6 @@ textarea::placeholder {
   color: var(--color-text-muted);
 }
 
-/* ── Tags / pills ────────────────────────────────────────── */
 .tag {
   display: inline-block;
   background-color: var(--color-cream-dark);
@@ -240,7 +215,6 @@ textarea::placeholder {
   border-radius: var(--radius-full);
 }
 
-/* ── Links ───────────────────────────────────────────────── */
 a {
   color: var(--color-brown-dark);
   text-decoration: none;
@@ -251,14 +225,12 @@ a:hover {
   color: var(--color-ink);
 }
 
-/* ── Dividers ────────────────────────────────────────────── */
 hr {
   border: none;
   border-top: 1px solid var(--color-border-light);
   margin: var(--space-6) 0;
 }
 
-/* ── Utility: visually hidden ────────────────────────────── */
 .hidden {
   display: none !important;
 }
