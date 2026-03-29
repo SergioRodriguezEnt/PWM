@@ -79,8 +79,7 @@
   display: none !important;
 }
 
-/* ── Mobile: bottom bar ───────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   #sidebar {
     top: auto;
     bottom: 0;
