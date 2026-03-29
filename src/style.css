@@ -9,31 +9,31 @@
 
 /* ── Color Tokens ─────────────────────────────────────────── */
 :root {
-    /* Primary warm palette */
-    --color-ink: #1c1814;
-    --color-brown-dark: #7a4e3a;
-    --color-brown-mid: #645545;
-    --color-brown-muted: #9c907f;
-    --color-sand: #d2c3af;
-    --color-cream-dark: #ebe2d3;
-    --color-cream-mid: #f3ede3;
-    --color-cream-light: #f7f3ec;
-    --color-cream-base: #fbf8f4;
+  /* Primary warm palette */
+  --color-ink: #1c1814;
+  --color-brown-dark: #7a4e3a;
+  --color-brown-mid: #645545;
+  --color-brown-muted: #9c907f;
+  --color-sand: #d2c3af;
+  --color-cream-dark: #ebe2d3;
+  --color-cream-mid: #f3ede3;
+  --color-cream-light: #f7f3ec;
+  --color-cream-base: #fbf8f4;
 
-    /* Semantic aliases */
-    --color-bg: var(--color-cream-base);
-    --color-surface: var(--color-cream-light);
-    --color-surface-alt: var(--color-cream-mid);
-    --color-border: var(--color-sand);
-    --color-border-light: var(--color-cream-dark);
+  /* Semantic aliases */
+  --color-bg: var(--color-cream-base);
+  --color-surface: var(--color-cream-light);
+  --color-surface-alt: var(--color-cream-mid);
+  --color-border: var(--color-sand);
+  --color-border-light: var(--color-cream-dark);
 
-    --color-text-primary: var(--color-ink);
-    --color-text-secondary: var(--color-brown-mid);
-    --color-text-muted: var(--color-brown-muted);
-    --color-text-on-dark: #ffffff;
+  --color-text-primary: var(--color-ink);
+  --color-text-secondary: var(--color-brown-mid);
+  --color-text-muted: var(--color-brown-muted);
+  --color-text-on-dark: #ffffff;
 
-    --color-interactive: var(--color-brown-dark);
-    --color-interactive-hover: #5e3b2c;
+  --color-interactive: var(--color-brown-dark);
+  --color-interactive-hover: #5e3b2c;
 
   /* ── Typography ─────────────────────────────────────────── */
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
