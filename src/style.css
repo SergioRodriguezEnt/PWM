@@ -9,31 +9,31 @@
 
 /* ── Color Tokens ─────────────────────────────────────────── */
 :root {
-  /* Primary warm palette */
-  --color-ink: #1c1610; /* deepest text, headings     */
-  --color-brown-dark: #3d2c1e; /* primary interactive        */
-  --color-brown-mid: #5c4a35; /* body text, labels          */
-  --color-brown-muted: #8a8070; /* placeholder, secondary     */
-  --color-sand: #c4b49a; /* borders, dividers          */
-  --color-cream-dark: #e8e0d0; /* surface hover, input bg    */
-  --color-cream-mid: #f0ebe1; /* input bg, light surface    */
-  --color-cream-light: #f5f0e8; /* card bg, sections          */
-  --color-cream-base: #faf7f2; /* page background            */
+    /* Primary warm palette */
+    --color-ink: #1c1814;
+    --color-brown-dark: #7a4e3a;
+    --color-brown-mid: #645545;
+    --color-brown-muted: #9c907f;
+    --color-sand: #d2c3af;
+    --color-cream-dark: #ebe2d3;
+    --color-cream-mid: #f3ede3;
+    --color-cream-light: #f7f3ec;
+    --color-cream-base: #fbf8f4;
 
-  /* Semantic aliases */
-  --color-bg: var(--color-cream-base);
-  --color-surface: var(--color-cream-light);
-  --color-surface-alt: var(--color-cream-mid);
-  --color-border: var(--color-sand);
-  --color-border-light: var(--color-cream-dark);
+    /* Semantic aliases */
+    --color-bg: var(--color-cream-base);
+    --color-surface: var(--color-cream-light);
+    --color-surface-alt: var(--color-cream-mid);
+    --color-border: var(--color-sand);
+    --color-border-light: var(--color-cream-dark);
 
-  --color-text-primary: var(--color-ink);
-  --color-text-secondary: var(--color-brown-mid);
-  --color-text-muted: var(--color-brown-muted);
-  --color-text-on-dark: #faf7f2;
+    --color-text-primary: var(--color-ink);
+    --color-text-secondary: var(--color-brown-mid);
+    --color-text-muted: var(--color-brown-muted);
+    --color-text-on-dark: #ffffff;
 
-  --color-interactive: var(--color-brown-dark);
-  --color-interactive-hover: var(--color-ink);
+    --color-interactive: var(--color-brown-dark);
+    --color-interactive-hover: #5e3b2c;
 
   /* ── Typography ─────────────────────────────────────────── */
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
