@@ -9,11 +9,11 @@
 
 #main {
   display: flex;
-  margin-top: 1%;
-  margin-bottom: 1%;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  max-width: 900px;
+  width: 90%;
+  margin: 1% auto;
 }
 
 html,
@@ -34,6 +34,7 @@ body {
 
   text-align: center;
   max-width: 70%;
+  align-self: center;
 }
 
 .main-btn {
@@ -47,8 +48,10 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s;
+  align-self: center;
 }
 
 #no-user-outfit-searchbar {
   margin-bottom: 1%;
+  width: 100%;
 }

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile View</title>
+
+    <script src="/src/common.js"></script>
+    <script src="/src/pages/js/profile.js"></script>
+    <script src="/src/templates/js/side-bar.js"></script>
+    <script src="/src/templates/js/profile-photo.js"></script>
+    <script src="/src/templates/js/search-results.js"></script>
+    <script src="/src/templates/js/bottom-bar.js"></script>
+    <link rel="stylesheet" href="/src/pages/css/with-user.css" />
+    <link rel="stylesheet" href="/src/pages/css/profile.css" />
+  </head>
+
+  <body>
+    <div id="search-sidebar" class="template-side-bar"></div>
+
+    <div id="page">
+      <div id="main">
+        <div id="content">
+          <div id="title-row">
+            <div id="photo-div">
+              <img src="" id="mini-avatar" alt="" />
+            </div>
+            <h1 id="page-title"></h1>
+            <div id="boton-perfil" class="template-profile-photo"></div>
+          </div>
+
+          <div id="subtabs">
+            <button class="subtab"></button>
+            <button class="subtab"></button>
+          </div>
+        </div>
+
+        <div id="results" class="template-search-results"></div>
+      </div>
+      <div id="bottom" class="template-bottom-bar"></div>
+    </div>
+  </body>
+</html>

@@ -1,23 +1,28 @@
 #bottombar {
-  box-sizing: border-box;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 1%;
-  margin: 0;
-  gap: 10%;
-  background-color: gray;
-  display: flex;
-  color: white;
-  overflow: hidden;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: gray;
+    color: white;
 }
 
 .bottombar-h3 {
-  padding-bottom: 5px;
+    margin: 0;
+    padding-bottom: 5px;
 }
 
 .bottombar-ul {
-  margin: 0;
+    margin: 0;
+    padding-left: 20px;
+}
+
+@media (max-width: 1023px) {
+    .bottombar-section {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        color: white;
+        background-color: gray;
+        flex-direction: column;
+    }
 }

@@ -78,3 +78,29 @@
 .profile-form-btn:active {
   transform: scale(0.98);
 }
+
+@media (max-width: 600px) {
+  .template-form-text-field {
+    margin-bottom: 12px;
+    padding-right: 16px;
+  }
+
+  #username-field label,
+  #password-field label,
+  #description-field label {
+    font-size: 1.05rem;
+  }
+
+  .template-form-text-field input,
+  .template-form-text-field textarea {
+    font-size: 1rem;
+    padding: 8px 10px;
+    min-height: 40px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 10px 14px;
+    min-height: 40px;
+  }
+}

@@ -27,7 +27,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* ← antes center */
+  align-items: flex-start;
 
   padding: 2%;
   overflow-y: auto;
@@ -45,4 +45,21 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 1023px) {
+  #page {
+    margin-left: 0;
+    padding-bottom: 50px;
+  }
+
+  #profile {
+    width: 44px;
+    flex-shrink: 0;
+  }
+
+  #topbar {
+    padding: 2% 3%;
+    overflow: visible;
+  }
 }

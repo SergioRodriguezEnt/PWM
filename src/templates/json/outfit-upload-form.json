@@ -1,0 +1,22 @@
+{
+  "title": "Subir outfit",
+  "outfit-img-btn": {
+    "src": "/src/resources/aspas.svg",
+    "alt": "Foto de outfit",
+    "required": true,
+    "type": "text"
+  },
+  "outfit-name-field": {
+    "display": "Nombre",
+    "placeholder": "Escriba aquí un nombre",
+    "required": true,
+    "type": "text"
+  },
+  "outfit-description-field": {
+    "display": "Descripción",
+    "placeholder": "Escriba aquí su descripción",
+    "required": true,
+    "type": "text"
+  },
+  "upload-form-button": "Subir"
+}
