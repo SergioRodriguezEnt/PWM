@@ -1,7 +1,4 @@
 {
   "mini-avatar": "avatar",
-  "subtabs": [
-    "Armario",
-    "Favoritos"
-  ]
+  "subtabs": ["Armario", "Favoritos"]
 }

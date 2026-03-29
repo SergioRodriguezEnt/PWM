@@ -13,16 +13,16 @@ async function loadOutfitView(data) {
   Promise.all([
     loadContentForElem(titleSection, "h2", "textContent", outfit, "title"),
     loadTags(titleSection, outfit),
-    descriptionSection.querySelector("h2").textContent = "Descripción",
-    loadContentForElem(descriptionSection, "p", "textContent", outfit, "description"),
-    loadContentForElem(root, ".imagen-principal", "src", outfit, "src"),
+    (descriptionSection.querySelector("h2").textContent = "Descripción"),
     loadContentForElem(
-      root,
-      ".nombre-autor",
+      descriptionSection,
+      "p",
       "textContent",
       outfit,
-      "user",
+      "description",
     ),
+    loadContentForElem(root, ".imagen-principal", "src", outfit, "src"),
+    loadContentForElem(root, ".nombre-autor", "textContent", outfit, "user"),
     loadContentForElem(
       root.querySelector(".boton-autor"),
       "img",
