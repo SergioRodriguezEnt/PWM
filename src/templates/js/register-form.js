@@ -1,5 +1,6 @@
 async function loadRegisterForm(data) {
   Promise.all([
+    loadContentFor("#register-title", "textContent", data, "title"),
     loadContentForField("username-field", data),
     loadContentForField("password-field", data),
     loadContentForField("password-2-field", data),

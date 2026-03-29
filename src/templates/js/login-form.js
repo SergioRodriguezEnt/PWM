@@ -1,5 +1,6 @@
 async function loadLoginForm(data) {
   return Promise.all([
+    loadContentFor("#login-title", "textContent", data, "title"),
     loadContentFor("#login-btn", "textContent", data, "login-btn"),
     loadContentForField("user-field", data),
     loadContentForField("password-field", data),
