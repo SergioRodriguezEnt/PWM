@@ -9,11 +9,15 @@
 
 ---
 
+# IMPORTANTE
+### El directiorio raíz del proyecto se debe llamar PWM.
+
+---
+
 ## Mockups Sprint 2 (Tablet y Móvil)
 
-# ESTO HAY QUE CAMBIARLO
-Los mockups de tablet y móvil se encuentran en `/src/mockups/sprint2/`.
-# ESTO HAY QUE CAMBIARLO
+Los mockups de móvil se encuentran en `/src/mockups/smartphone/`.
+Los mockups de tablet se encuentran en `/src/mockups/tablet/`.
 
 ---
 
