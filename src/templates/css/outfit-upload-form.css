@@ -28,8 +28,8 @@
   border: 2px dashed var(--color-border);
   cursor: pointer;
   transition:
-          border-color var(--transition-fast),
-          background-color var(--transition-fast);
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
 }
 
 #outfit-img-btn:hover {
@@ -71,8 +71,8 @@
   border: none;
   cursor: pointer;
   transition:
-          background-color var(--transition-fast),
-          transform var(--transition-fast);
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .upload-form-button:hover {

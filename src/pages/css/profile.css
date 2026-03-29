@@ -78,8 +78,8 @@
   border-radius: 10px;
   cursor: pointer;
   transition:
-          background-color 0.2s,
-          transform 0.1s;
+    background-color 0.2s,
+    transform 0.1s;
 }
 
 #subtabs .subtab:hover {

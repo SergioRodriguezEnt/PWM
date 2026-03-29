@@ -1,49 +1,49 @@
 .upload-form {
-    width: 100%;
-    padding: 2%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
 }
 
 .boton-perfil {
-    /* Fixed size that works in any context — topbar, title-row, etc. */
-    width: clamp(36px, 3vw, 56px);
-    height: clamp(36px, 3vw, 56px);
-    flex-shrink: 0;
+  /* Fixed size that works in any context — topbar, title-row, etc. */
+  width: clamp(36px, 3vw, 56px);
+  height: clamp(36px, 3vw, 56px);
+  flex-shrink: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #eee;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #eee;
 
-    cursor: pointer;
-    transition:
-            background-color 0.2s,
-            transform 0.1s;
-    border: none;
-    text-decoration: none;
-    padding: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+  border: none;
+  text-decoration: none;
+  padding: 0;
 }
 
 .boton-perfil:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .boton-perfil:hover .foto-circular {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 .boton-perfil:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .foto-circular {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.2s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s;
 }

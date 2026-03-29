@@ -78,8 +78,8 @@
   font-weight: var(--weight-medium);
   cursor: pointer;
   transition:
-          background-color var(--transition-fast),
-          transform var(--transition-fast);
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
   text-decoration: none;
   display: inline-flex;
   align-items: center;

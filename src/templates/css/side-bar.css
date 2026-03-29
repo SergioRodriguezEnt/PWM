@@ -51,8 +51,8 @@
   background-color: transparent;
 
   transition:
-          background-color var(--transition-fast),
-          transform var(--transition-fast);
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 #logo-btn {

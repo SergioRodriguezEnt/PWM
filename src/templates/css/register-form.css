@@ -43,8 +43,8 @@
   border-radius: var(--radius-md);
   cursor: pointer;
   transition:
-          background-color var(--transition-fast),
-          transform var(--transition-fast);
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
   display: block;
   margin: var(--space-4) auto 0;
   width: 40%;

@@ -25,8 +25,8 @@
   width: 100%;
   outline: none;
   transition:
-          background-color var(--transition-fast),
-          border-color var(--transition-fast);
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .text-field:focus {

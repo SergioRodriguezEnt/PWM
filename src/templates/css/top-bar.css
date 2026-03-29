@@ -1,84 +1,84 @@
 /* src/templates/css/top-bar.css */
 #topbar {
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    background-color: var(--color-surface);
-    border-bottom: 1px solid var(--color-border-light);
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-3) var(--space-5);
+  box-sizing: border-box;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
 
-    container-type: inline-size;
-    container-name: top;
+  container-type: inline-size;
+  container-name: top;
 }
 
 .topbar-div {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .topbar-btn {
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    color: var(--color-text-on-dark);
-    background-color: var(--color-brown-dark);
-    font-family: var(--font-body);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    transition:
-            background-color var(--transition-fast),
-            transform var(--transition-fast);
-    padding: var(--space-2) var(--space-5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text-on-dark);
+  background-color: var(--color-brown-dark);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+  padding: var(--space-2) var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
 }
 
 .topbar-btn:hover {
-    background-color: var(--color-interactive-hover);
-    transform: scale(1.03);
+  background-color: var(--color-interactive-hover);
+  transform: scale(1.03);
 }
 
 #home-btn {
-    padding: 0;
-    height: 44px;
-    width: 44px;
-    border-radius: var(--radius-full);
-    overflow: hidden;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition:
-            opacity var(--transition-fast),
-            transform var(--transition-fast);
+  padding: 0;
+  height: 44px;
+  width: 44px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 #home-btn:hover {
-    opacity: 0.8;
-    transform: scale(1.05);
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 #home-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 #home-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @container top (max-width: 500px) {
-    #topbar {
-        justify-content: center;
-    }
+  #topbar {
+    justify-content: center;
+  }
 }
