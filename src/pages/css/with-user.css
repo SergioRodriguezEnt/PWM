@@ -10,7 +10,7 @@ body {
 }
 
 #page {
-  margin-left: 6%;
+  margin-left: min(80px, 6%);
   min-width: 0; /* prevent overflow past sidebar */
   min-height: 100vh;
   display: flex;
