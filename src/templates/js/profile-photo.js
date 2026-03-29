@@ -2,8 +2,8 @@ async function loadProfilePhoto(data) {
   let username = getLocal("user").username;
   let user = await getUser(username);
   Promise.all([
-      loadContentFor(".foto-circular", "src", user, "profile-photo"),
-      loadContentFor(".foto-circular", "alt", data, "alt"),
+    loadContentFor(".foto-circular", "src", user, "profile-photo"),
+    loadContentFor(".foto-circular", "alt", data, "alt"),
   ]).catch(console.error);
 }
 

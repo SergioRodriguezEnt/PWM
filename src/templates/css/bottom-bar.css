@@ -1,28 +1,28 @@
 #bottombar {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    background-color: gray;
-    color: white;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: gray;
+  color: white;
 }
 
 .bottombar-h3 {
-    margin: 0;
-    padding-bottom: 5px;
+  margin: 0;
+  padding-bottom: 5px;
 }
 
 .bottombar-ul {
-    margin: 0;
-    padding-left: 20px;
+  margin: 0;
+  padding-left: 20px;
 }
 
 @media (max-width: 1023px) {
-    .bottombar-section {
-        display: flex;
-        gap: 10px;
-        padding: 20px;
-        color: white;
-        background-color: gray;
-        flex-direction: column;
-    }
+  .bottombar-section {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    color: white;
+    background-color: gray;
+    flex-direction: column;
+  }
 }
