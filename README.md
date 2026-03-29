@@ -5,7 +5,8 @@
 ##### Helen González Báez
 ##### Roberto Rodríguez Guillén
 ##### Sergio Rodríguez Rubio
----
+
+--- 
 
 ## Requisitos del proyecto:
 * Deben haber 3 niveles de usuarios con una jerarquía de permisos progresiva.
