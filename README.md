@@ -123,7 +123,7 @@ El sistema de carga de templates y datos está implementado en **`src/common.js`
 
 | Página | Archivo JS | Templates cargados | JSONs cargados |
 |--------|------------|-------------------|----------------|
-| `home.html` | `src/pages/js/home.js` | `top-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `home.json`, `outfits.json`, `bottom-bar.json` |
+| `home.html` | `src/pages/js/home.ts` | `top-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `home.json`, `outfits.json`, `bottom-bar.json` |
 | `login.html` | `src/pages/js/login.js` | `top-bar`, `login-form`, `bottom-bar` | `top-bar.json`, `login-form.json`, `bottom-bar.json` |
 | `register.html` | `src/pages/js/register.js` | `top-bar`, `register-form`, `bottom-bar` | `top-bar.json`, `register-form.json`, `bottom-bar.json` |
 | `search-no-user.html` | `src/pages/js/search-no-user.js` | `top-bar`, `search-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `search-bar.json`, `outfits.json`, `bottom-bar.json` |
