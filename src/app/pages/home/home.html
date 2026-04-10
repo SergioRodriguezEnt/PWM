@@ -1,32 +1,13 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-    <script src="/src/common.js"></script>
-    <script src="/src/app/pages/home/home.ts"></script>
-    <script src="/src/app/shared/components/top-bar/top-bar.js"></script>
-    <script src="/src/app/shared/components/search-results/search-results.js"></script>
-    <script src="/src/app/shared/components/bottom-bar/bottom-bar.js"></script>
-    <link rel="stylesheet" href="/src/style.css" />
-    <link rel="stylesheet" href="/src/app/pages/no-user.css" />
-    <link rel="stylesheet" href="/src/app/pages/home/home.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<div id="layout">
+  <div id="home-topbar" class="template-top-bar"></div>
 
-  <body>
-    <div id="layout">
-      <div id="home-topbar" class="template-top-bar"></div>
+  <div id="main">
+    <span class="main-span"></span>
 
-      <div id="main">
-        <span class="main-span"></span>
+    <div id="home-images" class="template-search-results"></div>
 
-        <div id="home-images" class="template-search-results"></div>
+    <button id="search-btn" class="main-btn"></button>
+  </div>
 
-        <button id="search-btn" class="main-btn"></button>
-      </div>
-
-      <div id="home-bottombar" class="template-bottom-bar"></div>
-    </div>
-  </body>
-</html>
+  <div id="home-bottombar" class="template-bottom-bar"></div>
+</div>

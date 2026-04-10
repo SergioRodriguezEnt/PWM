@@ -1,4 +1,14 @@
-async function loadDynamicContent() {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.html',
+  styleUrl: './home.css'
+})
+export class Home {
+
+}
+/*async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
     loadDynamicContentFor("/src/pages/json/home.json", loadHome),
@@ -23,4 +33,4 @@ async function setupHome() {
     setLocal("user", null);
   }
   setBtnRef(document, "#search-btn", "/PWM/src/pages/html/search-no-user.html");
-}
+}*/
