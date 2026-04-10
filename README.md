@@ -128,7 +128,7 @@ El sistema de carga de templates y datos está implementado en **`src/common.js`
 | `register.html` | `src/pages/js/register.js` | `top-bar`, `register-form`, `bottom-bar` | `top-bar.json`, `register-form.json`, `bottom-bar.json` |
 | `search-no-user.html` | `src/pages/js/search-no-user.js` | `top-bar`, `search-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `search-bar.json`, `outfits.json`, `bottom-bar.json` |
 | `search-with-user.html` | `src/pages/js/search-with-user.js` | `side-bar`, `search-bar`, `profile-photo`, `search-results`, `bottom-bar` | `side-bar.json`, `search-bar.json`, `profile-photo.json`, `outfits.json`, `bottom-bar.json` |
-| `outfit-no-user.html` | `src/pages/js/outfit-no-user.js` | `top-bar`, `search-bar`, `outfit-view`, `bottom-bar` | `top-bar.json`, `search-bar.json`, `outfits.json`, `bottom-bar.json` |
+| `outfit-no-user.html` | `src/pages/js/outfit.ts` | `top-bar`, `search-bar`, `outfit-view`, `bottom-bar` | `top-bar.json`, `search-bar.json`, `outfits.json`, `bottom-bar.json` |
 | `outfit-with-user.html` | `src/pages/js/outfit-view-with-user.js` | `side-bar`, `search-bar`, `profile-photo`, `outfit-view`, `bottom-bar` | `side-bar.json`, `search-bar.json`, `profile-photo.json`, `outfits.json`, `bottom-bar.json` |
 | `profile.html` | `src/pages/js/profile.js` | `side-bar`, `profile-photo`, `search-results`, `bottom-bar` | `side-bar.json`, `profile.json`, `outfits.json`, `profile-photo.json`, `bottom-bar.json` |
 | `update.html` | `src/pages/js/update.js` | `side-bar`, `edit-profile-form`, `bottom-bar` | `side-bar.json`, `edit-profile-form.json`, `bottom-bar.json` |

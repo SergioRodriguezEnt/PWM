@@ -1,4 +1,5 @@
-async function loadDynamicContent() {
+
+/*async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
     loadDynamicContentFor("/src/templates/json/login-form.json", loadLoginForm),
@@ -13,4 +14,4 @@ function setupTriggers() {
     return;
   }
   Promise.all([setupTopBar(), setupLoginForm()]).catch(console.error);
-}
+}*/
