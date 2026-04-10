@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [
+const routes: Routes = [
   {
     path: '',
     pathMatch: "full",
@@ -14,5 +14,14 @@ export const routes: Routes = [
     loadComponent: () => {
       return import('./pages/home/home').then((m) => m.Home)
     }
+  },
+  {
+    path: 'login',
+    pathMatch: "full",
+    loadComponent: () => {
+      return import('./pages/login/login').then((m) => m.Login)
+    }
   }
 ];
+export default routes
+

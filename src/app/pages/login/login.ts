@@ -1,3 +1,15 @@
+import { Component } from '@angular/core';
+import {LoginForm} from './login-form';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.html',
+  styleUrl: './login.css',
+  imports: [
+    LoginForm
+  ]
+})
+export class Login{}
 
 /*async function loadDynamicContent() {
   return Promise.all([

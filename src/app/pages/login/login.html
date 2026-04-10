@@ -1,25 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <script src="/src/common.js"></script>
-    <script src="/src/app/pages/login/login.js"></script>
-    <script src="/src/app/shared/components/top-bar/top-bar.js"></script>
-    <script src="/src/app/pages/login/login-form.js"></script>
-    <script src="/src/app/shared/components/bottom-bar/bottom-bar.js"></script>
-    <link rel="stylesheet" href="/src/style.css" />
-    <link rel="stylesheet" href="/src/app/pages/no-user.css" />
-    <link rel="stylesheet" href="/src/app/pages/login/login.css" />
-  </head>
+<div id="layout">
+  <div id="login-topbar" class="template-top-bar"></div>
 
-  <body>
-    <div id="layout">
-      <div id="login-topbar" class="template-top-bar"></div>
+  <login-form/>
 
-      <div id="main" class="template-login-form"></div>
-
-      <div id="login-bottombar" class="template-bottom-bar"></div>
-    </div>
-  </body>
-</html>
+  <div id="login-bottombar" class="template-bottom-bar"></div>
+</div>

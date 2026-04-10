@@ -1,4 +1,12 @@
-async function loadLoginForm(data) {
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'login-form',
+  templateUrl: './login-form.html',
+  styleUrl: './login-form.css',
+})
+export class LoginForm {}
+/*async function loadLoginForm(data) {
   return Promise.all([
     loadContentFor("#login-title", "textContent", data, "title"),
     loadContentFor("#login-btn", "textContent", data, "login-btn"),
@@ -30,3 +38,4 @@ async function setupLoginForm() {
     }
   });
 }
+*/
