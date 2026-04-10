@@ -1,13 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
-export class Home {
-
-}
+export class Home {}
 /*async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
