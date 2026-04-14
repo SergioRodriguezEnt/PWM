@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
+import {TopBar} from '../../shared/components/top-bar/top-bar';
+import {SearchResults} from '../../shared/components/search-results/search-results';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.css',
+  imports: [
+    TopBar,
+    SearchResults,
+    BottomBar
+  ]
 })
 export class Home {}
 /*async function loadDynamicContent() {
