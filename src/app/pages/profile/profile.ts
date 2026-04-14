@@ -1,9 +1,19 @@
 import {Component, signal} from "@angular/core";
 import {RouterOutlet} from "@angular/router";
+import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo';
+import {SideBar} from '../../shared/components/side-bar/side-bar';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
+import {SearchResults} from '../../shared/components/search-results/search-results';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.html',
+  imports: [
+    ProfilePhoto,
+    SideBar,
+    BottomBar,
+    SearchResults
+  ],
   styleUrl: './profile.css'
 })
 export class Profile {

@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import {RegisterForm} from './register-form';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
+import {TopBar} from '../../shared/components/top-bar/top-bar';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.html',
   styleUrl: './register.css',
   imports: [
-    RegisterForm
+    RegisterForm,
+    BottomBar,
+    TopBar
   ]
 })
 export class Register {}

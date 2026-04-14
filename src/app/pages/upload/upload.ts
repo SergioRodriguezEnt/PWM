@@ -1,12 +1,16 @@
 import {Component, signal} from "@angular/core";
 import {OutfitUploadForm} from './outfit-upload-form';
+import {SideBar} from '../../shared/components/side-bar/side-bar';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.html',
   styleUrl: './upload.css',
   imports: [
-    OutfitUploadForm
+    OutfitUploadForm,
+    SideBar,
+    BottomBar
   ]
 })
 export class Upload{

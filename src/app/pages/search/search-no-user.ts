@@ -1,8 +1,16 @@
 import {Component, signal} from "@angular/core";
+import {TopBar} from '../../shared/components/top-bar/top-bar';
+import {SearchBar} from '../../shared/components/search-bar/search-bar';
+import {SearchResults} from '../../shared/components/search-results/search-results';
 
 @Component({
   selector: 'app-search-no-user',
   templateUrl: './search-no-user.html',
+  imports: [
+    TopBar,
+    SearchBar,
+    SearchResults
+  ],
   styleUrl: './search-no-user.css'
 })
 export class SearchNoUser{

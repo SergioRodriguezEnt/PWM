@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import {LoginForm} from './login-form';
+import {TopBar} from '../../shared/components/top-bar/top-bar';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
   styleUrl: './login.css',
   imports: [
-    LoginForm
+    LoginForm,
+    TopBar,
+    BottomBar
   ]
 })
 export class Login{}

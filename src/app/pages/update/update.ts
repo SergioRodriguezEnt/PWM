@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import {EditProfileForm} from './edit-profile-form';
+import {SideBar} from '../../shared/components/side-bar/side-bar';
+import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 
 @Component({
   selector: 'app-update',
   templateUrl: './update.html',
   styleUrl: './update.css',
   imports: [
-    EditProfileForm
+    EditProfileForm,
+    SideBar,
+    BottomBar
   ]
 })
 export class Update {}
