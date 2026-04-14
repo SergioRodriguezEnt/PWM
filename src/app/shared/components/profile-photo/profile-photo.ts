@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
+import {UserService} from '../../../core/user.service';
 
 @Component({
   selector: 'profile-photo',
@@ -6,7 +7,7 @@ import {Component} from '@angular/core';
   styleUrl: './profile-photo.css',
 })
 export class ProfilePhoto {
-
+  isLogged = inject(UserService).isLogged
 }
 /*async function loadProfilePhoto(data) {
   let username = getLocal("user").username;
