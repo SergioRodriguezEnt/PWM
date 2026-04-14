@@ -1,4 +1,15 @@
-async function loadDynamicContent() {
+import {Component, signal} from "@angular/core";
+import {RouterOutlet} from "@angular/router";
+
+@Component({
+  selector: 'app-profile',
+  templateUrl: './profile.html',
+  styleUrl: './profile.css'
+})
+export class Profile {
+}
+
+/*async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/side-bar.json", loadSideBar),
     loadDynamicContentFor("/src/pages/json/profile.json", loadProfile),
@@ -56,3 +67,4 @@ async function setupProfile() {
     document.getElementById("boton-perfil").classList.add("hidden");
   }
 }
+*/
