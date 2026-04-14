@@ -1,4 +1,14 @@
-async function loadProfilePhoto(data) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'profile-photo',
+  templateUrl: './profile-photo.html',
+  styleUrl: './profile-photo.css',
+})
+export class ProfilePhoto {
+
+}
+/*async function loadProfilePhoto(data) {
   let username = getLocal("user").username;
   let user = await getUser(username);
   Promise.all([
@@ -14,4 +24,4 @@ async function setupProfilePhoto() {
     ".boton-perfil",
     "/PWM/src/pages/html/profile.html?username=" + user.username,
   );
-}
+}*/

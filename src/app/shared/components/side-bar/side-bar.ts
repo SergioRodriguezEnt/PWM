@@ -1,4 +1,14 @@
-async function loadSideBar(data) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'side-bar',
+  templateUrl: './side-bar.html',
+  styleUrl: './side-bar.css',
+})
+export class SideBar {
+
+}
+/*async function loadSideBar(data) {
   Promise.all([
     loadContentForBtnImg("logo-btn", data),
     loadContentForBtnImg("search-btn", data),
@@ -23,3 +33,4 @@ async function setupSideBar() {
     "/PWM/src/pages/html/home.html?logout=true",
   );
 }
+*/

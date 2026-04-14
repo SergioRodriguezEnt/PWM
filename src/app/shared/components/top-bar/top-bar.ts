@@ -1,4 +1,14 @@
-async function loadTopBar(data) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'top-bar',
+  templateUrl: './top-bar.html',
+  styleUrl: './top-bar.css',
+})
+export class TopBar {
+
+}
+/*async function loadTopBar(data) {
   let root = document.getElementById("topbar");
   let homeBtnData = data["home-btn"];
   Promise.all([
@@ -26,3 +36,4 @@ async function setupTopBar() {
   setBtnRef(document, "#to-login-btn", "/PWM/src/pages/html/login.html");
   setBtnRef(document, "#register-btn", "/PWM/src/pages/html/register.html");
 }
+*/

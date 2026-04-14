@@ -1,4 +1,14 @@
-async function loadSearchResults(data) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'search-results',
+  templateUrl: './search-results.html',
+  styleUrl: './search-results.css',
+})
+export class SearchResults {
+
+}
+/*async function loadSearchResults(data) {
   let outfits = filterOutfits(data, getParam("username"), getParam("search"));
   let columns = document.querySelectorAll(".columna");
   let column = 0;
@@ -37,4 +47,4 @@ async function setupSearchResults() {
         "/PWM/src/pages/html/" + page + ".html?id=" + button.dataset.id;
     });
   });
-}
+}*/
