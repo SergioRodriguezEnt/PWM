@@ -1,4 +1,14 @@
-async function loadBottomBar(data) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'bottom-bar',
+  templateUrl: './bottom-bar.html',
+  styleUrl: './bottom-bar.css',
+})
+export class BottomBar {
+
+}
+/*async function loadBottomBar(data) {
   for (let section of document.querySelectorAll(".bottombar-section")) {
     loadSectionData(section, data);
   }
@@ -19,3 +29,4 @@ function loadSectionData(section, data) {
     ulElement.appendChild(li);
   });
 }
+*/
