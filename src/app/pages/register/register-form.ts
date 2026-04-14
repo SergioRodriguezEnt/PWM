@@ -1,4 +1,13 @@
-async function loadRegisterForm(data) {
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'register-form',
+  templateUrl: './register-form.html',
+  styleUrl: './register-form.css',
+})
+export class RegisterForm {}
+
+/*async function loadRegisterForm(data) {
   Promise.all([
     loadContentFor("#register-title", "textContent", data, "title"),
     loadContentForField("username-field", data),
@@ -16,3 +25,4 @@ async function loadRegisterForm(data) {
 async function setupRegisterForm() {
   setBtnRef(document, ".register-form-btn", "/PWM/src/pages/html/update.html");
 }
+*/

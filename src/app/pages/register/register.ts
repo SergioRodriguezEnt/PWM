@@ -1,4 +1,17 @@
-function loadDynamicContent() {
+import { Component } from '@angular/core';
+import {RegisterForm} from './register-form';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.html',
+  styleUrl: './register.css',
+  imports: [
+    RegisterForm
+  ]
+})
+export class Register {}
+
+/*function loadDynamicContent() {
   Promise.all([
     loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
     loadDynamicContentFor(
@@ -12,3 +25,5 @@ function loadDynamicContent() {
 function setupTriggers() {
   Promise.all([setupTopBar(), setupRegisterForm()]).catch(console.error);
 }
+
+ */

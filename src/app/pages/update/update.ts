@@ -1,4 +1,17 @@
-async function loadDynamicContent() {
+import { Component } from '@angular/core';
+import {EditProfileForm} from './edit-profile-form';
+
+@Component({
+  selector: 'app-update',
+  templateUrl: './update.html',
+  styleUrl: './update.css',
+  imports: [
+    EditProfileForm
+  ]
+})
+export class Update {}
+
+/* async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/side-bar.json", loadSideBar),
     loadDynamicContentFor(
@@ -12,3 +25,4 @@ async function loadDynamicContent() {
 function setupTriggers() {
   Promise.all([setupSideBar(), setupEditProfileForm()]).catch(console.error);
 }
+ */

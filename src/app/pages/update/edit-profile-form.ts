@@ -1,4 +1,13 @@
-async function loadEditProfileForm(data) {
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'edit-profile-form',
+  templateUrl: './edit-profile-form.html',
+  styleUrl: './edit-profile-form.css',
+})
+export class EditProfileForm {}
+
+/* async function loadEditProfileForm(data) {
   let root = document.getElementById("profile-form");
   let username = getParam("username");
   let user = await getUser(username);
@@ -21,3 +30,4 @@ async function setupEditProfileForm() {
     "/PWM/src/pages/html/profile.html?username=" + getParam("username"),
   );
 }
+ */
