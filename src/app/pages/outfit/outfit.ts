@@ -1,10 +1,17 @@
 import {Component} from '@angular/core';
+import {OutfitView} from './outfit.view';
 
 @Component({
   selector: 'app-outfit',
   templateUrl: './outfit.html',
-  style
+  styleUrl: './outfit.css',
+  imports: [
+    OutfitView
+  ]
 })
+export class Outfit {
+
+}
 /*async function loadDynamicContent() {
   return Promise.all([
     loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
