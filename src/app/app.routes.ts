@@ -14,12 +14,5 @@ export const routes: Routes = [
     loadComponent: () => {
       return import('./pages/home/home').then((m) => m.Home)
     }
-  },
-  {
-    path: 'outfit',
-    pathMatch: "prefix",
-    loadComponent: () => {
-      return import('./pages/outfit/outfit').then((m) => m.Outfit)
-    }
   }
 ];

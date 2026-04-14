@@ -64,7 +64,7 @@ Los archivos CSS con implementación responsive son:
 
 ## Validaciones HTML en formularios
 
-### Formulario de Login — `src/templates/html/login-form.html` / `src/templates/js/login-form.js`
+### Formulario de Login — `src/templates/html/login-form.html` / `src/templates/js/login-form.ts`
 
 | Campo | Validación |
 |-------|------------|
@@ -117,14 +117,14 @@ El sistema de carga de templates y datos está implementado en **`src/common.js`
 
 - **Carga de datos JSON**: `loadDynamicContentFor(url, callback)` realiza un `fetch` a una URL JSON y llama a una función de carga con los datos recibidos.
 
-  **Ejemplo**: En `src/pages/js/login.js`, se llama a `loadDynamicContentFor("/src/templates/json/login-form.json", loadLoginForm)`, que rellena los textos del formulario con los datos del JSON.
+  **Ejemplo**: En `src/pages/js/login.ts`, se llama a `loadDynamicContentFor("/src/templates/json/login-form.json", loadLoginForm)`, que rellena los textos del formulario con los datos del JSON.
 
 ### Páginas y sus cargas
 
 | Página | Archivo JS | Templates cargados | JSONs cargados |
 |--------|------------|-------------------|----------------|
 | `home.html` | `src/pages/js/home.ts` | `top-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `home.json`, `outfits.json`, `bottom-bar.json` |
-| `login.html` | `src/pages/js/login.js` | `top-bar`, `login-form`, `bottom-bar` | `top-bar.json`, `login-form.json`, `bottom-bar.json` |
+| `login.html` | `src/pages/js/login.ts` | `top-bar`, `login-form`, `bottom-bar` | `top-bar.json`, `login-form.json`, `bottom-bar.json` |
 | `register.html` | `src/pages/js/register.js` | `top-bar`, `register-form`, `bottom-bar` | `top-bar.json`, `register-form.json`, `bottom-bar.json` |
 | `search-no-user.html` | `src/pages/js/search-no-user.js` | `top-bar`, `search-bar`, `search-results`, `bottom-bar` | `top-bar.json`, `search-bar.json`, `outfits.json`, `bottom-bar.json` |
 | `search-with-user.html` | `src/pages/js/search-with-user.js` | `side-bar`, `search-bar`, `profile-photo`, `search-results`, `bottom-bar` | `side-bar.json`, `search-bar.json`, `profile-photo.json`, `outfits.json`, `bottom-bar.json` |
