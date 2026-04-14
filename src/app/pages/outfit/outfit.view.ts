@@ -1,4 +1,14 @@
-async function loadTags(titleSection, outfit) {
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'outfit-view',
+  templateUrl: './outfit.view.html',
+  styleUrl: './outfit.view.css',
+})
+export class OutfitView {
+
+}
+/*async function loadTags(titleSection, outfit) {
   titleSection.querySelector("p").textContent = outfit["tags"].join(" ");
 }
 
@@ -40,4 +50,4 @@ async function setupOutfitView() {
     ".boton-autor",
     "/PWM/src/pages/html/profile.html?username=" + root.dataset.user,
   );
-}
+}*/
