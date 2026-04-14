@@ -44,10 +44,17 @@ const routes: Routes = [
     }
   },
   {
-    path: 'search',
+    path: 'search-no-user',
     pathMatch: "full",
     loadComponent: () => {
-      return import('./pages/search/search').then((m) => m.Search)
+      return import('./pages/search/search-no-user').then((m) => m.SearchNoUser)
+    }
+  },
+  {
+    path: 'search-with-user',
+    pathMatch: "full",
+    loadComponent: () => {
+      return import('./pages/search/search-with-user').then((m) => m.SearchWithUser)
     }
   },
   {
