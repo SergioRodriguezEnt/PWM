@@ -1,8 +1,7 @@
 <div id="profile-photo">
-  <button class="boton-perfil">
-    @if (isLogged()) {
-
-    }
-    <img src="" alt="" class="foto-circular" />
-  </button>
+  @if (userServ.isLoggedIn()) {
+    <button class="boton-perfil">
+      <img src="{{userServ.user()?.photoSrc}}" alt="" class="foto-circular" />
+    </button>
+  }
 </div>

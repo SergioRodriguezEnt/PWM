@@ -7,7 +7,7 @@ import {UserService} from '../../../core/user.service';
   styleUrl: './profile-photo.css',
 })
 export class ProfilePhoto {
-  isLogged = inject(UserService).isLogged
+  userServ = inject(UserService)
 }
 /*async function loadProfilePhoto(data) {
   let username = getLocal("user").username;
