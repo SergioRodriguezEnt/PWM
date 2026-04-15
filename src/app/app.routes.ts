@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import {UserService} from './core/user.service';
+import {inject} from '@angular/core';
 
 const routes: Routes = [
   {
@@ -44,17 +46,10 @@ const routes: Routes = [
     }
   },
   {
-    path: 'search-no-user',
+    path: 'search',
     pathMatch: "full",
     loadComponent: () => {
       return import('./pages/search/search-no-user').then((m) => m.SearchNoUser)
-    }
-  },
-  {
-    path: 'search-with-user',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/search/search-with-user').then((m) => m.SearchWithUser)
     }
   },
   {
@@ -69,6 +64,14 @@ const routes: Routes = [
     pathMatch: "full",
     loadComponent: () => {
       return import('./pages/upload/upload').then((m) => m.Upload)
+    }
+  },
+  {
+    path: 'logout',
+    pathMatch: "full",
+    loadComponent: () => {
+      inject(UserService).logOut()
+      return import('./pages/home/home').then((m) => m.Home)
     }
   },
 ];
