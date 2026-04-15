@@ -1,5 +1,4 @@
 {
-  "title": "Iniciar sesión",
   "user-field": {
     "display": "Nombre de usuario",
     "placeholder": "Escriba aquí su nombre de usuario",
@@ -11,6 +10,5 @@
     "placeholder": "Escriba aquí su contraseña",
     "required": true,
     "type": "password"
-  },
-  "login-btn": "Iniciar sesión"
+  }
 }
