@@ -6,7 +6,6 @@ import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 @Component({
   selector: 'app-update',
   templateUrl: './update.html',
-  styleUrl: './update.css',
   imports: [
     EditProfileForm,
     SideBar,

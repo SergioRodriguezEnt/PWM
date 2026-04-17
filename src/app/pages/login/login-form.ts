@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
-import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'login-form',
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
   imports: [
-    FormTextField,
-    RouterLink
+    FormTextField
   ]
 })
 export class LoginForm {}

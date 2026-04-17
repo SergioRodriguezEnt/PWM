@@ -10,8 +10,7 @@ import {SearchResults} from '../../shared/components/search-results/search-resul
     TopBar,
     SearchBar,
     SearchResults
-  ],
-  styleUrl: './search-no-user.css'
+  ]
 })
 export class SearchNoUser{
 }

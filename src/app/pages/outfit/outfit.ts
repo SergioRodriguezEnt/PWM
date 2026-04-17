@@ -4,7 +4,6 @@ import {OutfitView} from './outfit.view';
 @Component({
   selector: 'app-outfit',
   templateUrl: './outfit.html',
-  styleUrl: './outfit.css',
   imports: [
     OutfitView
   ]

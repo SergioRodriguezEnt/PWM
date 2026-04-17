@@ -14,8 +14,7 @@ import {SideBar} from '../../shared/components/side-bar/side-bar';
     BottomBar,
     ProfilePhoto,
     SideBar
-  ],
-  styleUrl: './search-with-user.css'
+  ]
 })
 export class SearchWithUser{
 }

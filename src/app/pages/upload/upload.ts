@@ -6,7 +6,6 @@ import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.html',
-  styleUrl: './upload.css',
   imports: [
     OutfitUploadForm,
     SideBar,
