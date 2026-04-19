@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import {UserService} from './core/user.service';
 import {inject} from '@angular/core';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     pathMatch: "full",
