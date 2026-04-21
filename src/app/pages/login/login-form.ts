@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
+import {Login} from './login';
+import { NgIf } from '@angular/common'; // ← añade esto
 
 @Component({
   selector: 'login-form',
   templateUrl: './login-form.html',
   styleUrl: './login-form.css',
   imports: [
-    FormTextField
+    FormTextField,
+    NgIf
   ]
 })
-export class LoginForm {}
+
+export class LoginForm {
+  @Input() parent!: Login;
+}
 /*
 
 async function setupLoginForm() {

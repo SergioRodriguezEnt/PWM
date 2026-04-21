@@ -1,36 +1,32 @@
-import {computed, Injectable, signal} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
+import {addDoc, collection, collectionData, deleteDoc, doc, Firestore, updateDoc} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 
 export interface User {
-  name: String;
-  photoSrc: String;
+  email: string;
+  name: string;
+  photoSrc: string;
   role: "admin" | "user";
 }
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class UserService {
-  private readonly STORAGE_KEY = "user";
+  private firestore = inject(Firestore);
+  private usersRef = collection(this.firestore, 'users');
 
-  private _user = signal<User | null>(this.loadFromStorage());
-
-  // Public readonly signal
-  readonly user = this._user.asReadonly();
-
-  // Derived signals
-  readonly isLoggedIn = computed(() => this._user() !== null);
-  readonly isAdmin = computed(() => this._user()?.role === 'admin');
-
-  logIn(user: User): void {
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));
-    this._user.set(user);
+  getUsers(): Observable<User[]> {
+    return collectionData(this.usersRef, { idField: 'email' }) as Observable<User[]>;
   }
 
-  logOut(): void {
-    localStorage.removeItem(this.STORAGE_KEY);
-    this._user.set(null);
+  addUser(user: User) {
+    return addDoc(this.usersRef, user);
   }
 
-  private loadFromStorage(): User | null {
-    const raw = localStorage.getItem(this.STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+  updateUser(email: string, data: Partial<User>) {
+    return updateDoc(doc(this.firestore, 'users', email), data);
+  }
+
+  deleteUser(email: string) {
+    return deleteDoc(doc(this.firestore, 'items', email));
   }
 }

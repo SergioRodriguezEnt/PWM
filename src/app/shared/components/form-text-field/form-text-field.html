@@ -1,7 +1,6 @@
 <div class="form-text-field">
-  <label class="display"></label>
-
+  <label class="display">{{ label }}</label>
   <label>
-    <input type="text" class="text-field" placeholder="" />
+    <input [type]="type" class="text-field" [placeholder]="placeholder" [(ngModel)]="value" />
   </label>
 </div>
