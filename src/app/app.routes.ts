@@ -70,7 +70,6 @@ export const routes: Routes = [
     path: 'logout',
     pathMatch: "full",
     loadComponent: () => {
-      inject(UserService).logOut()
       return import('./pages/home/home').then((m) => m.Home)
     }
   },

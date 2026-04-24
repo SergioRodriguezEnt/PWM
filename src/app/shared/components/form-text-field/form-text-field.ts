@@ -8,6 +8,8 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './form-text-field.css'
 })
 export class FormTextField {
+  @Input() id = ''
+  @Input() name = ''
   @Input() label = '';
   @Input() type = 'text';
   @Input() placeholder = '';

@@ -1,16 +1,76 @@
 <div id="register-form">
-  <link rel="stylesheet" href="/src/app/pages/register/register-form.css" />
-  <h1 id="register-title"></h1>
-  <form>
-    <div id="username-field" class="campo-grupo template-form-text-field"></div>
+  <h1 id="register-title">Registrarse</h1>
+  <form #RegisterForm="ngForm" (ngSubmit)="onSubmit(RegisterForm)">
 
-    <div id="password-field" class="campo-grupo template-form-text-field"></div>
+    <div id="username-field">
+      <form-text-field
+        label="Usuario"
+        id="username"
+        name="username"
+        type="text"
+        placeholder="Tu usuario"
+        [(ngModel)]="credentials.username"
+        required
+      />
+      @if (RegisterForm.controls['username']?.invalid && RegisterForm.controls['username']?.touched) {
+        @if (RegisterForm.controls['username'].errors?.['required']) {
+          <span>Username is required.</span>
+        }
+      }
+    </div>
 
-    <div
-      id="password-2-field"
-      class="campo-grupo template-form-text-field"
-    ></div>
+    <div id="email-field">
+      <form-text-field
+        label="Email"
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Tu email"
+        [(ngModel)]="credentials.email"
+        required
+        email
+      />
+      @if (RegisterForm.controls['email']?.invalid && RegisterForm.controls['email']?.touched) {
+        @if (RegisterForm.controls['email'].errors?.['required']) {
+          <span>Email is required.</span>
+        }
+        @if (RegisterForm.controls['email'].errors?.['email']) {
+          <span>Enter a valid email.</span>
+        }
+      }
+    </div>
 
-    <button class="register-form-btn"></button>
+    <div id="password-field">
+      <form-text-field
+        label="Contraseña"
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Tu contraseña"
+        [(ngModel)]="credentials.password"
+        required
+      />
+    </div>
+
+    <div id="password-2-field">
+      <form-text-field
+        label="Confirmar contraseña"
+        id="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        placeholder="Repite tu contraseña"
+        [(ngModel)]="credentials.confirmPassword"
+        required
+      />
+    </div>
+
+    @if (errorMessage) {
+      <p>{{ errorMessage }}</p>
+    }
+
+    <button class="register-form-btn" type="submit">
+      Registrarse
+    </button>
+
   </form>
 </div>

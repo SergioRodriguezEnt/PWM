@@ -1,8 +1,9 @@
 import {Component, computed, inject, signal} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 import {User, UserService} from '../../../core/user.service';
 import {AuthService} from '../../../core/auth.service';
 import {Router} from '@angular/router';
+import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'side-bar',
@@ -19,9 +20,13 @@ export class SideBar {
 
   isLoggedIn = this.authServ.isLoggedIn
 
+  private users = toSignal(this.userServ.getUsers(), { initialValue: [] as User[] });
+
   userOwnProfile = computed(() => {
-    this.userServ.getUsers().
-  })
+    const email = this.authServ.getEmail();
+    const list = this.users();
+    return list.find((u: User) => u.email === email) ?? null;
+  });
 
   logout() {
     this.authServ.logout().finally(() => this.router.navigate(['/home']));

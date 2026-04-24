@@ -1,6 +1,11 @@
 <div class="form-text-field">
-  <label class="display">{{ label }}</label>
-  <label>
-    <input [type]="type" class="text-field" [placeholder]="placeholder" [(ngModel)]="value" />
-  </label>
+  <label class="display" [for]="id">{{ label }}</label>
+  <input
+    [id]="id"
+    [type]="type"
+    class="text-field"
+    [placeholder]="placeholder"
+    [name]="name"
+    [(ngModel)]="value"
+  />
 </div>

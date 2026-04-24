@@ -1,28 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormTextField } from '../../shared/components/form-text-field/form-text-field';
+import { FormsModule, NgForm } from '@angular/forms';
+import { AuthService } from '../../core/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register-form',
   templateUrl: './register-form.html',
   styleUrl: './register-form.css',
+  imports: [
+    FormTextField,
+    FormsModule
+  ]
 })
-export class RegisterForm {}
+export class RegisterForm {
+  credentials = { username: '', email: '', password: '', confirmPassword: '' };
+  errorMessage = '';
 
-/*async function loadRegisterForm(data) {
-  Promise.all([
-    loadContentFor("#register-title", "textContent", data, "title"),
-    loadContentForField("username-field", data),
-    loadContentForField("password-field", data),
-    loadContentForField("password-2-field", data),
-    loadContentFor(
-      ".register-form-btn",
-      "textContent",
-      data,
-      "register-form-btn",
-    ),
-  ]).catch(console.error);
-}
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-async function setupRegisterForm() {
-  setBtnRef(document, ".register-form-btn", "/PWM/src/pages/html/update.html");
+  async onSubmit(form: NgForm) {
+    if (form.invalid) return;
+
+    if (this.credentials.password !== this.credentials.confirmPassword) {
+      this.errorMessage = 'Las contraseñas no coinciden';
+      return;
+    }
+
+    try {
+      await this.authService.register(
+        this.credentials.email,
+        this.credentials.password
+      );
+      this.router.navigate(['/search']);
+    } catch (error: any) {
+      this.errorMessage = error.message;
+    }
+  }
 }
-*/

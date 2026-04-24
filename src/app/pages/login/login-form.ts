@@ -1,7 +1,9 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
-import {Login} from './login';
-import { NgIf } from '@angular/common'; // ← añade esto
+import {FormsModule, NgForm} from '@angular/forms';
+import {AuthService} from '../../core/auth.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'login-form',
@@ -9,12 +11,29 @@ import { NgIf } from '@angular/common'; // ← añade esto
   styleUrl: './login-form.css',
   imports: [
     FormTextField,
-    NgIf
+    FormsModule
   ]
 })
 
 export class LoginForm {
-  @Input() parent!: Login;
+  credentials = {email: '', password: ''};
+  errorMessage = '';
+
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  async onSubmit(form: NgForm) {
+    if (form.invalid) return;
+    try {
+      await this.authService.login(
+        this.credentials.email,
+        this.credentials.password
+      );
+      await this.router.navigate(['/search']);
+    } catch (error: any) {
+      this.errorMessage = error.message;
+    }
+  }
 }
 /*
 

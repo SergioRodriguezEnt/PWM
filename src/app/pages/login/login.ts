@@ -1,9 +1,7 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {LoginForm} from './login-form';
 import {TopBar} from '../../shared/components/top-bar/top-bar';
 import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
-import {AuthService} from '../../core/auth.service';
-import {Router} from 'express';
 
 @Component({
   selector: 'app-login',
@@ -16,22 +14,6 @@ import {Router} from 'express';
   ]
 })
 export class Login{
-  private authService = inject(AuthService);
-  private router = inject(Router);
-
-  email = '';
-  password = '';
-  errorMsg = '';
-
-  async onLogin() {
-    try {
-      await this.authService.login(this.email, this.password);
-      this.router.navigate(['/search']); // redirige tras login
-    } catch (error: any) {
-      this.errorMsg = error.message;
-    }
-  }
-
 
 }
 
