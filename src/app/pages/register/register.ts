@@ -4,6 +4,7 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {AuthService} from '../../core/auth.service';
 import {Router} from '@angular/router';
 import {UserService} from '../../core/user.service';
+import {firstValueFrom} from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -39,7 +40,8 @@ export class Register {
     try {
       const credential = await this.authService.register(email, password);
       const uid = credential.user.uid;
-      this.userService.createUser(uid, {email: email, name: username, description: "", profilePhotoSrc: "", role: "user"})
+      await firstValueFrom(this.userService
+        .createUser(uid, {email: email, name: username, description: "", profilePhotoSrc: "", role: "user"}))
       await this.router.navigate(['/update']);
     } catch (error: any) {
       this.errorMessage = error.message;
