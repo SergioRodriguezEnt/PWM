@@ -1,8 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
-import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../core/auth.service';
 import {Router} from '@angular/router';
+import {UserService} from '../../core/user.service';
 
 @Component({
   selector: 'app-register',
@@ -15,26 +16,31 @@ import {Router} from '@angular/router';
   ]
 })
 export class Register {
-  credentials = { username: '', email: '', password: '', confirmPassword: '' };
+  registerForm = new FormGroup({
+    username: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
+    email: new FormControl<string>('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
+    password: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
+    confirmPassword: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
+  });
   errorMessage = '';
 
   private authService = inject(AuthService);
+  private userService = inject(UserService);
   private router = inject(Router);
 
-  async onSubmit(form: NgForm) {
-    if (form.invalid) return;
-
-    if (this.credentials.password !== this.credentials.confirmPassword) {
+  async onSubmit() {
+    if (this.registerForm.invalid) return;
+    const { username, email, password, confirmPassword } = this.registerForm.getRawValue();
+    if (password !== confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden';
       return;
     }
 
     try {
-      await this.authService.register(
-        this.credentials.email,
-        this.credentials.password
-      );
-      await this.router.navigate(['/search']);
+      const credential = await this.authService.register(email, password);
+      const uid = credential.user.uid;
+      this.userService.createUser(uid, {email: email, name: username, description: "", profilePhotoSrc: "", role: "user"})
+      await this.router.navigate(['/update']);
     } catch (error: any) {
       this.errorMessage = error.message;
     }

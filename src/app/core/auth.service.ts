@@ -12,7 +12,7 @@ export class AuthService {
     { initialValue: false }
   );
 
-  readonly userId = signal(this.auth.currentUser?.uid)
+  readonly userId = signal(this.auth.currentUser?.uid).asReadonly()
 
   getEmail() : string {
     return this.auth.currentUser?.email ?? '';

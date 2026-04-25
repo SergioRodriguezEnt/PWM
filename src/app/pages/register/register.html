@@ -1,18 +1,17 @@
 <div id="register-form">
   <h1 id="register-title">Registrarse</h1>
-  <form #RegisterForm="ngForm" (ngSubmit)="onSubmit(RegisterForm)">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
     <div id="username-field">
       <form-text-field
         label="Usuario"
         id="username"
-        name="username"
         type="text"
         placeholder="Tu usuario"
-        [(ngModel)]="credentials.username"
+        [control]="registerForm.controls['username']"
       />
-      @if (RegisterForm.controls['username']?.invalid && RegisterForm.controls['username']?.touched) {
-        @if (RegisterForm.controls['username'].errors?.['required']) {
+      @if (registerForm.controls['username']?.invalid && registerForm.controls['username']?.touched) {
+        @if (registerForm.controls['username'].errors?.['required']) {
           <span>Username is required.</span>
         }
       }
@@ -22,17 +21,15 @@
       <form-text-field
         label="Email"
         id="email"
-        name="email"
         type="email"
         placeholder="Tu email"
-        [(ngModel)]="credentials.email"
-        email
+        [control]="registerForm.controls['email']"
       />
-      @if (RegisterForm.controls['email']?.invalid && RegisterForm.controls['email']?.touched) {
-        @if (RegisterForm.controls['email'].errors?.['required']) {
+      @if (registerForm.controls['email']?.invalid && registerForm.controls['email']?.touched) {
+        @if (registerForm.controls['email'].errors?.['required']) {
           <span>Email is required.</span>
         }
-        @if (RegisterForm.controls['email'].errors?.['email']) {
+        @if (registerForm.controls['email'].errors?.['email']) {
           <span>Enter a valid email.</span>
         }
       }
@@ -42,10 +39,9 @@
       <form-text-field
         label="Contraseña"
         id="password"
-        name="password"
         type="password"
         placeholder="Tu contraseña"
-        [(ngModel)]="credentials.password"
+        [control]="registerForm.controls['password']"
       />
     </div>
 
@@ -53,10 +49,9 @@
       <form-text-field
         label="Confirmar contraseña"
         id="confirmPassword"
-        name="confirmPassword"
         type="password"
         placeholder="Repite tu contraseña"
-        [(ngModel)]="credentials.confirmPassword"
+        [control]="registerForm.controls['confirmPassword']"
       />
     </div>
 
