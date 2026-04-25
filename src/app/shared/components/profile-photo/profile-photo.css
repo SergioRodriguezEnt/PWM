@@ -6,7 +6,6 @@
 }
 
 .boton-perfil {
-  /* Fixed size that works in any context — topbar, title-row, etc. */
   width: clamp(36px, 3vw, 56px);
   height: clamp(36px, 3vw, 56px);
   flex-shrink: 0;

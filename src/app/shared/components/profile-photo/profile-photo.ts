@@ -1,28 +1,35 @@
-import {Component, computed, inject, signal} from '@angular/core';
-import {User, UserService} from '../../../core/user.service';
-import {RouterLink} from '@angular/router';
+import {Component, computed, inject} from '@angular/core';
+import {UserService} from '../../../core/user.service';
+import {Router} from '@angular/router';
 import {AuthService} from '../../../core/auth.service';
-import {toSignal} from '@angular/core/rxjs-interop';
+import {toObservable, toSignal} from '@angular/core/rxjs-interop';
+import {NgOptimizedImage} from '@angular/common';
+import {filter, switchMap} from 'rxjs';
 
 @Component({
   selector: 'profile-photo',
   templateUrl: './profile-photo.html',
   styleUrl: './profile-photo.css',
   imports: [
-    RouterLink
+    NgOptimizedImage
   ]
 })
 export class ProfilePhoto {
-  private authServ = inject(AuthService);
-  private userServ = inject(UserService);
+  private authService = inject(AuthService);
+  private userService = inject(UserService);
+  private router = inject(Router);
 
-  private users = toSignal(this.userServ.getUsers(), { initialValue: [] as User[] });
+  private user = toSignal(
+    toObservable(this.authService.userId).pipe(
+      filter(id => !!id),
+      switchMap(id => this.userService.getUser(id!))
+    )
+  );
 
-  isLoggedIn = this.authServ.isLoggedIn
+  photoSrc = computed(() => this.user()?.profilePhotoSrc ?? null)
 
-  user = computed(() => {
-    const email = this.authServ.getEmail();
-    const list = this.users();
-    return list.find((u: User) => u.email === email) ?? null;
-  });
+  async goToProfile() {
+    console.log(<string>this.authService.userId());
+    await this.router.navigate(['/profile'], {queryParams: {id: <string>this.authService.userId()}});
+  }
 }

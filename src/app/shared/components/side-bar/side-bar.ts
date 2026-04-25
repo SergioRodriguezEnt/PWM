@@ -1,6 +1,5 @@
 import {Component, computed, inject} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {UserService} from '../../../core/user.service';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 import {AuthService} from '../../../core/auth.service';
 import {Router} from '@angular/router';
 
@@ -13,9 +12,9 @@ import {Router} from '@angular/router';
   ]
 })
 export class SideBar {
-  private userService = inject(UserService);
   private authService = inject(AuthService);
   private router = inject(Router)
+  private route = inject(ActivatedRoute);
 
   isLookingAtOwnProfile = computed(() => {
     if (!this.router.url.includes('profile')) return false;
@@ -24,11 +23,11 @@ export class SideBar {
 
   private userOwnProfile() {
     const userId = this.authService.userId();
-    return this.userService.getUser(<string>userId)
+    const profileUserId = this.route.snapshot.queryParamMap.get('id')
+    return userId === profileUserId;
   }
 
   logout() {
     this.authService.logout().finally(() => this.router.navigate(['/home']));
   }
 }
-
