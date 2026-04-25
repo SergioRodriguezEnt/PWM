@@ -1,7 +1,40 @@
-<div id="layout">
-  <top-bar/>
+<div id="login-form">
+  <h1 id="login-title">Iniciar sesión</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div id="user-field">
+      <form-text-field
+        label="Email"
+        id="email"
+        type="email"
+        placeholder="Tu email"
+        [control]="loginForm.controls['email']"
+      />
+      @if (loginForm.controls['email']?.invalid && loginForm.controls['email']?.touched) {
+        @if (loginForm.controls['email'].errors?.['required']) {
+          <span>Email is required.</span>
+        }
+        @if (loginForm.controls['email'].errors?.['email']) {
+          <span>Enter a valid email.</span>
+        }
+      }
+    </div>
 
-  <login-form/>
+    <div id="password-field">
+      <form-text-field
+        label="Contraseña"
+        id="password"
+        type="password"
+        placeholder="Tu contraseña"
+        [control]="loginForm.controls['password']"
+      />
+    </div>
 
-  <bottom-bar/>
+    @if (errorMessage) {
+      <p>{{errorMessage}}</p>
+    }
+
+    <button id="login-btn" type="submit">
+      Iniciar sesión
+    </button>
+  </form>
 </div>

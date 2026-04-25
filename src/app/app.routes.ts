@@ -1,78 +1,66 @@
 import { Routes } from '@angular/router';
-import {UserService} from './core/user.service';
-import {inject} from '@angular/core';
+import {Home} from './pages/home/home';
+import {Login} from './pages/login/login';
+import {Outfit} from './pages/outfit/outfit';
+import {Profile} from './pages/profile/profile';
+import {Register} from './pages/register/register';
+import {Update} from './pages/update/update';
+import {Upload} from './pages/upload/upload';
+import {Search} from './pages/search/search';
 
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/home/home').then((m) => m.Home)
-    }
+    pathMatch: 'full',
+    redirectTo: '/home'
   },
   {
     path: 'home',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/home/home').then((m) => m.Home)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Home',
+    component: Home
   },
   {
     path: 'login',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/login/login').then((m) => m.Login)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Login',
+    component: Login
   },
   {
     path: 'outfit',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/outfit/outfit').then((m) => m.Outfit)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Outfit',
+    component: Outfit
   },
   {
     path: 'profile',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/profile/profile').then((m) => m.Profile)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Profile',
+    component: Profile
   },
   {
     path: 'register',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/register/register').then((m) => m.Register)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Register',
+    component: Register
   },
   {
     path: 'search',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/search/search-no-user').then((m) => m.SearchNoUser)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Search',
+    component: Search
   },
   {
     path: 'update',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/update/update').then((m) => m.Update)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Update',
+    component: Update
   },
   {
     path: 'upload',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/upload/upload').then((m) => m.Upload)
-    }
-  },
-  {
-    path: 'logout',
-    pathMatch: "full",
-    loadComponent: () => {
-      return import('./pages/home/home').then((m) => m.Home)
-    }
+    pathMatch: 'full',
+    title: 'Outfitera | Upload',
+    component: Upload
   },
 ];
-export default routes
 

@@ -1,33 +1,42 @@
-import { Component } from '@angular/core';
-import {RegisterForm} from './register-form';
-import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
-import {TopBar} from '../../shared/components/top-bar/top-bar';
+import {Component, inject} from '@angular/core';
+import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
+import {FormsModule, NgForm, ReactiveFormsModule} from '@angular/forms';
+import {AuthService} from '../../core/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.html',
   styleUrl: './register.css',
   imports: [
-    RegisterForm,
-    BottomBar,
-    TopBar
+    FormTextField,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
-export class Register {}
+export class Register {
+  credentials = { username: '', email: '', password: '', confirmPassword: '' };
+  errorMessage = '';
 
-/*function loadDynamicContent() {
-  Promise.all([
-    loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
-    loadDynamicContentFor(
-      "/src/templates/json/register-form.json",
-      loadRegisterForm,
-    ),
-    loadDynamicContentFor("/src/templates/json/bottom-bar.json", loadBottomBar),
-  ]).catch(console.error);
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  async onSubmit(form: NgForm) {
+    if (form.invalid) return;
+
+    if (this.credentials.password !== this.credentials.confirmPassword) {
+      this.errorMessage = 'Las contraseñas no coinciden';
+      return;
+    }
+
+    try {
+      await this.authService.register(
+        this.credentials.email,
+        this.credentials.password
+      );
+      await this.router.navigate(['/search']);
+    } catch (error: any) {
+      this.errorMessage = error.message;
+    }
+  }
 }
-
-function setupTriggers() {
-  Promise.all([setupTopBar(), setupRegisterForm()]).catch(console.error);
-}
-
- */

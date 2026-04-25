@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {TopBar} from '../../shared/components/top-bar/top-bar';
 import {SearchResults} from '../../shared/components/search-results/search-results';
-import {BottomBar} from '../../shared/components/bottom-bar/bottom-bar';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -9,36 +7,10 @@ import {RouterLink} from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css',
   imports: [
-    TopBar,
     SearchResults,
-    BottomBar,
     RouterLink
   ]
 })
-export class Home {}
-/*async function loadDynamicContent() {
-  return Promise.all([
-    loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
-    loadDynamicContentFor("/src/pages/json/home.json", loadHome),
-    loadDynamicContentFor("/src/resources/outfits.json", loadSearchResults),
-    loadDynamicContentFor("/src/templates/json/bottom-bar.json", loadBottomBar),
-  ]).catch(console.error);
-}
+export class Home {
 
-function setupTriggers() {
-  Promise.all([setupTopBar(), setupHome(), setupSearchResults()]).catch(
-    console.error,
-  );
 }
-
-async function loadHome(data) {
-  await loadContentFor(".main-span", "textContent", data, "textContent");
-  await loadContentFor("#search-btn", "textContent", data, "search-btn");
-}
-
-async function setupHome() {
-  if (getParam("logout") === "true") {
-    setLocal("user", null);
-  }
-  setBtnRef(document, "#search-btn", "/PWM/src/pages/html/search-no-user.html");
-}*/

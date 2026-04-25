@@ -1,29 +1,16 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {Component, Input} from '@angular/core';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'form-text-field',
   templateUrl: './form-text-field.html',
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   styleUrl: './form-text-field.css'
 })
 export class FormTextField {
-  @Input() id = ''
-  @Input() name = ''
+  @Input() id = '';
   @Input() label = '';
   @Input() type = 'text';
   @Input() placeholder = '';
-  @Input() value = '';
-  @Output() valueChange = new EventEmitter<string>();
-
-  onInput(val: string) {
-    this.valueChange.emit(val);
-  }
+  @Input() control!: FormControl;
 }
-/*function consume(data) {
-  data = data["form-text-field"];
-  Promise.all([
-    loadContentFor(".display", "textContent", data, "display"),
-    loadContentFor(".text-field", "placeholder", data, "placeholder"),
-  ]).catch((error) => console.error("Error:", error));
-}*/

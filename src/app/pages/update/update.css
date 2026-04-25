@@ -1,4 +1,3 @@
-/* src/templates/css/edit-profile-form.css */
 #profile-form {
   background-color: var(--color-surface);
   width: 100%;
@@ -87,7 +86,6 @@
   min-width: 140px;
 }
 
-/* Cancel button gets a secondary style */
 #cancel-btn {
   background-color: var(--color-cream-dark);
   color: var(--color-text-primary);

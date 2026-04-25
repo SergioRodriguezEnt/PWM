@@ -1,27 +1,14 @@
 import {Component} from '@angular/core';
-import {OutfitView} from './outfit.view';
+import {SearchBar} from '../../shared/components/search-bar/search-bar';
 
 @Component({
   selector: 'app-outfit',
   templateUrl: './outfit.html',
+  styleUrls: ['./outfit.css'],
   imports: [
-    OutfitView
+    SearchBar
   ]
 })
 export class Outfit {
 
 }
-/*async function loadDynamicContent() {
-  return Promise.all([
-    loadDynamicContentFor("/src/templates/json/top-bar.json", loadTopBar),
-    loadDynamicContentFor("/src/templates/json/search-bar.json", loadSearchBar),
-    loadDynamicContentFor("/src/resources/outfits.json", loadOutfitView),
-    loadDynamicContentFor("/src/templates/json/bottom-bar.json", loadBottomBar),
-  ]).catch(console.error);
-}
-
-function setupTriggers() {
-  Promise.all([setupTopBar(), setupSearchBar(), setupOutfitView()]).catch(
-    console.error,
-  );
-}*/

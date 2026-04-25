@@ -1,9 +1,8 @@
-import {Component, computed, inject, signal} from '@angular/core';
-import {ActivatedRoute, RouterLink} from '@angular/router';
-import {User, UserService} from '../../../core/user.service';
+import {Component, computed, inject} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {UserService} from '../../../core/user.service';
 import {AuthService} from '../../../core/auth.service';
 import {Router} from '@angular/router';
-import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'side-bar',
@@ -14,22 +13,22 @@ import {toSignal} from '@angular/core/rxjs-interop';
   ]
 })
 export class SideBar {
-  private userServ = inject(UserService);
-  private authServ = inject(AuthService);
+  private userService = inject(UserService);
+  private authService = inject(AuthService);
   private router = inject(Router)
 
-  isLoggedIn = this.authServ.isLoggedIn
-
-  private users = toSignal(this.userServ.getUsers(), { initialValue: [] as User[] });
-
-  userOwnProfile = computed(() => {
-    const email = this.authServ.getEmail();
-    const list = this.users();
-    return list.find((u: User) => u.email === email) ?? null;
+  isLookingAtOwnProfile = computed(() => {
+    if (!this.router.url.includes('profile')) return false;
+    return this.userOwnProfile();
   });
 
+  private userOwnProfile() {
+    const userId = this.authService.userId();
+    return this.userService.getUser(<string>userId)
+  }
+
   logout() {
-    this.authServ.logout().finally(() => this.router.navigate(['/home']));
+    this.authService.logout().finally(() => this.router.navigate(['/home']));
   }
 }
 
