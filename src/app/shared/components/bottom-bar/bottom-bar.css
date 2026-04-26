@@ -33,7 +33,6 @@ ul li {
 
 @media (max-width: 1023px) {
   :host {
-    flex-direction: column;
     gap: var(--space-5);
     padding: var(--space-5) var(--space-6);
   }
@@ -41,6 +40,7 @@ ul li {
 
 @media (max-width: 480px) {
   :host {
+    flex-direction: column;
     padding: var(--space-4) var(--space-5);
     gap: var(--space-4);
   }
