@@ -6,6 +6,7 @@ import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo'
 @Component({
   selector: 'app-search',
   templateUrl: './search.html',
+  styleUrl: './search.css',
   imports: [
     SearchBar,
     SearchResults,

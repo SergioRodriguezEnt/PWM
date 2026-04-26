@@ -1,12 +1,10 @@
-<div id="layout">
-  @if(!isLoggedIn()) {
-    <top-bar/>
-  } @else {
-    <side-bar/>
-  }
+@if(!isLoggedIn()) {
+  <top-bar/>
+} @else {
+  <side-bar/>
+}
 
-  <div id="main">
-    <router-outlet/>
-    <bottom-bar/>
-  </div>
+<div id="page">
+  <router-outlet/>
+  <bottom-bar/>
 </div>
