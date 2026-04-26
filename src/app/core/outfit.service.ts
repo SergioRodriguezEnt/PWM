@@ -5,7 +5,7 @@ import {
   deleteDoc,
   doc,
   docData,
-  Firestore,
+  Firestore, query,
   setDoc,
   updateDoc
 } from '@angular/fire/firestore';
@@ -34,7 +34,7 @@ export class OutfitService {
 
   getOutfits(): Observable<Outfit[]> {
     return runInInjectionContext(this.injector, () =>
-      collectionData(this.outfitsCollection) as Observable<Outfit[]>
+      collectionData(query(this.outfitsCollection)) as Observable<Outfit[]>
     );
   }
 

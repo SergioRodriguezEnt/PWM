@@ -5,7 +5,7 @@ import {
   deleteDoc,
   doc,
   docData,
-  Firestore,
+  Firestore, query,
   setDoc,
   updateDoc
 } from '@angular/fire/firestore';
@@ -34,7 +34,7 @@ export class UserService {
 
   getUsers(): Observable<User[]> {
     return runInInjectionContext(this.injector, () =>
-      collectionData(this.usersCollection) as Observable<User[]>
+      collectionData(query(this.usersCollection)) as Observable<User[]>
     );
   }
 
