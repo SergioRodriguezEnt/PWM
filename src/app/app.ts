@@ -15,4 +15,8 @@ export class App {
   private authService = inject(AuthService);
 
   isLoggedIn = this.authService.isLoggedIn;
+
+  get pageClass(): string {
+    return this.isLoggedIn() ? 'has-sidebar' : '';
+  }
 }

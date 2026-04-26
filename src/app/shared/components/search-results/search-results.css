@@ -1,22 +1,20 @@
-.results {
-  display: grid !important;
+:host {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
   width: 100%;
-  gap: 12px;
-  padding: 24px 16px;
+  padding: var(--space-4) var(--space-5);
   box-sizing: border-box;
 }
 
-.columna {
+div {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  min-width: 120px;
 }
 
-/* The clickable card button */
-.columna button {
+button {
   display: block;
   width: 100%;
   padding: 0;
@@ -24,54 +22,50 @@
   background: none;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   position: relative;
-
-  /* Subtle lift on hover */
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
-.columna button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
-.columna button:active {
+button:active {
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-sm);
 }
 
-/* Portrait images — natural outfit proportions */
-.columna img {
+img {
   width: 100%;
   height: auto;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   display: block;
-
-  /* Slight zoom on hover for the image inside the button */
-  transition: transform 0.3s ease;
+  border-radius: var(--radius-lg);
+  transition: transform 0.35s ease;
 }
 
-.columna button:hover img {
-  transform: scale(1.03);
+button:hover img {
+  transform: scale(1.04);
 }
 
 @media (max-width: 1023px) {
   .results {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    padding: 16px 12px;
+    padding: var(--space-3) var(--space-4);
   }
 }
 
 @media (max-width: 480px) {
   .results {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    padding: 12px 8px;
+    padding: var(--space-3);
   }
 }
