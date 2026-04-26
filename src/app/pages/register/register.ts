@@ -40,8 +40,7 @@ export class Register {
     try {
       const credential = await this.authService.register(email, password);
       const uid = credential.user.uid;
-      await firstValueFrom(this.userService
-        .createUser(uid, {email: email, name: username, description: "", profilePhotoSrc: "", role: "user"}))
+      await this.userService.createUser(uid, {email: email, name: username, description: "", profilePhotoSrc: "", role: "user"})
       await this.router.navigate(['/update']);
     } catch (error: any) {
       this.errorMessage = error.message;

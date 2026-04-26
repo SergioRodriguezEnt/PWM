@@ -1,10 +1,11 @@
 <div class="form-text-field">
-  <label class="display" [for]="id">{{ label }}</label>
+  <label class="display" [for]="selfId">{{ label }}</label>
   <input
-    [id]="id"
+    [id]="selfId"
     [type]="type"
     class="text-field"
     [placeholder]="placeholder"
     [formControl]="control"
+    autocomplete="on"
   />
 </div>

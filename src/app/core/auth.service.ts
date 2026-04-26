@@ -19,7 +19,9 @@ export class AuthService {
   );
 
   login(email: string, password: string) {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return runInInjectionContext(this.injector, () =>
+      signInWithEmailAndPassword(this.auth, email, password)
+    );
   }
 
   register(email: string, password: string) {
@@ -29,6 +31,8 @@ export class AuthService {
   }
 
   logout() {
-    return signOut(this.auth);
+    return runInInjectionContext(this.injector, () =>
+      signOut(this.auth)
+    );
   }
 }

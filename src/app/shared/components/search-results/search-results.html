@@ -1,4 +1,28 @@
-<div></div>
-<div></div>
-<div></div>
-<div></div>
+<div>
+  @for (src of column1(); track $index) {
+    <button>
+      <img [ngSrc]="src" fill alt="outfit">
+    </button>
+  }
+</div>
+<div>
+  @for (src of column2(); track $index) {
+    <button>
+      <img [ngSrc]="src" fill alt="outfit">
+    </button>
+  }
+</div>
+<div>
+  @for (src of column3(); track $index) {
+    <button>
+      <img [ngSrc]="src" fill alt="outfit">
+    </button>
+  }
+</div>
+<div>
+  @for (src of column4(); track $index) {
+    <button>
+      <img [ngSrc]="src" fill alt="outfit">
+    </button>
+  }
+</div>

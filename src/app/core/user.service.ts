@@ -1,14 +1,15 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, Injector, runInInjectionContext} from '@angular/core';
 import {
   collection,
   collectionData,
   deleteDoc,
-  doc, docData,
+  doc,
+  docData,
   Firestore,
   setDoc,
   updateDoc
 } from '@angular/fire/firestore';
-import {from, Observable} from 'rxjs';
+import {Observable} from 'rxjs';
 
 export interface User {
   email: string;
@@ -21,34 +22,40 @@ export interface User {
 @Injectable({ providedIn: 'root' })
 export class UserService {
   private firestore = inject(Firestore);
+  private injector = inject(Injector);
   private usersCollection = collection(this.firestore, 'users');
 
-  /** Fetch a single user by UID as a one-time read. */
   getUser(uid: string): Observable<User | undefined> {
-    const userDoc = doc(this.firestore, `users/${uid}`);
-    return docData(userDoc) as Observable<User | undefined>;
+    return runInInjectionContext(this.injector, () => {
+      const userDoc = doc(this.firestore, `users/${uid}`);
+      return docData(userDoc) as Observable<User | undefined>;
+    });
   }
 
-  /** Stream all users in the collection in real time. */
   getUsers(): Observable<User[]> {
-    return collectionData(this.usersCollection) as Observable<User[]>;
+    return runInInjectionContext(this.injector, () =>
+      collectionData(this.usersCollection) as Observable<User[]>
+    );
   }
 
-  /** Create a new user document. The UID should come from Firebase Auth. */
-  createUser(uid: string, user: User): Observable<void> {
-    const userDoc = doc(this.firestore, `users/${uid}`);
-    return from(setDoc(userDoc, user));
+  createUser(uid: string, user: User): Promise<void> {
+    return runInInjectionContext(this.injector, () => {
+      const userDoc = doc(this.firestore, `users/${uid}`);
+      return setDoc(userDoc, user);
+    });
   }
 
-  /** Partially update an existing user document. */
-  updateUser(uid: string, partial: Partial<User>): Observable<void> {
-    const userDoc = doc(this.firestore, `users/${uid}`);
-    return from(updateDoc(userDoc, { ...partial }));
+  updateUser(uid: string, partial: Partial<User>): Promise<void> {
+    return runInInjectionContext(this.injector, () => {
+      const userDoc = doc(this.firestore, `users/${uid}`);
+      return updateDoc(userDoc, { ...partial });
+    });
   }
 
-  /** Delete a user document by UID. */
-  deleteUser(uid: string): Observable<void> {
-    const userDoc = doc(this.firestore, `users/${uid}`);
-    return from(deleteDoc(userDoc));
+  deleteUser(uid: string): Promise<void> {
+    return runInInjectionContext(this.injector, () => {
+      const userDoc = doc(this.firestore, `users/${uid}`);
+      return deleteDoc(userDoc);
+    });
   }
 }

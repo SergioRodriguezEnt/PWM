@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+let nextID = 0;
+
 @Component({
   selector: 'form-text-field',
   templateUrl: './form-text-field.html',
@@ -13,4 +15,6 @@ export class FormTextField {
   @Input() type = 'text';
   @Input() placeholder = '';
   @Input() control!: FormControl;
+
+  readonly selfId = `${this.id}-${nextID++}`;
 }

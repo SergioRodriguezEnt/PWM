@@ -1,12 +1,33 @@
-import {Component} from '@angular/core';
+import {Component, computed, inject, OnDestroy, OnInit} from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
+import {OutfitService} from '../../../core/outfit.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'search-results',
   templateUrl: './search-results.html',
   styleUrl: './search-results.css',
+  imports: [
+    NgOptimizedImage
+  ]
 })
-export class SearchResults {
+export class SearchResults implements OnInit, OnDestroy {
+  private outfitService = inject(OutfitService);
+  private imageSrcs: string[] = [];
+  private subscription: Subscription | undefined;
 
+  column1 = computed(() => this.imageSrcs.filter((val, index) => index % 4 === 0))
+  column2 = computed(() => this.imageSrcs.filter((val, index) => index % 4 === 1))
+  column3 = computed(() => this.imageSrcs.filter((val, index) => index % 4 === 2))
+  column4 = computed(() => this.imageSrcs.filter((val, index) => index % 4 === 3))
+
+  ngOnInit() {
+    this.subscription = this.outfitService.getOutfits().subscribe(outfits => this.imageSrcs=outfits.map(outfit => outfit.src))
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe()
+  }
 }
 /*async function loadSearchResults(data) {
   let outfits = filterOutfits(data, getParam("username"), getParam("search"));
