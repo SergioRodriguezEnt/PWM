@@ -1,7 +1,8 @@
-<div id="profile-photo">
-  @if (photoSrc()) {
-    <button class="boton-perfil" (click)="goToProfile()">
-      <img [ngSrc]="photoSrc()!" alt="Foto de perfil" class="foto-circular" fill />
-    </button>
+<div class="profile-photo" [style.width.px]="size()" [style.height.px]="size()">
+  @if (src()) {
+    <img [ngSrc]="src()" [alt]="alt()" fill/>
+  } @else {
+    <span class="placeholder" aria-hidden="true"></span>
   }
 </div>
+<!-- TODO Make the profile-photo a button that when clicked takes the user to the profile page of the corresponding photo -->

@@ -1,8 +1,4 @@
-<div id="searchbar">
-  <form class="searchbar-form">
-    <label class="searchbar-label">
-      <input type="search" placeholder="Buscar" class="searchbar-input" />
-    </label>
-    <button class="searchbar-btn">🔍</button>
-  </form>
-</div>
+<form class="search-bar" (ngSubmit)="submit()">
+  <input type="search" [formControl]="query" placeholder="Buscar outfits, tags, usuarios..." aria-label="Search"/>
+  <button type="submit" class="btn">Buscar 🔍</button>
+</form>

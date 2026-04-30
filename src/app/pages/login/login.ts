@@ -1,36 +1,46 @@
-import {Component, inject} from '@angular/core';
-import {FormTextField} from '../../shared/components/form-text-field/form-text-field';
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {AuthService} from '../../core/auth.service';
-import {Router} from '@angular/router';
+import {Component, inject, signal} from '@angular/core';
+import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AuthService} from '../../core/services/auth.service';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
   styleUrl: './login.css',
   imports: [
-    FormTextField,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ]
 })
-export class Login{
-  errorMessage = '';
-  loginForm = new FormGroup({
-    email: new FormControl<string>('', { nonNullable: true, validators: [Validators.required, Validators.email] }),
-    password: new FormControl<string>('', { nonNullable: true, validators: [Validators.required] }),
-  });
-
+export class Login {
+  private formBuilder = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  async onSubmit() {
-    if (this.loginForm.invalid) return;
+  loading = signal(false);
+  error = signal<string | null>(null);
+
+  form = this.formBuilder.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
+  });
+
+  async submit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+    this.loading.set(true);
+    this.error.set(null);
     try {
-      const { email, password } = this.loginForm.getRawValue();
-      await this.authService.login(email, password);
-      await this.router.navigate(['/search']);
-    } catch (error: any) {
-      this.errorMessage = error.message;
+      const { email, password } = this.form.getRawValue();
+      const uid = await this.authService.login(email, password);
+      await this.router.navigate(['profile', uid]);
+    } catch (e: unknown) {
+      this.error.set(e instanceof Error ? e.message : 'El inicio de sesión falló');
+    } finally {
+      this.loading.set(false);
     }
   }
 }

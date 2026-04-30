@@ -1,5 +1,9 @@
-<div id="topbar">
-  <search-bar/>
-  <profile-photo/>
-</div>
-<search-results/>
+<section class="search-page">
+  <div class="section-header">
+    <search-bar (search)="onSearch($event)"/>
+    @if (isLoggedIn()) {
+      <profile-photo/> <!-- TODO add the fields required to show the authenticated user profile photo -->
+    }
+  </div>
+  <search-results [outfits]="results()"/>
+</section>

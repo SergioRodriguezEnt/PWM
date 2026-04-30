@@ -1,5 +1,8 @@
-<span>Para gustos, colores. Para personas, ¡outfits!</span>
+<section class="home-page">
+  <h1 class="hero">Para gustos, colores. Para personas, ¡outfits!</h1>
 
-<search-results/>
-
-<button routerLink="/search">Search now</button>
+  <div class="preview-wrapper">
+    <search-results [outfits]="outfits()" />
+    <button type="button" class="cta" routerLink="search">Busca ahora</button>
+  </div>
+</section>

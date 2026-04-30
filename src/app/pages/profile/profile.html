@@ -1,16 +1,19 @@
-<div id="content">
-  <div id="title-row">
-    <div id="photo-div">
-      <img src="" id="mini-avatar" alt="" />
-    </div>
-    <h1 id="page-title"></h1>
-    <profile-photo/>
-  </div>
 
-  <div id="subtabs">
-    <button class="subtab"></button>
-    <button class="subtab"></button>
-  </div>
-</div>
+@if (user(); as u) {
+  <section class="profile-page">
+    <header class="profile-header">
+      <profile-photo [src]="u.profileSrc" [size]="120" [alt]="u.name" />
+      <div class="profile-meta">
+        <h1>{{ u.name }}</h1>
+        @if (u.description) {
+          <p class="description">{{ u.description }}</p>
+        }
+      </div>
+    </header>
 
-<search-results/>
+    <h2>Outfits</h2>
+    <search-results [outfits]="outfits()" />
+  </section>
+} @else {
+  <p class="loading">Cargando perfil...</p>
+}

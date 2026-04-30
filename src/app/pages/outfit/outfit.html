@@ -1,26 +1,62 @@
 <search-bar/>
-<main class="tarjeta-gris">
-  <div class="columna-izquierda">
-    <img src="" alt="" class="imagen-principal" />
-
-    <div class="autor-info">
-      <button class="boton-autor">
-        <img src="" alt="" />
-      </button>
-
-      <span class="nombre-autor"></span>
+@if (outfit(); as o) {
+  <article class="outfit-page">
+    <div class="outfit-image">
+      <img [ngSrc]="o.src" [alt]="o.title" fill/>
     </div>
-  </div>
 
-  <div class="columna-derecha">
-    <section id="title-tags" class="bloque-texto">
-      <h2></h2>
-      <p></p>
-    </section>
+    <div class="outfit-details">
+      <h1>{{ o.title }}</h1>
+      <p class="description">{{ o.description }}</p>
 
-    <section id="description" class="bloque-texto">
-      <h2 class="segundo-titulo"></h2>
-      <p></p>
-    </section>
-  </div>
-</main>
+      @if (o.tags?.length) {
+        <ul class="tags">
+          @for (t of o.tags; track t) {
+            <li class="chip">{{ t }}</li>
+          }
+        </ul>
+      }
+
+      @if (author(); as a) {
+        <a class="author" [routerLink]="['/profile', a.id]">
+          <profile-photo [src]="a.profileSrc" [size]="40" [alt]="a.name" />
+          <span>{{ a.name }}</span>
+        </a>
+      }
+
+      <section class="comments">
+        <h2>Comentarios</h2>
+
+        @if (isLoggedIn()) {
+          <form (ngSubmit)="addComment()" class="comment-form">
+            <input type="text" [formControl]="commentControl" placeholder="Escribe un comentario"/>
+            <button type="submit" class="btn" [disabled]="posting() || commentControl.invalid">
+              {{ posting() ? 'Enviando...' : 'Enviar' }}
+            </button>
+          </form>
+          @if (postError(); as err) {
+            <p class="error">{{ err }}</p>
+          }
+        } @else {
+          <p class="hint">Inicia sesión para añadir un comentario.</p>
+        }
+
+        <ul class="comment-list">
+          @for (c of comments(); track c.id) {
+            <li class="comment">
+              <profile-photo [src]="c.authorPhoto ?? ''" [size]="32" [alt]="c.authorName ?? ''"/>
+              <div class="comment-body">
+                <strong>{{ c.authorName ?? 'Usuario desconocido' }}</strong>
+                <p>{{ c.comment }}</p>
+              </div>
+            </li>
+          } @empty {
+            <li class="empty">Ningún comentario todavía. ¡Se el primero en comentar ahora!</li>
+          }
+        </ul>
+      </section>
+    </div>
+  </article>
+} @else {
+  <p class="loading">Cargando outfit...</p>
+}

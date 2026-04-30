@@ -14,7 +14,11 @@ export interface User {
 export class UserService extends CrudService<User>{
   constructor() { super('users') }
 
-  override create(data: Omit<User, "id">, id: string): Promise<string> {
-    return super.create(data, id);
+  override create(data: Omit<User, 'id' | 'role'>, id: string): Promise<string> {
+    return super.create({ ...data, role: 'user' }, id);
+  }
+
+  override update(id: string, data: Partial<Omit<User, 'id' | 'role'>>): Promise<void> {
+    return super.update(id, data);
   }
 }

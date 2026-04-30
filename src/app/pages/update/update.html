@@ -1,25 +1,42 @@
-<div id="profile-form">
-  <header class="profile-form-header">
-    <h1 class="profile-form-h1"></h1>
-  </header>
+<section class="update-page">
+  <h1>Editar perfil</h1>
 
-  <section class="profile-form-section">
-    <button id="photo-btn" class="profile-form-btn">
-      <img alt="" class="profile-form-img" src="" />
-    </button>
-  </section>
+  @if (loading()) {
+    <p class="loading">Cargando...</p>
+  } @else {
+    <form [formGroup]="form" (ngSubmit)="save()" class="update-form" novalidate>
+      <div class="preview">
+        <profile-photo [src]="profilePreview() ?? ''" [size]="120" />
+        <span class="hint">Copia la URL de una imagen debajo para visualizarla.</span>
+      </div>
 
-  <form class="profile-form-form">
-    <div id="username-field" class="template-form-text-field"></div>
+      <label class="field">
+        <span class="field-label">URL de la foto de perfil</span>
+        <input type="url" formControlName="profileSrc" placeholder="https://..." />
+      </label>
 
-    <div id="password-field" class="template-form-text-field"></div>
+      <label class="field">
+        <span class="field-label">Nombre de usuario</span>
+        <input type="text" formControlName="name" />
+      </label>
 
-    <div id="description-field" class="template-form-text-field"></div>
-  </form>
+      <label class="field">
+        <span class="field-label">Descripción</span>
+        <textarea formControlName="description" rows="4"></textarea>
+      </label>
 
-  <footer class="profile-form-footer">
-    <button id="cancel-btn" class="profile-form-btn"></button>
+      @if (error(); as err) {
+        <p class="error">{{ err }}</p>
+      }
 
-    <button id="save-btn" class="profile-form-btn"></button>
-  </footer>
-</div>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary" [disabled]="saving() || form.invalid">
+          {{ saving() ? 'Guardando...' : 'Guardar' }}
+        </button>
+        <button type="button" class="btn" (click)="cancel()" [disabled]="fromRegister()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  }
+</section>
