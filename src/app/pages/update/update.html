@@ -6,7 +6,7 @@
   } @else {
     <form [formGroup]="form" (ngSubmit)="save()" class="update-form" novalidate>
       <div class="preview">
-        <profile-photo [src]="profilePreview() ?? ''" [size]="120" />
+        <profile-photo [src]="profilePreview()" [size]="120" />
         <span class="hint">Copia la URL de una imagen debajo para visualizarla.</span>
       </div>
 
