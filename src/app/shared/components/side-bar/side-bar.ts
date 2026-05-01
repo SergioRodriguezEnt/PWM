@@ -112,6 +112,20 @@ export class SideBar {
     await Promise.all(ns.map(n => this.notificationService.delete(n.id)));
   }
 
+  async openNotification(n: AppNotification) {
+    this.closeNotifications();
+
+    if (n.outfitId) {
+      await this.router.navigate(['outfit', n.outfitId]);
+    }
+
+    try {
+      await this.notificationService.delete(n.id);
+    } catch (e) {
+      console.warn('Failed to delete notification', e);
+    }
+  }
+
   async logout() {
     this.closeNotifications();
     await this.authService.logout();

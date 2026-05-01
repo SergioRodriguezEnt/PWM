@@ -19,6 +19,13 @@
         <span class="field-label">Nombre de usuario</span>
         <input type="text" formControlName="name" />
       </label>
+      @if (form.controls.name.touched && form.controls.name.invalid) {
+        @if (form.controls.name.hasError('required')) {
+          <p class="error">El nombre de usuario es obligatorio.</p>
+        } @else if (form.controls.name.hasError('minlength')) {
+          <p class="error">El nombre debe tener al menos 2 caracteres.</p>
+        }
+      }
 
       <label class="field">
         <span class="field-label">Descripción</span>

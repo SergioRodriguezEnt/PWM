@@ -24,6 +24,7 @@ export class Upload {
   private outfitService = inject(OutfitService);
 
   saving = signal(false);
+  deleting = signal(false);
   error = signal<string | null>(null);
 
   private editId = toSignal(
@@ -130,6 +131,27 @@ export class Upload {
       this.error.set(e instanceof Error ? e.message : 'No se pudo guardar el outfit.');
     } finally {
       this.saving.set(false);
+    }
+  }
+
+  async deleteOutfit() {
+    const id = this.editId();
+    if (!id) return;
+
+    const ok = window.confirm(
+      '¿Seguro que quieres eliminar este outfit? Esta acción no se puede deshacer.',
+    );
+    if (!ok) return;
+
+    this.deleting.set(true);
+    this.error.set(null);
+    try {
+      await this.outfitService.delete(id);
+      await this.router.navigate(['search']);
+    } catch (e: unknown) {
+      this.error.set(e instanceof Error ? e.message : 'No se pudo eliminar el outfit.');
+    } finally {
+      this.deleting.set(false);
     }
   }
 }

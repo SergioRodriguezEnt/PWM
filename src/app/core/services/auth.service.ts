@@ -23,4 +23,9 @@ export class AuthService {
   logout(): Promise<void> {
     return signOut(this.auth);
   }
+
+  async deleteCurrentUser(): Promise<void> {
+    const current = this.auth.currentUser;
+    if (current) await current.delete();
+  }
 }

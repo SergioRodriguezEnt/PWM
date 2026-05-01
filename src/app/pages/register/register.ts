@@ -54,14 +54,34 @@ export class Register {
 
     this.loading.set(true);
     this.error.set(null);
-    try {
-      const { name, email, password } = this.form.getRawValue();
-      const uid = await this.authService.register(email, password);
-      await this.userService.create({ name, email, description: '', profileSrc: '' }, uid,);
 
-      await this.router.navigate(['update', uid], {queryParams: {fromRegister: 1}});
+    const { name, email, password } = this.form.getRawValue();
+
+    let uid: string;
+    try {
+      uid = await this.authService.register(email, password);
     } catch (e: unknown) {
       this.error.set(e instanceof Error ? e.message : 'El registro falló');
+      this.loading.set(false);
+      return;
+    }
+
+    try {
+      await this.userService.create({ name, email, description: '', profileSrc: '' }, uid);
+    } catch (e: unknown) {
+      try {
+        await this.authService.deleteCurrentUser();
+      } catch {
+      }
+      this.error.set(
+        e instanceof Error ? e.message : 'No se pudo crear el perfil. Intenta de nuevo.',
+      );
+      this.loading.set(false);
+      return;
+    }
+
+    try {
+      await this.router.navigate(['update', uid], { queryParams: { fromRegister: 1 } });
     } finally {
       this.loading.set(false);
     }

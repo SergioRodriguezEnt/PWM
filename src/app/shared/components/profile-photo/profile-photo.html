@@ -1,8 +1,21 @@
-<div class="profile-photo" [style.width.px]="size()" [style.height.px]="size()">
-  @if (src()) {
-    <img [ngSrc]="src()" [alt]="alt()" fill/>
-  } @else {
-    <span class="placeholder" aria-hidden="true"></span>
-  }
-</div>
-<!-- TODO Make the profile-photo a button that when clicked takes the user to the profile page of the corresponding photo -->
+@if (hasLink()) {
+  <a [routerLink]="['profile', userId()]"
+     class="profile-photo profile-photo-link"
+     [style.width.px]="size()"
+     [style.height.px]="size()"
+     [attr.aria-label]="alt()">
+    @if (src()) {
+      <img [ngSrc]="src()" [alt]="alt()" fill/>
+    } @else {
+      <span class="placeholder" aria-hidden="true"></span>
+    }
+  </a>
+} @else {
+  <div class="profile-photo" [style.width.px]="size()" [style.height.px]="size()">
+    @if (src()) {
+      <img [ngSrc]="src()" [alt]="alt()" fill/>
+    } @else {
+      <span class="placeholder" aria-hidden="true"></span>
+    }
+  </div>
+}

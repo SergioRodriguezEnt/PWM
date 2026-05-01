@@ -1,5 +1,11 @@
-
-@if (user(); as u) {
+@if (loading()) {
+  <p class="loading">Cargando perfil...</p>
+} @else if (notFound()) {
+  <section class="not-found">
+    <h1>Perfil no encontrado</h1>
+    <p>El usuario que buscas no existe.</p>
+  </section>
+} @else if (user(); as u) {
   <section class="profile-page">
     <header class="profile-header">
       <profile-photo [src]="u.profileSrc" [size]="120" [alt]="u.name" />
@@ -14,6 +20,4 @@
     <h2>Outfits</h2>
     <search-results [outfits]="outfits()" />
   </section>
-} @else {
-  <p class="loading">Cargando perfil...</p>
 }

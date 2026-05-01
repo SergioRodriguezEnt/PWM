@@ -1,8 +1,8 @@
 <section class="search-page">
   <div class="section-header">
-    <search-bar (search)="onSearch($event)"/>
+    <search-bar [initial]="initialQuery()" (search)="onSearch($event)"/>
     @if (isLoggedIn()) {
-      <profile-photo/> <!-- TODO add the fields required to show the authenticated user profile photo -->
+      <profile-photo [src]="profileSrc()" [alt]="profileName()" [userId]="profileId()" [size]="48"/>
     }
   </div>
   <search-results [outfits]="results()"/>

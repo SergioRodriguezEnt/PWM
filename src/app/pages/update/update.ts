@@ -18,7 +18,7 @@ import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo'
 export class Update {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
-  private fb = inject(FormBuilder);
+  private formBuilder = inject(FormBuilder);
   private userService = inject(UserService);
 
   loading = signal(true);
@@ -35,7 +35,7 @@ export class Update {
     { initialValue: '' },
   );
 
-  form = this.fb.nonNullable.group({
+  form = this.formBuilder.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     description: [''],
     profileSrc: [''],
@@ -54,13 +54,15 @@ export class Update {
         .get(id)
         .pipe(take(1))
         .subscribe(u => {
-          if (u) {
-            this.form.patchValue({
-              name: u.name ?? '',
-              description: u.description ?? '',
-              profileSrc: u.profileSrc ?? '',
-            });
+          if (!u) {
+            this.router.navigate(['search']).then();
+            return;
           }
+          this.form.patchValue({
+            name: u.name ?? '',
+            description: u.description ?? '',
+            profileSrc: u.profileSrc ?? '',
+          });
           this.loading.set(false);
         });
     });

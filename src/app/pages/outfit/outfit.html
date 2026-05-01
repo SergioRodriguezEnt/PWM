@@ -1,5 +1,13 @@
-<search-bar/>
-@if (outfit(); as o) {
+<search-bar (search)="onSearch($event)"/>
+@if (loading()) {
+  <p class="loading">Cargando outfit...</p>
+} @else if (notFound()) {
+  <section class="not-found">
+    <h1>Outfit no encontrado</h1>
+    <p>El outfit que buscas no existe o ha sido eliminado.</p>
+    <a class="btn btn-primary" [routerLink]="['/search']">Volver a buscar</a>
+  </section>
+} @else if (outfit(); as o) {
   <article class="outfit-page">
     <div class="outfit-image">
       <img [ngSrc]="o.src" [alt]="o.title" fill/>
@@ -44,7 +52,11 @@
         <ul class="comment-list">
           @for (c of comments(); track c.id) {
             <li class="comment">
-              <profile-photo [src]="c.authorPhoto ?? ''" [size]="32" [alt]="c.authorName ?? ''"/>
+              <profile-photo
+                [src]="c.authorPhoto ?? ''"
+                [size]="32"
+                [alt]="c.authorName ?? ''"
+                [userId]="c.userId"/>
               <div class="comment-body">
                 <strong>{{ c.authorName ?? 'Usuario desconocido' }}</strong>
                 <p>{{ c.comment }}</p>
@@ -57,6 +69,4 @@
       </section>
     </div>
   </article>
-} @else {
-  <p class="loading">Cargando outfit...</p>
 }

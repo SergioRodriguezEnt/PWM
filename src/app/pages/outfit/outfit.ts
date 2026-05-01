@@ -1,11 +1,11 @@
-import { Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import {Component, computed, inject, signal} from '@angular/core';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { combineLatest, map, of, switchMap } from 'rxjs';
 
 import { AuthService } from '../../core/services/auth.service';
-import { OutfitService } from '../../core/services/outfit.service';
+import { OutfitService, Outfit as OutfitModel } from '../../core/services/outfit.service';
 import { UserService } from '../../core/services/user.service';
 import { CommentService, Comment as OutfitComment } from '../../core/services/comment.service';
 import { NotificationService } from '../../core/services/notification.service';
@@ -16,6 +16,11 @@ import {NgOptimizedImage} from '@angular/common';
 interface CommentWithAuthor extends OutfitComment {
   authorName?: string;
   authorPhoto?: string;
+}
+
+interface OutfitState {
+  loaded: boolean;
+  value: OutfitModel | undefined;
 }
 
 @Component({
@@ -33,6 +38,7 @@ interface CommentWithAuthor extends OutfitComment {
 })
 export class Outfit {
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private authService = inject(AuthService);
   private outfitService = inject(OutfitService);
   private userService = inject(UserService);
@@ -45,12 +51,23 @@ export class Outfit {
     this.route.paramMap.pipe(map(p => p.get('id') ?? '')), { initialValue: '' }
   );
 
-  outfit = toSignal(
+  private outfitState = toSignal<OutfitState, OutfitState>(
     toObservable(this.id).pipe(
-      switchMap(id => (id ? this.outfitService.get(id) : of(undefined)))
+      switchMap(id =>
+        id
+          ? this.outfitService.get(id).pipe(map(value => ({ loaded: true, value })))
+          : of<OutfitState>({ loaded: false, value: undefined }),
+      ),
     ),
-    { initialValue: undefined },
+    { initialValue: { loaded: false, value: undefined } },
   );
+
+  outfit = computed(() => this.outfitState().value);
+  loading = computed(() => !this.outfitState().loaded);
+  notFound = computed(() => {
+    const s = this.outfitState();
+    return s.loaded && !s.value;
+  });
 
   author = toSignal(
     toObservable(this.outfit).pipe(
@@ -96,27 +113,41 @@ export class Outfit {
 
     this.posting.set(true);
     this.postError.set(null);
+
     try {
       await this.commentService.create({
         outfitId: outfit.id,
         userId: myId,
         comment: text,
       });
-
-      if (outfit.userId !== myId) {
-        await this.notificationService.create({
-          userId: outfit.userId,
-          message: `New comment on your outfit "${outfit.title}"`,
-        });
-      }
-
-      this.commentControl.reset('');
     } catch (e: unknown) {
       this.postError.set(
         e instanceof Error ? e.message : 'Could not post comment',
       );
-    } finally {
       this.posting.set(false);
+      return;
     }
+
+    this.commentControl.reset('');
+
+    if (outfit.userId !== myId) {
+      try {
+        await this.notificationService.create({
+          userId: outfit.userId,
+          message: `New comment on your outfit "${outfit.title}"`,
+          outfitId: outfit.id,
+        });
+      } catch (e) {
+        console.warn('Failed to create notification', e);
+      }
+    }
+
+    this.posting.set(false);
+  }
+
+  async onSearch(query: string) {
+    await this.router.navigate(['search'], {
+      queryParams: query ? { q: query } : {},
+    });
   }
 }

@@ -1,4 +1,4 @@
-import {Component, output} from '@angular/core';
+import {Component, effect, input, output} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -11,8 +11,19 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
   ]
 })
 export class SearchBar {
+  initial = input<string>('');
+
   query = new FormControl('', { nonNullable: true });
   search = output<string>();
+
+  constructor() {
+    effect(() => {
+      const value = this.initial();
+      if (value !== this.query.value) {
+        this.query.setValue(value);
+      }
+    });
+  }
 
   submit() {
     this.search.emit(this.query.value.trim());

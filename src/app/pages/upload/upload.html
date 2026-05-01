@@ -14,11 +14,21 @@
       <span class="field-label">URL del outfit</span>
       <input type="url" formControlName="src" placeholder="https://..." />
     </label>
+    @if (form.controls.src.touched && form.controls.src.invalid) {
+      @if (form.controls.src.hasError('required')) {
+        <p class="error">La URL del outfit es obligatoria.</p>
+      }
+    }
 
     <label class="field">
       <span class="field-label">Título</span>
       <input type="text" formControlName="title" />
     </label>
+    @if (form.controls.title.touched && form.controls.title.invalid) {
+      @if (form.controls.title.hasError('required')) {
+        <p class="error">El título es obligatorio.</p>
+      }
+    }
 
     <label class="field">
       <span class="field-label">Descripción</span>
@@ -51,8 +61,16 @@
       <p class="error">{{ err }}</p>
     }
 
-    <button type="submit" class="btn btn-primary" [disabled]="saving() || form.invalid">
-      {{ saving() ? 'Guardando...' : isEdit() ? 'Guardar cambios' : 'Subir' }}
-    </button>
+    <div class="actions">
+      <button type="submit" class="btn btn-primary" [disabled]="saving() || deleting() || form.invalid">
+        {{ saving() ? 'Guardando...' : isEdit() ? 'Guardar cambios' : 'Subir' }}
+      </button>
+
+      @if (isEdit()) {
+        <button type="button" class="btn btn-danger" (click)="deleteOutfit()" [disabled]="saving() || deleting()">
+          {{ deleting() ? 'Eliminando...' : 'Eliminar outfit' }}
+        </button>
+      }
+    </div>
   </form>
 </section>
