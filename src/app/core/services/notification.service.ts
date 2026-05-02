@@ -5,7 +5,7 @@ export interface Notification {
   id: string;
   userId: string;
   message: string;
-  outfitId: string;
+  outfitId?: string;
 }
 
 @Injectable({ providedIn: 'root' })

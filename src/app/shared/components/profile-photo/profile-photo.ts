@@ -1,5 +1,4 @@
 import {Component, computed, input} from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
@@ -7,7 +6,6 @@ import {RouterLink} from '@angular/router';
   templateUrl: './profile-photo.html',
   styleUrl: './profile-photo.css',
   imports: [
-    NgOptimizedImage,
     RouterLink
   ]
 })

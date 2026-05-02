@@ -1,0 +1,105 @@
+/* =============================================================
+   Search results — masonry-style grid using CSS columns.
+   Each card has an aspect-ratio wrapper so ngSrc can use [fill].
+   Varied aspect ratios via :nth-child create the masonry feel.
+   ============================================================= */
+
+:host {
+  display: block;
+}
+
+.results-grid {
+  column-count: 4;
+  column-gap: var(--space-4);
+}
+
+.results-grid .empty {
+  column-span: all;
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  color: var(--color-text-faint);
+  font-size: var(--text-base);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- Card ---------- */
+.result-card {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  text-decoration: none;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  color: var(--color-text);
+}
+
+/* Image wrapper — aspect-ratio container that satisfies [ngSrc] [fill] */
+.result-card .card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;       /* default */
+  background: var(--color-sand);
+  overflow: hidden;
+}
+
+.result-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Vary aspect-ratios for masonry feel — every Nth card gets a different shape */
+.result-card:nth-child(7n + 1) .card-image { aspect-ratio: 4 / 5; }
+.result-card:nth-child(7n + 2) .card-image { aspect-ratio: 1 / 1; }
+.result-card:nth-child(7n + 4) .card-image { aspect-ratio: 3 / 5; }
+.result-card:nth-child(7n + 6) .card-image { aspect-ratio: 2 / 3; }
+
+.result-card .card-title {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+/* ---------- Responsive column counts ---------- */
+@media (max-width: 1200px) {
+  .results-grid { column-count: 3; }
+}
+
+@media (max-width: 900px) {
+  .results-grid { column-count: 2; }
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    column-count: 2;
+    column-gap: var(--space-3);
+  }
+
+  .result-card {
+    margin-bottom: var(--space-3);
+  }
+
+  .result-card .card-title {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .results-grid { column-count: 2; }
+}

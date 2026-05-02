@@ -1,0 +1,86 @@
+/* =============================================================
+   Top bar — shown when logged out
+   ============================================================= */
+
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-bar);
+}
+
+.top-bar {
+  height: var(--topbar-h);
+  background: var(--color-rose);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+  box-shadow: 0 1px 0 rgba(141, 73, 58, 0.08);
+}
+
+/* Brand */
+.top-bar .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.top-bar .brand:hover {
+  opacity: 0.85;
+  color: var(--color-text);
+}
+
+.top-bar .logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-brick);
+  flex-shrink: 0;
+}
+
+.top-bar .brand-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-xl);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+/* Actions */
+.top-bar .actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.top-bar .actions .btn-primary {
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.top-bar .actions .btn-link {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 0 var(--space-4);
+  }
+
+  .top-bar .brand-name {
+    font-size: var(--text-lg);
+  }
+
+  .top-bar .logo {
+    width: 36px;
+    height: 36px;
+  }
+}

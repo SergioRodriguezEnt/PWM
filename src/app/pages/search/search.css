@@ -1,0 +1,30 @@
+/* =============================================================
+   Search page
+   ============================================================= */
+
+.search-page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-7);
+}
+
+.search-page .section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  /* Reserve clearance for the floating profile photo on the right */
+  padding-right: 72px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .search-page {
+    padding: var(--space-4) var(--space-4) var(--space-5);
+  }
+
+  .search-page .section-header {
+    margin-bottom: var(--space-4);
+    padding-right: 56px;
+  }
+}

@@ -1,11 +1,11 @@
 @if (hasLink()) {
-  <a [routerLink]="['profile', userId()]"
+  <a [routerLink]="['/profile', userId()]"
      class="profile-photo profile-photo-link"
      [style.width.px]="size()"
      [style.height.px]="size()"
      [attr.aria-label]="alt()">
     @if (src()) {
-      <img [ngSrc]="src()" [alt]="alt()" fill/>
+      <img [src]="src()" [alt]="alt()"/>
     } @else {
       <span class="placeholder" aria-hidden="true"></span>
     }
@@ -13,7 +13,7 @@
 } @else {
   <div class="profile-photo" [style.width.px]="size()" [style.height.px]="size()">
     @if (src()) {
-      <img [ngSrc]="src()" [alt]="alt()" fill/>
+      <img [src]="src()" [alt]="alt()"/>
     } @else {
       <span class="placeholder" aria-hidden="true"></span>
     }

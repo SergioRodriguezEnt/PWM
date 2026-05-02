@@ -1,0 +1,63 @@
+/* =============================================================
+   Update profile page
+   ============================================================= */
+
+.update-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-5);
+}
+
+.update-page h1 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+}
+
+.update-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.update-form .preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0 var(--space-2);
+}
+
+.update-form .preview .hint {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-style: italic;
+  max-width: 32ch;
+}
+
+.update-form .actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.update-form .actions .btn,
+.update-form .actions .btn-primary {
+  flex: 1;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .update-page {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .update-form {
+    padding: var(--space-5) var(--space-4);
+  }
+}

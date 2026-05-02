@@ -6,6 +6,7 @@
     <p>El usuario que buscas no existe.</p>
   </section>
 } @else if (user(); as u) {
+  <floating-profile [hideForUserId]="u.id"/>
   <section class="profile-page">
     <header class="profile-header">
       <profile-photo [src]="u.profileSrc" [size]="120" [alt]="u.name" />

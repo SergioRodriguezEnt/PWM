@@ -1,0 +1,68 @@
+/* =============================================================
+   Register page — shares the auth-form pattern with login
+   ============================================================= */
+
+.auth-page {
+  min-height: calc(100vh - var(--topbar-h));
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--space-5);
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 440px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-form h1 {
+  text-align: center;
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.auth-form .btn-primary {
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+}
+
+.auth-form .alt-action {
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.auth-form .alt-action a {
+  color: var(--color-brick);
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.auth-form .alt-action a:hover {
+  border-bottom-color: var(--color-brick);
+  color: var(--color-brick);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .auth-page {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .auth-form {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .auth-form h1 {
+    font-size: var(--text-xl);
+  }
+}

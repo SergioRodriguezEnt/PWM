@@ -1,0 +1,83 @@
+/* =============================================================
+   Home page — hero + 8-outfit preview + CTA
+   ============================================================= */
+
+.home-page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-page .hero {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: center;
+  max-width: 18ch;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-7);
+}
+
+.preview-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* CTA button — sits over the bottom of the preview grid */
+.preview-wrapper .cta {
+  position: relative;
+  margin-top: calc(var(--space-7) * -1);
+  background: var(--color-brick);
+  color: var(--color-on-brick);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--space-4) var(--space-7);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: background var(--dur-base) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+  z-index: 2;
+}
+
+.preview-wrapper .cta:hover {
+  background: var(--color-brick-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-on-brick);
+}
+
+.preview-wrapper .cta:active {
+  transform: translateY(0);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .home-page {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .home-page .hero {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    margin-bottom: var(--space-6);
+  }
+
+  .preview-wrapper .cta {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+  }
+}

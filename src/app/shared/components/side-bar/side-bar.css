@@ -1,0 +1,332 @@
+/* =============================================================
+   Side bar — shown when logged in.
+   Fixed to the left on desktop, fixed to the bottom on mobile.
+   ============================================================= */
+
+:host {
+  display: block;
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--color-rose);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-4) 0;
+  z-index: var(--z-bar);
+  box-shadow: 1px 0 0 rgba(141, 73, 58, 0.08);
+}
+
+#side-bar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#side-bar-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  width: 100%;
+  padding: 0 var(--space-3);
+}
+
+#side-bar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- Buttons ---------- */
+.side-btn {
+  width: 64px;
+  height: 64px;
+  background: var(--color-brick);
+  color: var(--color-on-brick);
+  border: none;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px;
+  font-family: var(--font-body);
+  position: relative;
+  transition: background var(--dur-base) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.side-btn:hover {
+  background: var(--color-brick-hover);
+  color: var(--color-on-brick);
+}
+
+.side-btn:active {
+  transform: translateY(1px);
+}
+
+.side-btn .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  /* Render dark PNG icons in cream so they match on the brick button */
+  filter: brightness(0) invert(1) opacity(0.95);
+}
+
+.side-btn .label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-on-brick);
+  opacity: 0.92;
+  text-transform: uppercase;
+}
+
+/* Brand button is round, holds the colorful logo (no filter) */
+.side-btn.brand {
+  border-radius: 50%;
+  background: var(--color-brick);
+}
+
+.side-btn.brand .icon {
+  filter: none;
+  width: 28px;
+  height: 28px;
+}
+
+.side-btn.brand .label {
+  display: none;
+}
+
+/* Logout is round to differentiate from the navigational squares */
+.side-btn.logout {
+  border-radius: 50%;
+}
+
+/* Active state — small brick rail on the left edge of the sidebar */
+.side-btn.active::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 28px;
+  background: var(--color-brick);
+  border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+}
+
+/* Notification dot */
+.notif-btn .badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 9px;
+  height: 9px;
+  background: var(--color-cream);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--color-brick);
+}
+
+/* =============================================================
+   Notifications popup
+   ============================================================= */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 35, 23, 0.25);
+  backdrop-filter: blur(2px);
+  z-index: var(--z-backdrop);
+  animation: fade-in var(--dur-base) var(--ease-out);
+}
+
+.notifications-popup {
+  position: fixed;
+  left: calc(var(--sidebar-w) + var(--space-3));
+  bottom: var(--space-5);
+  width: 380px;
+  max-height: 480px;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-modal);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: pop-in var(--dur-base) var(--ease-out);
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.popup-header h3 {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text-soft);
+  font-size: 22px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.close-btn:hover {
+  background: var(--color-sand);
+  color: var(--color-text);
+}
+
+.notifications-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.notification {
+  margin: 0;
+}
+
+.notification-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.45;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.notification-btn:hover {
+  background: var(--color-sand);
+}
+
+.notifications-list .empty {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  color: var(--color-text-faint);
+  font-size: var(--text-sm);
+  font-style: italic;
+  list-style: none;
+}
+
+.popup-footer {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.popup-footer .btn {
+  width: 100%;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* =============================================================
+   Mobile — sidebar moves to the bottom; brand hidden.
+   ============================================================= */
+@media (max-width: 768px) {
+  .side-bar {
+    top: auto;
+    right: 0;
+    height: var(--bottombar-h);
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 var(--space-3);
+    box-shadow: 0 -1px 0 rgba(141, 73, 58, 0.08);
+  }
+
+  /* Hide the brand button when sidebar is at the bottom */
+  #side-bar-top {
+    display: none;
+  }
+
+  #side-bar-center {
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0;
+    gap: var(--space-2);
+    padding: 0;
+  }
+
+  #side-bar-bottom {
+    flex-direction: row;
+  }
+
+  .side-btn {
+    width: 56px;
+    height: 56px;
+    padding: 6px;
+  }
+
+  .side-btn .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .side-btn .label {
+    font-size: 8px;
+  }
+
+  /* No edge to anchor the rail to on the bottom bar */
+  .side-btn.active::before {
+    display: none;
+  }
+
+  /* Notifications popup slides up from the bottom, full-width-ish */
+  .notifications-popup {
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: calc(var(--bottombar-h) + var(--space-3));
+    width: auto;
+    max-height: 70vh;
+    animation: slide-up var(--dur-base) var(--ease-out);
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}

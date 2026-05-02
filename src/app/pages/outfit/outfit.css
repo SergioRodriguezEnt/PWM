@@ -1,0 +1,236 @@
+/* =============================================================
+   Outfit detail page
+   ============================================================= */
+
+.outfit-page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-6) var(--space-7);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+/* search-bar above the outfit, full width */
+:host > search-bar {
+  display: block;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-6) 0;
+  /* leave space for the floating profile */
+  padding-right: 88px;
+}
+
+/* ---------- Image ---------- */
+.outfit-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-sand);
+  box-shadow: var(--shadow-md);
+}
+
+.outfit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Details ---------- */
+.outfit-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.outfit-details h1 {
+  font-size: var(--text-2xl);
+  margin: 0;
+}
+
+.outfit-details .description {
+  color: var(--color-text-soft);
+  font-size: var(--text-base);
+  line-height: 1.65;
+}
+
+.outfit-details .tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.outfit-details .tags .chip {
+  background: var(--color-sand);
+  color: var(--color-text);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.outfit-details .author {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-cream);
+  border: 1px solid var(--color-border-soft);
+  text-decoration: none;
+  color: var(--color-text);
+  width: fit-content;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.outfit-details .author:hover {
+  background: var(--color-sand);
+  color: var(--color-text);
+}
+
+.outfit-details .author span {
+  font-weight: 500;
+}
+
+/* ---------- Comments ---------- */
+.comments {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.comments h2 {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.comments .hint {
+  font-style: italic;
+}
+
+.comment-form {
+  display: flex;
+  gap: var(--space-3);
+  align-items: stretch;
+}
+
+.comment-form input {
+  flex: 1;
+}
+
+.comment-form .btn {
+  background: var(--color-brick);
+  color: var(--color-on-brick);
+  border-color: var(--color-brick);
+  white-space: nowrap;
+}
+
+.comment-form .btn:hover:not(:disabled) {
+  background: var(--color-brick-hover);
+  border-color: var(--color-brick-hover);
+  color: var(--color-on-brick);
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.comment {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.comment-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.comment-body strong {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.comment-body p {
+  color: var(--color-text-soft);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.comment-list .empty {
+  list-style: none;
+  font-style: italic;
+  color: var(--color-text-faint);
+  font-size: var(--text-sm);
+  padding: var(--space-4) 0;
+  text-align: center;
+}
+
+/* ---------- Not found ---------- */
+.not-found {
+  max-width: 480px;
+  margin: var(--space-8) auto;
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.not-found h1 {
+  font-size: var(--text-2xl);
+}
+
+.not-found p {
+  color: var(--color-text-soft);
+}
+
+.not-found .btn-primary {
+  align-self: center;
+  text-decoration: none;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .outfit-page {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 768px) {
+  :host > search-bar {
+    padding: var(--space-4) var(--space-4) 0;
+    padding-right: 64px;
+  }
+
+  .outfit-page {
+    padding: var(--space-4) var(--space-4) var(--space-6);
+  }
+
+  .outfit-details h1 {
+    font-size: var(--text-xl);
+  }
+
+  .comment-form {
+    flex-direction: column;
+  }
+}

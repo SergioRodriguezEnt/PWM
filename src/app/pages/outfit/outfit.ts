@@ -10,6 +10,7 @@ import { UserService } from '../../core/services/user.service';
 import { CommentService, Comment as OutfitComment } from '../../core/services/comment.service';
 import { NotificationService } from '../../core/services/notification.service';
 import { ProfilePhoto } from '../../shared/components/profile-photo/profile-photo';
+import { FloatingProfile } from '../../shared/components/floating-profile/floating-profile';
 import {SearchBar} from '../../shared/components/search-bar/search-bar';
 import {NgOptimizedImage} from '@angular/common';
 
@@ -31,6 +32,7 @@ interface OutfitState {
     SearchBar,
     RouterLink,
     ProfilePhoto,
+    FloatingProfile,
     FormsModule,
     ReactiveFormsModule,
     NgOptimizedImage

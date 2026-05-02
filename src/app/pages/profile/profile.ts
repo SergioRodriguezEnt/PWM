@@ -1,6 +1,7 @@
 import {Component, computed, inject} from "@angular/core";
 import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo';
 import {SearchResults} from '../../shared/components/search-results/search-results';
+import {FloatingProfile} from '../../shared/components/floating-profile/floating-profile';
 import {ActivatedRoute} from '@angular/router';
 import {User, UserService} from '../../core/services/user.service';
 import {Outfit, OutfitService} from '../../core/services/outfit.service';
@@ -17,7 +18,8 @@ interface UserState {
   templateUrl: './profile.html',
   imports: [
     ProfilePhoto,
-    SearchResults
+    SearchResults,
+    FloatingProfile
   ],
   styleUrl: './profile.css'
 })

@@ -1,9 +1,9 @@
 <section class="search-page">
+  @if (isLoggedIn()) {
+    <floating-profile/>
+  }
   <div class="section-header">
     <search-bar [initial]="initialQuery()" (search)="onSearch($event)"/>
-    @if (isLoggedIn()) {
-      <profile-photo [src]="profileSrc()" [alt]="profileName()" [userId]="profileId()" [size]="48"/>
-    }
   </div>
   <search-results [outfits]="results()"/>
 </section>
