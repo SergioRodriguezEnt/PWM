@@ -1,12 +1,12 @@
 <div class="results-grid">
   @for (outfit of outfits(); track outfit.id) {
-    <a [routerLink]="['outfit', outfit.id]" class="result-card">
+    <a [routerLink]="['/outfit', outfit.id]" class="result-card">
       <div class="card-image">
-        <img [ngSrc]="outfit.src" [alt]="outfit.title" loading="lazy" fill/>
+        <img [src]="outfit.src" [alt]="outfit.title" loading="lazy"/>
       </div>
       <span class="card-title">{{ outfit.title }}</span>
     </a>
   } @empty {
-    <p class="empty">No outfits found.</p>
+    <p class="empty">No se encontró ningún outfit.</p>
   }
 </div>

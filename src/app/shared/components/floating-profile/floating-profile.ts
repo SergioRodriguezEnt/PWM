@@ -12,14 +12,10 @@ import {ProfilePhoto} from '../profile-photo/profile-photo';
   imports: [ProfilePhoto],
 })
 export class FloatingProfile {
-  /**
-   * If the current user's id matches this value, the floating photo is hidden.
-   * Used on the profile page to prevent showing the avatar while viewing one's own profile.
-   */
-  hideForUserId = input<string>('');
-
   private authService = inject(AuthService);
   private userService = inject(UserService);
+
+  hideForUserId = input<string>('');
 
   private currentUser = toSignal(
     toObservable(this.authService.userId).pipe(
