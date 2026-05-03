@@ -36,10 +36,7 @@ export class Search {
 
   constructor() {
     effect(() => {
-      const initial = this.initialQuery();
-      if (initial !== this.query()) {
-        this.query.set(initial);
-      }
+      this.query.set(this.initialQuery());
     });
   }
 
