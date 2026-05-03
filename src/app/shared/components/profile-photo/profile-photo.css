@@ -1,8 +1,3 @@
-/* =============================================================
-   Profile photo — circular avatar.
-   Renders as <a> when userId is provided, otherwise <div>.
-   ============================================================= */
-
 .profile-photo {
   position: relative;
   display: inline-block;
@@ -25,7 +20,6 @@
   background: linear-gradient(135deg, var(--color-brick) 0%, var(--color-brick-hover) 100%);
 }
 
-/* Linked variant — slight lift on hover */
 .profile-photo-link {
   cursor: pointer;
   transition: transform var(--dur-base) var(--ease-out),

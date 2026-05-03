@@ -1,7 +1,3 @@
-/* =============================================================
-   Bottom bar — global page footer
-   ============================================================= */
-
 :host {
   display: block;
   margin-top: auto;
@@ -25,7 +21,7 @@
 }
 
 .bottom-bar h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-display), serif;
   font-weight: 500;
   font-size: var(--text-md);
   color: var(--color-text);
@@ -62,7 +58,6 @@
   margin: 0;
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .bottom-bar {
     grid-template-columns: 1fr 1fr;

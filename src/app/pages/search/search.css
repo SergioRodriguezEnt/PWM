@@ -1,7 +1,3 @@
-/* =============================================================
-   Search page
-   ============================================================= */
-
 .search-page {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -13,11 +9,9 @@
   align-items: center;
   gap: var(--space-4);
   margin-bottom: var(--space-6);
-  /* Reserve clearance for the floating profile photo on the right */
   padding-right: 72px;
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .search-page {
     padding: var(--space-4) var(--space-4) var(--space-5);

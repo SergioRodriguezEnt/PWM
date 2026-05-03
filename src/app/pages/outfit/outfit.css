@@ -1,7 +1,3 @@
-/* =============================================================
-   Outfit detail page
-   ============================================================= */
-
 .outfit-page {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -11,17 +7,14 @@
   gap: var(--space-6);
 }
 
-/* search-bar above the outfit, full width */
 :host > search-bar {
   display: block;
   max-width: var(--content-max);
   margin: 0 auto;
   padding: var(--space-5) var(--space-6) 0;
-  /* leave space for the floating profile */
   padding-right: 88px;
 }
 
-/* ---------- Image ---------- */
 .outfit-image {
   position: relative;
   width: 100%;
@@ -38,7 +31,6 @@
   object-fit: cover;
 }
 
-/* ---------- Details ---------- */
 .outfit-details {
   display: flex;
   flex-direction: column;
@@ -97,7 +89,6 @@
   font-weight: 500;
 }
 
-/* ---------- Comments ---------- */
 .comments {
   margin-top: var(--space-5);
   padding-top: var(--space-5);
@@ -183,7 +174,6 @@
   text-align: center;
 }
 
-/* ---------- Not found ---------- */
 .not-found {
   max-width: 480px;
   margin: var(--space-8) auto;
@@ -208,7 +198,6 @@
   text-decoration: none;
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 900px) {
   .outfit-page {
     grid-template-columns: 1fr;

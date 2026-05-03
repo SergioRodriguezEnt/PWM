@@ -1,8 +1,3 @@
-/* =============================================================
-   Floating profile — small avatar fixed to the top-right of
-   the viewport on search/outfit/profile pages while logged in.
-   ============================================================= */
-
 :host {
   display: contents;
 }
@@ -23,7 +18,6 @@
   transform: scale(1.04);
 }
 
-/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .floating-profile {
     top: var(--space-4);

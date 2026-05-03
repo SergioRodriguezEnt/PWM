@@ -1,8 +1,3 @@
-/* =============================================================
-   Side bar — shown when logged in.
-   Fixed to the left on desktop, fixed to the bottom on mobile.
-   ============================================================= */
-
 :host {
   display: block;
 }
@@ -45,7 +40,6 @@
   align-items: center;
 }
 
-/* ---------- Buttons ---------- */
 .side-btn {
   width: 64px;
   height: 64px;
@@ -61,7 +55,7 @@
   cursor: pointer;
   text-decoration: none;
   padding: 8px;
-  font-family: var(--font-body);
+  font-family: var(--font-body), serif;
   position: relative;
   transition: background var(--dur-base) var(--ease-out),
               transform var(--dur-fast) var(--ease-out);
@@ -80,7 +74,6 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  /* Render dark PNG icons in cream so they match on the brick button */
   filter: brightness(0) invert(1) opacity(0.95);
 }
 
@@ -94,7 +87,6 @@
   text-transform: uppercase;
 }
 
-/* Brand button is round, holds the colorful logo (no filter) */
 .side-btn.brand {
   border-radius: 50%;
   background: var(--color-brick);
@@ -110,12 +102,10 @@
   display: none;
 }
 
-/* Logout is round to differentiate from the navigational squares */
 .side-btn.logout {
   border-radius: 50%;
 }
 
-/* Active state — small brick rail on the left edge of the sidebar */
 .side-btn.active::before {
   content: '';
   position: absolute;
@@ -128,7 +118,6 @@
   border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
 }
 
-/* Notification dot */
 .notif-btn .badge {
   position: absolute;
   top: 8px;
@@ -140,9 +129,6 @@
   box-shadow: 0 0 0 2px var(--color-brick);
 }
 
-/* =============================================================
-   Notifications popup
-   ============================================================= */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -223,7 +209,7 @@
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   cursor: pointer;
-  font-family: var(--font-body);
+  font-family: var(--font-body), serif;
   font-size: var(--text-sm);
   color: var(--color-text);
   line-height: 1.45;
@@ -262,9 +248,6 @@
   to   { opacity: 1; transform: translateY(0)   scale(1); }
 }
 
-/* =============================================================
-   Mobile — sidebar moves to the bottom; brand hidden.
-   ============================================================= */
 @media (max-width: 768px) {
   .side-bar {
     top: auto;
@@ -277,7 +260,6 @@
     box-shadow: 0 -1px 0 rgba(141, 73, 58, 0.08);
   }
 
-  /* Hide the brand button when sidebar is at the bottom */
   #side-bar-top {
     display: none;
   }
@@ -310,12 +292,10 @@
     font-size: 8px;
   }
 
-  /* No edge to anchor the rail to on the bottom bar */
   .side-btn.active::before {
     display: none;
   }
 
-  /* Notifications popup slides up from the bottom, full-width-ish */
   .notifications-popup {
     left: var(--space-3);
     right: var(--space-3);
