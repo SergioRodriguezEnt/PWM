@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    @for (outfit of outfitsWithFlag(); track outfit.id) {
+      <ion-item [routerLink]="['/outfit', outfit.id]" [button]="true" [detail]="true">
+        <ion-thumbnail slot="start">
+          <img [src]="outfit.src" [alt]="outfit.title"/>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ outfit.title }}</h2>
+          <p>{{ outfit.description }}</p>
+        </ion-label>
+        @if (outfit.isFavorite) {
+          <ion-badge slot="end" color="danger">♥ Favorito</ion-badge>
+        }
+      </ion-item>
+    } @empty {
+      <ion-item>
+        <ion-label class="ion-text-center">No hay outfits disponibles.</ion-label>
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>

@@ -11,6 +11,7 @@ import {GuestGuard} from './core/guards/guest.guard';
 import {AuthGuard} from './core/guards/auth.guard';
 import {OutfitEditGuard} from './core/guards/outfitEdit.guard';
 import {ProfileEditGuard} from './core/guards/profileEdit.guard';
+import {Favorites} from './pages/favorites/favorites';
 
 export const routes: Routes = [
   {
@@ -81,6 +82,13 @@ export const routes: Routes = [
     path: '**',
     pathMatch: 'full',
     redirectTo: ''
+  },
+  {
+    path: 'favorites',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    title: 'Outfitera | Favorites',
+    component: Favorites
   }
 ];
 

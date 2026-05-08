@@ -1,0 +1,16 @@
+ion-thumbnail {
+  --size: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+ion-thumbnail img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+ion-badge {
+  font-size: 12px;
+  padding: 6px 10px;
+}

@@ -1,4 +1,4 @@
-import {Component, computed, inject, signal} from '@angular/core';
+import {Component, computed, effect, inject, signal} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -13,6 +13,10 @@ import { ProfilePhoto } from '../../shared/components/profile-photo/profile-phot
 import { FloatingProfile } from '../../shared/components/floating-profile/floating-profile';
 import {SearchBar} from '../../shared/components/search-bar/search-bar';
 import {NgOptimizedImage} from '@angular/common';
+import {FavoritesService} from '../../core/services/favorites.service';
+import {IonFab, IonFabButton, IonIcon} from '@ionic/angular/standalone';
+import {addIcons} from 'ionicons';
+import {heart, heartOutline} from 'ionicons/icons';
 
 interface CommentWithAuthor extends OutfitComment {
   authorName?: string;
@@ -35,7 +39,10 @@ interface OutfitState {
     FloatingProfile,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    IonFab,
+    IonFabButton,
+    IonIcon
   ]
 })
 export class Outfit {
@@ -46,8 +53,33 @@ export class Outfit {
   private userService = inject(UserService);
   private commentService = inject(CommentService);
   private notificationService = inject(NotificationService);
+  private favoritesService = inject(FavoritesService);
 
   isLoggedIn = this.authService.isLoggedIn;
+  isFavorite = signal(false);
+
+  constructor() {
+    addIcons({ heart, heartOutline });
+
+    effect(async () => {
+      const id = this.id();
+      if (id) {
+        const fav = await this.favoritesService.isFavorite(id);
+        this.isFavorite.set(fav);
+      }
+    });
+  }
+
+  async toggleFavorite() {
+    const id = this.id();
+    if (!id) return;
+    if (this.isFavorite()) {
+      await this.favoritesService.removeFavorite(id);
+    } else {
+      await this.favoritesService.addFavorite(id);
+    }
+    this.isFavorite.update(v => !v);
+  }
 
   private id = toSignal(
     this.route.paramMap.pipe(map(p => p.get('id') ?? '')), { initialValue: '' }

@@ -6,7 +6,9 @@
 .app-content {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
 }
 
 :host:has(side-bar) .app-content {
