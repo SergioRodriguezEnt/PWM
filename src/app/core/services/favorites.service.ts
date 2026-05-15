@@ -7,7 +7,13 @@ export class FavoritesService {
   private db!: SQLiteDBConnection;
 
   async init(): Promise<void> {
-    this.db = await this.sqlite.createConnection('outfitera_db', false, 'no-encryption', 1, false);
+    const isConsistent = (await this.sqlite.checkConnectionsConsistency()).result;
+    const isConn = (await this.sqlite.isConnection('outfitera_db', false)).result;
+
+    this.db = (isConsistent && isConn)
+      ? await this.sqlite.retrieveConnection('outfitera_db', false)
+      : await this.sqlite.createConnection('outfitera_db', false, 'no-encryption', 1, false);
+
     await this.db.open();
     await this.db.execute(`
       CREATE TABLE IF NOT EXISTS favorites (
