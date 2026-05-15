@@ -24,11 +24,11 @@ export class FavoritesService {
       : await this.sqlite.createConnection('outfitera_db', false, 'no-encryption', 1, false);
 
     await this.db.open();
-    await this.db.execute(`
-      CREATE TABLE IF NOT EXISTS favorites (
-        outfitId TEXT PRIMARY KEY
-      );
-    `);
+    await this.db.run(
+      'CREATE TABLE IF NOT EXISTS favorites (outfitId TEXT PRIMARY KEY)',
+      [],
+      true
+    );
   }
 
   async getFavoriteIds(): Promise<string[]> {
@@ -48,14 +48,18 @@ export class FavoritesService {
   async addFavorite(outfitId: string): Promise<void> {
     await this.ensureInit();
     await this.db.run(
-      'INSERT OR IGNORE INTO favorites (outfitId) VALUES (?)', [outfitId]
+      'INSERT OR IGNORE INTO favorites (outfitId) VALUES (?)',
+      [outfitId],
+      true
     );
   }
 
   async removeFavorite(outfitId: string): Promise<void> {
     await this.ensureInit();
     await this.db.run(
-      'DELETE FROM favorites WHERE outfitId = ?', [outfitId]
+      'DELETE FROM favorites WHERE outfitId = ?',
+      [outfitId],
+      true
     );
   }
 }
