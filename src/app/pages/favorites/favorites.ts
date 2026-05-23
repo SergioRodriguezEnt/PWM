@@ -1,7 +1,8 @@
-import {Component, computed, inject, OnInit, signal} from '@angular/core';
+import {Component, computed, effect, inject, signal} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {OutfitService, Outfit} from '../../core/services/outfit.service';
 import {FavoritesService} from '../../core/services/favorites.service';
+import {AuthService} from '../../core/services/auth.service';
 import {SearchResults} from '../../shared/components/search-results/search-results';
 
 @Component({
@@ -10,9 +11,10 @@ import {SearchResults} from '../../shared/components/search-results/search-resul
   styleUrl: './favorites.css',
   imports: [SearchResults]
 })
-export class Favorites implements OnInit {
+export class Favorites {
   private outfitService = inject(OutfitService);
   private favoritesService = inject(FavoritesService);
+  private authService = inject(AuthService);
 
   private allOutfits = toSignal(this.outfitService.getAll(), { initialValue: [] as Outfit[] });
   private favoriteIds = signal<Set<string>>(new Set());
@@ -22,8 +24,15 @@ export class Favorites implements OnInit {
     return this.allOutfits().filter(o => ids.has(o.id));
   });
 
-  async ngOnInit() {
-    const ids = await this.favoritesService.getFavoriteIds();
-    this.favoriteIds.set(new Set(ids));
+  constructor() {
+    effect(async () => {
+      const uid = this.authService.userId();
+      if (!uid) {
+        this.favoriteIds.set(new Set());
+        return;
+      }
+      const ids = await this.favoritesService.getFavoriteIds();
+      this.favoriteIds.set(new Set(ids));
+    });
   }
 }

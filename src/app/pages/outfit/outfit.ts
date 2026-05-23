@@ -66,9 +66,12 @@ export class Outfit {
 
     effect(async () => {
       const id = this.id();
-      if (id) {
+      const uid = this.authService.userId();
+      if (id && uid) {
         const fav = await this.favoritesService.isFavorite(id);
         this.isFavorite.set(fav);
+      } else {
+        this.isFavorite.set(false);
       }
     });
   }
