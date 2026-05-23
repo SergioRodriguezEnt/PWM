@@ -79,16 +79,16 @@ export const routes: Routes = [
     component: Upload
   },
   {
-    path: '**',
-    pathMatch: 'full',
-    redirectTo: ''
-  },
-  {
     path: 'favorites',
     pathMatch: 'full',
     canActivate: [AuthGuard],
     title: 'Outfitera | Favorites',
     component: Favorites
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: ''
   }
 ];
 
