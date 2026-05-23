@@ -10,6 +10,7 @@ import {
 import {AuthService} from '../../core/services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {UserService} from '../../core/services/user.service';
+import {IonButton, IonInput} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ import {UserService} from '../../core/services/user.service';
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    IonInput,
+    IonButton
   ]
 })
 export class Register {

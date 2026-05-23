@@ -6,6 +6,7 @@ import {OutfitService} from '../../core/services/outfit.service';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map, take} from 'rxjs';
 import {NgOptimizedImage} from '@angular/common';
+import {IonButton, IonChip, IonInput, IonLabel, IonTextarea} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-upload',
@@ -13,7 +14,12 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './upload.css',
   imports: [
     ReactiveFormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    IonInput,
+    IonTextarea,
+    IonButton,
+    IonChip,
+    IonLabel
   ]
 })
 export class Upload {

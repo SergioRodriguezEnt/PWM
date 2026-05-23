@@ -2,6 +2,7 @@ import {Component, inject, signal} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router, RouterLink} from '@angular/router';
+import {IonButton, IonInput} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import {Router, RouterLink} from '@angular/router';
   styleUrl: './login.css',
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    IonInput,
+    IonButton
   ]
 })
 export class Login {

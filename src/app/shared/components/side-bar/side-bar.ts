@@ -7,6 +7,7 @@ import {NotificationService, Notification as AppNotification} from '../../../cor
 import {OutfitService} from '../../../core/services/outfit.service';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {filter, map, of, startWith, switchMap} from 'rxjs';
+import {IonButton, IonItem, IonLabel, IonList} from '@ionic/angular/standalone';
 
 type EditTarget = { type: 'profile' | 'outfit'; id: string } | null;
 
@@ -16,7 +17,11 @@ type EditTarget = { type: 'profile' | 'outfit'; id: string } | null;
   styleUrl: './side-bar.css',
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    IonButton,
+    IonList,
+    IonItem,
+    IonLabel
   ]
 })
 export class SideBar {

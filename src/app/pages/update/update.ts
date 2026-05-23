@@ -5,6 +5,7 @@ import {UserService} from '../../core/services/user.service';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map, take} from 'rxjs';
 import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo';
+import {IonButton, IonInput, IonTextarea} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-update',
@@ -12,7 +13,10 @@ import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo'
   styleUrl: './update.css',
   imports: [
     ReactiveFormsModule,
-    ProfilePhoto
+    ProfilePhoto,
+    IonInput,
+    IonTextarea,
+    IonButton
   ]
 })
 export class Update {

@@ -67,6 +67,31 @@
   --z-floating:   60;
   --z-backdrop:  100;
   --z-modal:     110;
+
+  --ion-font-family: var(--font-body);
+  --ion-background-color: var(--color-cream);
+  --ion-text-color: var(--color-text);
+
+  --ion-color-primary: var(--color-brick);
+  --ion-color-primary-rgb: 141, 73, 58;
+  --ion-color-primary-contrast: var(--color-on-brick);
+  --ion-color-primary-contrast-rgb: 248, 237, 227;
+  --ion-color-primary-shade: var(--color-brick-hover);
+  --ion-color-primary-tint: var(--color-brick);
+
+  --ion-color-secondary: var(--color-sand);
+  --ion-color-secondary-rgb: 223, 211, 195;
+  --ion-color-secondary-contrast: var(--color-text);
+  --ion-color-secondary-contrast-rgb: 61, 35, 23;
+  --ion-color-secondary-shade: var(--color-rose);
+  --ion-color-secondary-tint: var(--color-sand);
+
+  --ion-color-danger: var(--color-danger);
+  --ion-color-danger-rgb: 160, 69, 69;
+  --ion-color-danger-contrast: var(--color-on-brick);
+  --ion-color-danger-contrast-rgb: 248, 237, 227;
+  --ion-color-danger-shade: var(--color-danger-hover);
+  --ion-color-danger-tint: var(--color-danger);
 }
 
 *,
@@ -318,4 +343,127 @@ textarea:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+ion-input,
+ion-textarea {
+  --background: var(--color-input);
+  --color: var(--color-text);
+  --placeholder-color: var(--color-text-faint);
+  --placeholder-opacity: 1;
+  --border-radius: var(--radius-md);
+  --padding-top: var(--space-3);
+  --padding-bottom: var(--space-3);
+  --padding-start: var(--space-4);
+  --padding-end: var(--space-4);
+  --highlight-color-focused: var(--color-brick);
+  --highlight-color-valid: var(--color-brick);
+  --highlight-color-invalid: var(--color-danger);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-input);
+  font-family: var(--font-body), serif;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  transition: border-color var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out),
+              background var(--dur-base) var(--ease-out);
+  min-height: 48px;
+}
+
+ion-input.has-focus,
+ion-textarea.textarea-wrapper-focused,
+ion-input:focus-within,
+ion-textarea:focus-within {
+  border-color: var(--color-brick);
+  box-shadow: 0 0 0 4px var(--color-brick-soft);
+  background: var(--color-surface);
+  --background: var(--color-surface);
+}
+
+ion-textarea {
+  min-height: 96px;
+}
+
+ion-button {
+  --background: var(--color-input);
+  --background-hover: var(--color-sand);
+  --background-activated: var(--color-sand);
+  --color: var(--color-text);
+  --color-hover: var(--color-text);
+  --border-color: var(--color-border);
+  --border-radius: var(--radius-md);
+  --border-style: solid;
+  --border-width: 1px;
+  --padding-top: var(--space-3);
+  --padding-bottom: var(--space-3);
+  --padding-start: var(--space-5);
+  --padding-end: var(--space-5);
+  --box-shadow: none;
+  font-family: var(--font-body), serif;
+  font-size: var(--text-base);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  height: auto;
+  min-height: 48px;
+}
+
+ion-button[color='primary'] {
+  --background: var(--color-brick);
+  --background-hover: var(--color-brick-hover);
+  --background-activated: var(--color-brick-hover);
+  --color: var(--color-on-brick);
+  --color-hover: var(--color-on-brick);
+  --border-color: var(--color-brick);
+}
+
+ion-button[color='danger'] {
+  --background: transparent;
+  --background-hover: var(--color-danger);
+  --background-activated: var(--color-danger);
+  --color: var(--color-danger);
+  --color-hover: var(--color-on-brick);
+  --border-color: var(--color-danger);
+}
+
+ion-button[fill='clear'] {
+  --background: transparent;
+  --background-hover: transparent;
+  --background-activated: transparent;
+  --color: var(--color-text);
+  --color-hover: var(--color-text);
+  --border-color: transparent;
+  --border-width: 0;
+  --padding-start: var(--space-2);
+  --padding-end: var(--space-2);
+  min-height: auto;
+}
+
+ion-chip {
+  --background: var(--color-sand);
+  --color: var(--color-text);
+  font-family: var(--font-body), serif;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+}
+
+ion-badge {
+  --background: var(--color-brick);
+  --color: var(--color-on-brick);
+  font-family: var(--font-body), serif;
+  font-weight: 500;
+}
+
+ion-list {
+  background: transparent;
+  --ion-item-background: transparent;
+}
+
+ion-item {
+  --background: transparent;
+  --color: var(--color-text);
+  --border-color: var(--color-border-soft);
+  font-family: var(--font-body), serif;
 }

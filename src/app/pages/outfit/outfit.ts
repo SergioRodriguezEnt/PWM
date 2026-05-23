@@ -14,7 +14,7 @@ import { FloatingProfile } from '../../shared/components/floating-profile/floati
 import {SearchBar} from '../../shared/components/search-bar/search-bar';
 import {NgOptimizedImage} from '@angular/common';
 import {FavoritesService} from '../../core/services/favorites.service';
-import {IonFab, IonFabButton, IonIcon} from '@ionic/angular/standalone';
+import {IonButton, IonChip, IonFab, IonFabButton, IonIcon, IonInput} from '@ionic/angular/standalone';
 import {addIcons} from 'ionicons';
 import {heart, heartOutline} from 'ionicons/icons';
 
@@ -42,7 +42,10 @@ interface OutfitState {
     NgOptimizedImage,
     IonFab,
     IonFabButton,
-    IonIcon
+    IonIcon,
+    IonInput,
+    IonButton,
+    IonChip
   ]
 })
 export class Outfit {

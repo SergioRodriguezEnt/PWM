@@ -1,5 +1,6 @@
 import {Component, effect, input, output} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {IonButton, IonInput} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'search-bar',
@@ -7,7 +8,9 @@ import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './search-bar.css',
   imports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    IonInput,
+    IonButton
   ]
 })
 export class SearchBar {

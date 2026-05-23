@@ -57,13 +57,15 @@
   gap: var(--space-2);
 }
 
-.outfit-details .tags .chip {
-  background: var(--color-sand);
-  color: var(--color-text);
+.outfit-details .tags ion-chip {
+  --background: var(--color-sand);
+  --color: var(--color-text);
   border-radius: var(--radius-pill);
   padding: 6px 14px;
   font-size: var(--text-sm);
   font-weight: 500;
+  height: auto;
+  margin: 0;
 }
 
 .outfit-details .author {
@@ -113,21 +115,13 @@
   align-items: stretch;
 }
 
-.comment-form input {
+.comment-form ion-input {
   flex: 1;
 }
 
-.comment-form .btn {
-  background: var(--color-brick);
-  color: var(--color-on-brick);
-  border-color: var(--color-brick);
+.comment-form ion-button {
   white-space: nowrap;
-}
-
-.comment-form .btn:hover:not(:disabled) {
-  background: var(--color-brick-hover);
-  border-color: var(--color-brick-hover);
-  color: var(--color-on-brick);
+  margin: 0;
 }
 
 .comment-list {

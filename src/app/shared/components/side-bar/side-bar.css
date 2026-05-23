@@ -169,55 +169,58 @@
   margin: 0;
 }
 
-.close-btn {
-  background: transparent;
-  border: none;
+ion-button.close-btn {
+  --background: transparent;
+  --background-hover: var(--color-sand);
+  --background-activated: var(--color-sand);
+  --color: var(--color-text-soft);
+  --color-hover: var(--color-text);
+  --border-radius: 50%;
+  --border-width: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--color-text-soft);
+  min-height: 32px;
+  margin: 0;
   font-size: 22px;
   line-height: 1;
-  display: grid;
-  place-items: center;
-  transition: background var(--dur-fast) var(--ease-out);
 }
 
-.close-btn:hover {
-  background: var(--color-sand);
-  color: var(--color-text);
-}
-
-.notifications-list {
-  list-style: none;
+ion-list.notifications-list {
+  background: transparent;
   margin: 0;
   padding: var(--space-2);
   overflow-y: auto;
   flex: 1;
 }
 
-.notification {
+ion-item.notification {
+  --background: transparent;
+  --background-hover: var(--color-sand);
+  --background-activated: var(--color-sand);
+  --background-hover-opacity: 1;
+  --color: var(--color-text);
+  --padding-start: var(--space-4);
+  --padding-end: var(--space-4);
+  --inner-padding-end: 0;
+  --min-height: 0;
+  --border-radius: var(--radius-md);
   margin: 0;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body), serif;
+  font-size: var(--text-sm);
+  line-height: 1.45;
 }
 
-.notification-btn {
-  width: 100%;
-  background: transparent;
-  border: none;
-  text-align: left;
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-md);
-  cursor: pointer;
+ion-item.notification ion-label.notification-label {
+  white-space: normal;
   font-family: var(--font-body), serif;
   font-size: var(--text-sm);
   color: var(--color-text);
-  line-height: 1.45;
-  transition: background var(--dur-fast) var(--ease-out);
-}
-
-.notification-btn:hover {
-  background: var(--color-sand);
+  margin: var(--space-3) 0;
 }
 
 .notifications-list .empty {
@@ -226,7 +229,7 @@
   color: var(--color-text-faint);
   font-size: var(--text-sm);
   font-style: italic;
-  list-style: none;
+  margin: 0;
 }
 
 .popup-footer {
@@ -234,8 +237,8 @@
   border-top: 1px solid var(--color-border-soft);
 }
 
-.popup-footer .btn {
-  width: 100%;
+.popup-footer ion-button {
+  margin: 0;
 }
 
 @keyframes fade-in {

@@ -10,41 +10,41 @@
       }
     </div>
 
-    <label class="field">
+    <div class="field">
       <span class="field-label">URL del outfit</span>
-      <input type="url" formControlName="src" placeholder="https://..." />
-    </label>
+      <ion-input type="url" formControlName="src" placeholder="https://..." />
+    </div>
     @if (form.controls.src.touched && form.controls.src.invalid) {
       @if (form.controls.src.hasError('required')) {
         <p class="error">La URL del outfit es obligatoria.</p>
       }
     }
 
-    <label class="field">
+    <div class="field">
       <span class="field-label">Título</span>
-      <input type="text" formControlName="title" />
-    </label>
+      <ion-input type="text" formControlName="title" />
+    </div>
     @if (form.controls.title.touched && form.controls.title.invalid) {
       @if (form.controls.title.hasError('required')) {
         <p class="error">El título es obligatorio.</p>
       }
     }
 
-    <label class="field">
+    <div class="field">
       <span class="field-label">Descripción</span>
-      <textarea formControlName="description" rows="4"></textarea>
-    </label>
+      <ion-textarea formControlName="description" rows="4" />
+    </div>
 
     <div class="field tag-field">
       <span class="field-label">Tags</span>
       <div class="chips">
         @for (t of tags(); track t) {
-          <span class="chip">
-            {{ t }}
+          <ion-chip class="tag-chip">
+            <ion-label>{{ t }}</ion-label>
             <button type="button" class="chip-remove" (click)="removeTag(t)" aria-label="Eliminar tag">
               ×
             </button>
-          </span>
+          </ion-chip>
         }
         <input type="text"
           class="chip-input"
@@ -62,14 +62,14 @@
     }
 
     <div class="actions">
-      <button type="submit" class="btn btn-primary" [disabled]="saving() || deleting() || form.invalid">
+      <ion-button type="submit" color="primary" expand="block" [disabled]="saving() || deleting() || form.invalid">
         {{ saving() ? 'Guardando...' : isEdit() ? 'Guardar cambios' : 'Subir' }}
-      </button>
+      </ion-button>
 
       @if (isEdit()) {
-        <button type="button" class="btn btn-danger" (click)="deleteOutfit()" [disabled]="saving() || deleting()">
+        <ion-button type="button" color="danger" expand="block" (click)="deleteOutfit()" [disabled]="saving() || deleting()">
           {{ deleting() ? 'Eliminando...' : 'Eliminar outfit' }}
-        </button>
+        </ion-button>
       }
     </div>
   </form>

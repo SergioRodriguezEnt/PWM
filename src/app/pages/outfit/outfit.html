@@ -8,7 +8,7 @@
   <section class="not-found">
     <h1>Outfit no encontrado</h1>
     <p>El outfit que buscas no existe o ha sido eliminado.</p>
-    <a class="btn btn-primary" [routerLink]="['/search']">Volver a buscar</a>
+    <ion-button color="primary" [routerLink]="['/search']">Volver a buscar</ion-button>
   </section>
 } @else if (outfit(); as o) {
   <article class="outfit-page">
@@ -21,11 +21,11 @@
       <p class="description">{{ o.description }}</p>
 
       @if (o.tags.length) {
-        <ul class="tags">
+        <div class="tags">
           @for (t of o.tags; track t) {
-            <li class="chip">{{ t }}</li>
+            <ion-chip>{{ t }}</ion-chip>
           }
-        </ul>
+        </div>
       }
 
       @if (author(); as a) {
@@ -40,10 +40,10 @@
 
         @if (isLoggedIn()) {
           <form (ngSubmit)="addComment()" class="comment-form">
-            <input type="text" [formControl]="commentControl" placeholder="Escribe un comentario"/>
-            <button type="submit" class="btn" [disabled]="posting() || commentControl.invalid">
+            <ion-input type="text" [formControl]="commentControl" placeholder="Escribe un comentario"/>
+            <ion-button type="submit" color="primary" [disabled]="posting() || commentControl.invalid">
               {{ posting() ? 'Enviando...' : 'Enviar' }}
-            </button>
+            </ion-button>
           </form>
           @if (postError(); as err) {
             <p class="error">{{ err }}</p>

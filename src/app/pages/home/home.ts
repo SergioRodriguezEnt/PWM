@@ -4,6 +4,7 @@ import {RouterLink} from '@angular/router';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {Outfit, OutfitService} from '../../core/services/outfit.service';
 import {map} from 'rxjs';
+import {IonButton} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import {map} from 'rxjs';
   styleUrl: './home.css',
   imports: [
     SearchResults,
-    RouterLink
+    RouterLink,
+    IonButton
   ]
 })
 export class Home {

@@ -81,27 +81,25 @@
   <div class="notifications-popup" role="dialog" aria-label="Notifications">
     <header class="popup-header">
       <h3>Notificaciones</h3>
-      <button type="button" class="close-btn" (click)="closeNotifications()" aria-label="Close">
+      <ion-button fill="clear" class="close-btn" (click)="closeNotifications()" aria-label="Close">
         ×
-      </button>
+      </ion-button>
     </header>
 
-    <ul class="notifications-list">
+    <ion-list class="notifications-list" lines="none">
       @for (n of notifications(); track n.id) {
-        <li class="notification">
-          <button type="button" class="notification-btn" (click)="openNotification(n)">
-            {{ n.message }}
-          </button>
-        </li>
+        <ion-item button="true" detail="false" class="notification" (click)="openNotification(n)">
+          <ion-label class="notification-label">{{ n.message }}</ion-label>
+        </ion-item>
       } @empty {
-        <li class="empty">No hay notificaciones.</li>
+        <p class="empty">No hay notificaciones.</p>
       }
-    </ul>
+    </ion-list>
 
     <footer class="popup-footer">
-      <button type="button" class="btn" (click)="clearAll()" [disabled]="!hasNotifications()">
+      <ion-button expand="block" (click)="clearAll()" [disabled]="!hasNotifications()">
         Limpiar todas
-      </button>
+      </ion-button>
     </footer>
   </div>
 }
