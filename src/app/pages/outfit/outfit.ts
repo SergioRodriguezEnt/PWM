@@ -1,4 +1,4 @@
-import {Component, computed, effect, inject, signal} from '@angular/core';
+import {Component, computed, inject, signal, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -45,7 +45,7 @@ interface OutfitState {
     IonIcon
   ]
 })
-export class Outfit {
+export class Outfit implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private authService = inject(AuthService);
@@ -60,25 +60,29 @@ export class Outfit {
 
   constructor() {
     addIcons({ heart, heartOutline });
+  }
 
-    effect(async () => {
-      const id = this.id();
-      if (id) {
-        const fav = await this.favoritesService.isFavorite(id);
-        this.isFavorite.set(fav);
-      }
-    });
+  async ngOnInit() {
+    await this.favoritesService.init();
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.isFavorite.set(await this.favoritesService.isFavorite(id));
+    }
   }
 
   async toggleFavorite() {
-    const id = this.id();
+    const id = this.route.snapshot.paramMap.get('id');
     if (!id) return;
-    if (this.isFavorite()) {
-      await this.favoritesService.removeFavorite(id);
-    } else {
-      await this.favoritesService.addFavorite(id);
+    try {
+      if (this.isFavorite()) {
+        await this.favoritesService.removeFavorite(id);
+      } else {
+        await this.favoritesService.addFavorite(id);
+      }
+      this.isFavorite.update(v => !v);
+    } catch (e) {
+      console.error('[toggleFavorite] Error:', e);
     }
-    this.isFavorite.update(v => !v);
   }
 
   private id = toSignal(
@@ -113,21 +117,21 @@ export class Outfit {
   private comments$ = toObservable(this.id).pipe(
     switchMap(id =>
       id ? combineLatest([
-        this.commentService.getAll().pipe(
-          map(all => all.filter(c => c.outfitId === id)),
-        ),
-        this.userService.getAll(),
-      ]).pipe(
-        map(([comments, users]) => {
-          const usersById = new Map(users.map(u => [u.id, u]));
-          return comments.map<CommentWithAuthor>(c => ({
-            ...c,
-            authorName: usersById.get(c.userId)?.name,
-            authorPhoto: usersById.get(c.userId)?.profileSrc,
-          }));
-        }),
-      )
-      : of([] as CommentWithAuthor[]),
+          this.commentService.getAll().pipe(
+            map(all => all.filter(c => c.outfitId === id)),
+          ),
+          this.userService.getAll(),
+        ]).pipe(
+          map(([comments, users]) => {
+            const usersById = new Map(users.map(u => [u.id, u]));
+            return comments.map<CommentWithAuthor>(c => ({
+              ...c,
+              authorName: usersById.get(c.userId)?.name,
+              authorPhoto: usersById.get(c.userId)?.profileSrc,
+            }));
+          }),
+        )
+        : of([] as CommentWithAuthor[]),
     ),
   );
   comments = toSignal(this.comments$, { initialValue: [] as CommentWithAuthor[] });
