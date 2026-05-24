@@ -1,49 +1,51 @@
-<section class="update-page">
-  <h1>Editar perfil</h1>
+<app-page-shell>
+  <section class="update-page">
+    <h1>Editar perfil</h1>
 
-  @if (loading()) {
-    <p class="loading">Cargando...</p>
-  } @else {
-    <form [formGroup]="form" (ngSubmit)="save()" class="update-form" novalidate>
-      <div class="preview">
-        <profile-photo [src]="profilePreview()" [size]="120" />
-        <span class="hint">Copia la URL de una imagen debajo para visualizarla.</span>
-      </div>
+    @if (loading()) {
+      <p class="loading">Cargando...</p>
+    } @else {
+      <form [formGroup]="form" (ngSubmit)="save()" class="update-form" novalidate>
+        <div class="preview">
+          <profile-photo [src]="profilePreview()" [size]="120" />
+          <span class="hint">Copia la URL de una imagen debajo para visualizarla.</span>
+        </div>
 
-      <div class="field">
-        <span class="field-label">URL de la foto de perfil</span>
-        <ion-input type="url" formControlName="profileSrc" placeholder="https://..." />
-      </div>
+        <div class="field">
+          <span class="field-label">URL de la foto de perfil</span>
+          <ion-input type="url" formControlName="profileSrc" placeholder="https://..." />
+        </div>
 
-      <div class="field">
-        <span class="field-label">Nombre de usuario</span>
-        <ion-input type="text" formControlName="name" />
-      </div>
-      @if (form.controls.name.touched && form.controls.name.invalid) {
-        @if (form.controls.name.hasError('required')) {
-          <p class="error">El nombre de usuario es obligatorio.</p>
-        } @else if (form.controls.name.hasError('minlength')) {
-          <p class="error">El nombre debe tener al menos 2 caracteres.</p>
+        <div class="field">
+          <span class="field-label">Nombre de usuario</span>
+          <ion-input type="text" formControlName="name" />
+        </div>
+        @if (form.controls.name.touched && form.controls.name.invalid) {
+          @if (form.controls.name.hasError('required')) {
+            <p class="error">El nombre de usuario es obligatorio.</p>
+          } @else if (form.controls.name.hasError('minlength')) {
+            <p class="error">El nombre debe tener al menos 2 caracteres.</p>
+          }
         }
-      }
 
-      <div class="field">
-        <span class="field-label">Descripción</span>
-        <ion-textarea formControlName="description" rows="4" />
-      </div>
+        <div class="field">
+          <span class="field-label">Descripción</span>
+          <ion-textarea formControlName="description" rows="4" />
+        </div>
 
-      @if (error(); as err) {
-        <p class="error">{{ err }}</p>
-      }
+        @if (error(); as err) {
+          <p class="error">{{ err }}</p>
+        }
 
-      <div class="actions">
-        <ion-button type="submit" color="primary" expand="block" [disabled]="saving() || form.invalid">
-          {{ saving() ? 'Guardando...' : 'Guardar' }}
-        </ion-button>
-        <ion-button type="button" expand="block" (click)="cancel()" [disabled]="fromRegister()">
-          Cancelar
-        </ion-button>
-      </div>
-    </form>
-  }
-</section>
+        <div class="actions">
+          <ion-button type="submit" color="primary" expand="block" [disabled]="saving() || form.invalid">
+            {{ saving() ? 'Guardando...' : 'Guardar' }}
+          </ion-button>
+          <ion-button type="button" expand="block" (click)="cancel()" [disabled]="fromRegister()">
+            Cancelar
+          </ion-button>
+        </div>
+      </form>
+    }
+  </section>
+</app-page-shell>

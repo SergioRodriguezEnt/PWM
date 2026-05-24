@@ -1,82 +1,87 @@
-@if (isLoggedIn()) {
-  <floating-profile/>
-}
-<search-bar (search)="onSearch($event)"/>
-@if (loading()) {
-  <p class="loading">Cargando outfit...</p>
-} @else if (notFound()) {
-  <section class="not-found">
-    <h1>Outfit no encontrado</h1>
-    <p>El outfit que buscas no existe o ha sido eliminado.</p>
-    <ion-button color="primary" [routerLink]="['/search']">Volver a buscar</ion-button>
-  </section>
-} @else if (outfit(); as o) {
-  <article class="outfit-page">
-    <div class="outfit-image">
-      <img [ngSrc]="o.src" [alt]="o.title" fill/>
-    </div>
+<app-page-shell>
+  @if (isLoggedIn()) {
+    <floating-profile/>
+  }
+  <search-bar (search)="onSearch($event)"/>
+  @if (loading()) {
+    <p class="loading">Cargando outfit...</p>
+  } @else if (notFound()) {
+    <section class="not-found">
+      <h1>Outfit no encontrado</h1>
+      <p>El outfit que buscas no existe o ha sido eliminado.</p>
+      <ion-button color="primary" [routerLink]="['/search']">Volver a buscar</ion-button>
+    </section>
+  } @else if (outfit(); as o) {
+    <article class="outfit-page">
+      <div class="outfit-image">
+        <img [ngSrc]="o.src" [alt]="o.title" fill/>
+      </div>
 
-    <div class="outfit-details">
-      <h1>{{ o.title }}</h1>
-      <p class="description">{{ o.description }}</p>
+      <div class="outfit-details">
+        <h1>{{ o.title }}</h1>
+        <p class="description">{{ o.description }}</p>
 
-      @if (o.tags.length) {
-        <div class="tags">
-          @for (t of o.tags; track t) {
-            <ion-chip>{{ t }}</ion-chip>
-          }
-        </div>
-      }
-
-      @if (author(); as a) {
-        <a class="author" [routerLink]="['/profile', a.id]">
-          <profile-photo [src]="a.profileSrc" [size]="40" [alt]="a.name" />
-          <span>{{ a.name }}</span>
-        </a>
-      }
-
-      <section class="comments">
-        <h2>Comentarios</h2>
-
-        @if (isLoggedIn()) {
-          <form (ngSubmit)="addComment()" class="comment-form">
-            <ion-input type="text" [formControl]="commentControl" placeholder="Escribe un comentario"/>
-            <ion-button type="submit" color="primary" [disabled]="posting() || commentControl.invalid">
-              {{ posting() ? 'Enviando...' : 'Enviar' }}
-            </ion-button>
-          </form>
-          @if (postError(); as err) {
-            <p class="error">{{ err }}</p>
-          }
-        } @else {
-          <p class="hint">Inicia sesión para añadir un comentario.</p>
+        @if (o.tags.length) {
+          <div class="tags">
+            @for (t of o.tags; track t) {
+              <ion-chip>{{ t }}</ion-chip>
+            }
+          </div>
         }
 
-        <ul class="comment-list">
-          @for (c of comments(); track c.id) {
-            <li class="comment">
-              <profile-photo
-                [src]="c.authorPhoto ?? ''"
-                [size]="32"
-                [alt]="c.authorName ?? ''"
-                [userId]="c.userId"/>
-              <div class="comment-body">
-                <strong>{{ c.authorName ?? 'Usuario desconocido' }}</strong>
-                <p>{{ c.comment }}</p>
-              </div>
-            </li>
-          } @empty {
-            <li class="empty">Ningún comentario todavía. ¡Se el primero en comentar ahora!</li>
+        @if (author(); as a) {
+          <a class="author" [routerLink]="['/profile', a.id]">
+            <profile-photo [src]="a.profileSrc" [size]="40" [alt]="a.name" />
+            <span>{{ a.name }}</span>
+          </a>
+        }
+
+        <section class="comments">
+          <h2>Comentarios</h2>
+
+          @if (isLoggedIn()) {
+            <form (ngSubmit)="addComment()" class="comment-form">
+              <ion-input type="text" [formControl]="commentControl" placeholder="Escribe un comentario"/>
+              <ion-button type="submit" color="primary" [disabled]="posting() || commentControl.invalid">
+                {{ posting() ? 'Enviando...' : 'Enviar' }}
+              </ion-button>
+            </form>
+            @if (postError(); as err) {
+              <p class="error">{{ err }}</p>
+            }
+          } @else {
+            <p class="hint">Inicia sesión para añadir un comentario.</p>
           }
-        </ul>
-      </section>
-    </div>
-    @if (isLoggedIn()) {
-      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button (click)="toggleFavorite()" color="danger">
-          <ion-icon [name]="isFavorite() ? 'heart' : 'heart-outline'"/>
-        </ion-fab-button>
-      </ion-fab>
-    }
-  </article>
-}
+
+          @if (comments().length) {
+            <ion-list class="comment-list" lines="none">
+              @for (c of comments(); track c.id) {
+                <ion-item lines="none" class="comment">
+                  <profile-photo
+                    slot="start"
+                    [src]="c.authorPhoto ?? ''"
+                    [size]="32"
+                    [alt]="c.authorName ?? ''"
+                    [userId]="c.userId"/>
+                  <div class="comment-body">
+                    <strong>{{ c.authorName ?? 'Usuario desconocido' }}</strong>
+                    <p>{{ c.comment }}</p>
+                  </div>
+                </ion-item>
+              }
+            </ion-list>
+          } @else {
+            <p class="comment-empty">Ningún comentario todavía. ¡Se el primero en comentar ahora!</p>
+          }
+        </section>
+      </div>
+      @if (isLoggedIn()) {
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button (click)="toggleFavorite()" color="danger">
+            <ion-icon [name]="isFavorite() ? 'heart' : 'heart-outline'"/>
+          </ion-fab-button>
+        </ion-fab>
+      }
+    </article>
+  }
+</app-page-shell>

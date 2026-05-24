@@ -4,12 +4,14 @@ import {OutfitService, Outfit} from '../../core/services/outfit.service';
 import {FavoritesService} from '../../core/services/favorites.service';
 import {AuthService} from '../../core/services/auth.service';
 import {SearchResults} from '../../shared/components/search-results/search-results';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-favorites',
   templateUrl: './favorites.html',
   styleUrl: './favorites.css',
-  imports: [SearchResults]
+  host: { class: 'ion-page' },
+  imports: [SearchResults, PageShell]
 })
 export class Favorites {
   private outfitService = inject(OutfitService);

@@ -1,5 +1,5 @@
 .auth-page {
-  min-height: calc(100vh - var(--topbar-h));
+  flex: 1;
   display: grid;
   place-items: center;
   padding: var(--space-7) var(--space-5);
@@ -51,7 +51,6 @@
 @media (max-width: 768px) {
   .auth-page {
     padding: var(--space-5) var(--space-4);
-    min-height: calc(100vh - var(--topbar-h));
   }
 
   .auth-form {

@@ -7,6 +7,7 @@ import {User, UserService} from '../../core/services/user.service';
 import {Outfit, OutfitService} from '../../core/services/outfit.service';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
 import {map, of, switchMap} from 'rxjs';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 interface UserState {
   loaded: boolean;
@@ -16,10 +17,12 @@ interface UserState {
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.html',
+  host: { class: 'ion-page' },
   imports: [
     ProfilePhoto,
     SearchResults,
-    FloatingProfile
+    FloatingProfile,
+    PageShell
   ],
   styleUrl: './profile.css'
 })

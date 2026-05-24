@@ -5,15 +5,18 @@ import {toSignal} from '@angular/core/rxjs-interop';
 import {Outfit, OutfitService} from '../../core/services/outfit.service';
 import {map} from 'rxjs';
 import {IonButton} from '@ionic/angular/standalone';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.html',
   styleUrl: './home.css',
+  host: { class: 'ion-page' },
   imports: [
     SearchResults,
     RouterLink,
-    IonButton
+    IonButton,
+    PageShell
   ]
 })
 export class Home {

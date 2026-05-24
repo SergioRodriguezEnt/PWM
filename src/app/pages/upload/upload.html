@@ -1,3 +1,4 @@
+<app-page-shell>
 <section class="upload-page">
   <h1>{{ isEdit() ? 'Editar outfit' : 'Subir outfit' }}</h1>
 
@@ -42,16 +43,17 @@
           <ion-chip class="tag-chip">
             <ion-label>{{ t }}</ion-label>
             <button type="button" class="chip-remove" (click)="removeTag(t)" aria-label="Eliminar tag">
-              ×
+              <ion-icon name="close" aria-hidden="true"/>
             </button>
           </ion-chip>
         }
-        <input type="text"
+        <ion-input
           class="chip-input"
+          type="text"
           [value]="tagInput()"
-          (input)="onTagInput($event)"
+          (ionInput)="onTagInput($event)"
           (keydown)="onTagKey($event)"
-          (blur)="addTagFromInput()"
+          (ionBlur)="addTagFromInput()"
           placeholder="Añade una tag y presiona Enter"
         />
       </div>
@@ -74,3 +76,4 @@
     </div>
   </form>
 </section>
+</app-page-shell>

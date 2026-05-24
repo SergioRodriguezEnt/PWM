@@ -1,5 +1,5 @@
 .auth-page {
-  min-height: calc(100vh - var(--topbar-h));
+  flex: 1;
   display: grid;
   place-items: center;
   padding: var(--space-7) var(--space-5);

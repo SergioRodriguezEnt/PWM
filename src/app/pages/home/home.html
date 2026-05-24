@@ -1,8 +1,10 @@
-<section class="home-page">
-  <h1 class="hero">Para gustos, colores. Para personas, ¡outfits!</h1>
+<app-page-shell>
+  <section class="home-page">
+    <h1 class="hero">Para gustos, colores. Para personas, ¡outfits!</h1>
 
-  <div class="preview-wrapper">
-    <search-results [outfits]="outfits()" />
-    <ion-button class="cta" color="primary" routerLink="/search">Busca ahora</ion-button>
-  </div>
-</section>
+    <div class="preview-wrapper">
+      <search-results [outfits]="outfits()" />
+      <ion-button class="cta" color="primary" routerLink="/search">Busca ahora</ion-button>
+    </div>
+  </section>
+</app-page-shell>

@@ -98,7 +98,7 @@
   background: rgba(141, 73, 58, 0.15);
   color: var(--color-text);
   cursor: pointer;
-  font-size: 14px;
+  padding: 0;
   line-height: 1;
   display: grid;
   place-items: center;
@@ -106,31 +106,38 @@
               color var(--dur-fast) var(--ease-out);
 }
 
+.chip-remove ion-icon {
+  font-size: 14px;
+  color: inherit;
+}
+
 .chip-remove:hover {
   background: var(--color-brick);
   color: var(--color-on-brick);
 }
 
-.chip-input {
+ion-input.chip-input {
   flex: 1;
   min-width: 140px;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 6px 4px;
-  font-family: var(--font-body), serif;
-  font-size: var(--text-base);
-  color: var(--color-text);
-}
-
-.chip-input::placeholder {
-  color: var(--color-text-faint);
-}
-
-.chip-input:focus {
+  --background: transparent;
+  --color: var(--color-text);
+  --placeholder-color: var(--color-text-faint);
+  --placeholder-opacity: 1;
+  --padding-start: 4px;
+  --padding-end: 4px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --border-radius: 0;
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
   background: transparent;
   border: none;
   box-shadow: none;
+  font-family: var(--font-body), serif;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  min-height: auto;
 }
 
 .upload-form .actions {

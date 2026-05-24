@@ -1,0 +1,14 @@
+:host {
+  display: contents;
+}
+
+ion-content.page-shell-content {
+  --background: var(--color-cream);
+  --color: var(--color-text);
+}
+
+.page-shell-inner {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

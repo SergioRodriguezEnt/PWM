@@ -1,24 +1,26 @@
-@if (loading()) {
-  <p class="loading">Cargando perfil...</p>
-} @else if (notFound()) {
-  <section class="not-found">
-    <h1>Perfil no encontrado</h1>
-    <p>El usuario que buscas no existe.</p>
-  </section>
-} @else if (user(); as u) {
-  <floating-profile [hideForUserId]="u.id"/>
-  <section class="profile-page">
-    <header class="profile-header">
-      <profile-photo [src]="u.profileSrc" [size]="120" [alt]="u.name" />
-      <div class="profile-meta">
-        <h1>{{ u.name }}</h1>
-        @if (u.description) {
-          <p class="description">{{ u.description }}</p>
-        }
-      </div>
-    </header>
+<app-page-shell>
+  @if (loading()) {
+    <p class="loading">Cargando perfil...</p>
+  } @else if (notFound()) {
+    <section class="not-found">
+      <h1>Perfil no encontrado</h1>
+      <p>El usuario que buscas no existe.</p>
+    </section>
+  } @else if (user(); as u) {
+    <floating-profile [hideForUserId]="u.id"/>
+    <section class="profile-page">
+      <header class="profile-header">
+        <profile-photo [src]="u.profileSrc" [size]="120" [alt]="u.name" />
+        <div class="profile-meta">
+          <h1>{{ u.name }}</h1>
+          @if (u.description) {
+            <p class="description">{{ u.description }}</p>
+          }
+        </div>
+      </header>
 
-    <h2>Outfits</h2>
-    <search-results [outfits]="outfits()" />
-  </section>
-}
+      <h2>Outfits</h2>
+      <search-results [outfits]="outfits()" />
+    </section>
+  }
+</app-page-shell>

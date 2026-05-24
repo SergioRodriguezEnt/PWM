@@ -8,15 +8,18 @@ import {User, UserService} from '../../core/services/user.service';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.html',
   styleUrl: './search.css',
+  host: { class: 'ion-page' },
   imports: [
     SearchBar,
     SearchResults,
-    FloatingProfile
+    FloatingProfile,
+    PageShell
   ]
 })
 export class Search {

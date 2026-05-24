@@ -6,12 +6,16 @@ import {OutfitService} from '../../core/services/outfit.service';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {map, take} from 'rxjs';
 import {NgOptimizedImage} from '@angular/common';
-import {IonButton, IonChip, IonInput, IonLabel, IonTextarea} from '@ionic/angular/standalone';
+import {IonButton, IonChip, IonIcon, IonInput, IonLabel, IonTextarea} from '@ionic/angular/standalone';
+import {addIcons} from 'ionicons';
+import {close} from 'ionicons/icons';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.html',
   styleUrl: './upload.css',
+  host: { class: 'ion-page' },
   imports: [
     ReactiveFormsModule,
     NgOptimizedImage,
@@ -19,7 +23,9 @@ import {IonButton, IonChip, IonInput, IonLabel, IonTextarea} from '@ionic/angula
     IonTextarea,
     IonButton,
     IonChip,
-    IonLabel
+    IonIcon,
+    IonLabel,
+    PageShell
   ]
 })
 export class Upload {
@@ -51,6 +57,8 @@ export class Upload {
   preview = toSignal(this.form.controls.src.valueChanges, { initialValue: '' });
 
   constructor() {
+    addIcons({ close });
+
     effect(() => {
       const id = this.editId();
       if (!id) return;
@@ -71,9 +79,8 @@ export class Upload {
     });
   }
 
-  onTagInput(event: Event) {
-    const target = event.target as HTMLInputElement;
-    this.tagInput.set(target.value);
+  onTagInput(event: CustomEvent<{ value?: string | null }>) {
+    this.tagInput.set(event.detail.value ?? '');
   }
 
   addTagFromInput() {

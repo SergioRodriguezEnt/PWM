@@ -14,9 +14,10 @@ import { FloatingProfile } from '../../shared/components/floating-profile/floati
 import {SearchBar} from '../../shared/components/search-bar/search-bar';
 import {NgOptimizedImage} from '@angular/common';
 import {FavoritesService} from '../../core/services/favorites.service';
-import {IonButton, IonChip, IonFab, IonFabButton, IonIcon, IonInput} from '@ionic/angular/standalone';
+import {IonButton, IonChip, IonFab, IonFabButton, IonIcon, IonInput, IonItem, IonList} from '@ionic/angular/standalone';
 import {addIcons} from 'ionicons';
 import {heart, heartOutline} from 'ionicons/icons';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 interface CommentWithAuthor extends OutfitComment {
   authorName?: string;
@@ -32,6 +33,7 @@ interface OutfitState {
   selector: 'app-outfit',
   templateUrl: './outfit.html',
   styleUrls: ['./outfit.css'],
+  host: { class: 'ion-page' },
   imports: [
     SearchBar,
     RouterLink,
@@ -45,7 +47,10 @@ interface OutfitState {
     IonIcon,
     IonInput,
     IonButton,
-    IonChip
+    IonChip,
+    IonList,
+    IonItem,
+    PageShell
   ]
 })
 export class Outfit {

@@ -6,17 +6,20 @@ import {toSignal} from '@angular/core/rxjs-interop';
 import {map, take} from 'rxjs';
 import {ProfilePhoto} from '../../shared/components/profile-photo/profile-photo';
 import {IonButton, IonInput, IonTextarea} from '@ionic/angular/standalone';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-update',
   templateUrl: './update.html',
   styleUrl: './update.css',
+  host: { class: 'ion-page' },
   imports: [
     ReactiveFormsModule,
     ProfilePhoto,
     IonInput,
     IonTextarea,
-    IonButton
+    IonButton,
+    PageShell
   ]
 })
 export class Update {

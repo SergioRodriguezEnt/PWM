@@ -7,7 +7,7 @@
   gap: var(--space-6);
 }
 
-:host > search-bar {
+:host search-bar {
   display: block;
   max-width: var(--content-max);
   margin: 0 auto;
@@ -124,19 +124,37 @@
   margin: 0;
 }
 
-.comment-list {
-  list-style: none;
-  margin: 0;
+ion-list.comment-list {
+  background: transparent;
+  --ion-item-background: transparent;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.comment {
-  display: flex;
-  gap: var(--space-3);
+ion-item.comment {
+  --background: transparent;
+  --background-hover: transparent;
+  --background-focused: transparent;
+  --background-activated: transparent;
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --inner-padding-top: 0;
+  --inner-padding-bottom: 0;
+  --min-height: 0;
+  --border-color: transparent;
   align-items: flex-start;
+}
+
+ion-item.comment profile-photo[slot='start'] {
+  margin: 0 var(--space-3) 0 0;
+  align-self: flex-start;
 }
 
 .comment-body {
@@ -159,8 +177,7 @@
   margin: 0;
 }
 
-.comment-list .empty {
-  list-style: none;
+.comment-empty {
   font-style: italic;
   color: var(--color-text-faint);
   font-size: var(--text-sm);
@@ -200,7 +217,7 @@
 }
 
 @media (max-width: 768px) {
-  :host > search-bar {
+  :host search-bar {
     padding: var(--space-4) var(--space-4) 0;
     padding-right: 64px;
   }

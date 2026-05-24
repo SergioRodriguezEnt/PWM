@@ -1,9 +1,11 @@
-<section class="search-page">
-  @if (isLoggedIn()) {
-    <floating-profile/>
-  }
-  <div class="section-header">
-    <search-bar [initial]="initialQuery()" (search)="onSearch($event)"/>
-  </div>
-  <search-results [outfits]="results()"/>
-</section>
+<app-page-shell>
+  <section class="search-page">
+    @if (isLoggedIn()) {
+      <floating-profile/>
+    }
+    <div class="section-header">
+      <search-bar [initial]="initialQuery()" (search)="onSearch($event)"/>
+    </div>
+    <search-results [outfits]="results()"/>
+  </section>
+</app-page-shell>

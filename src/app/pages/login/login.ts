@@ -3,16 +3,19 @@ import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../core/services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {IonButton, IonInput} from '@ionic/angular/standalone';
+import {PageShell} from '../../shared/components/page-shell/page-shell';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
   styleUrl: './login.css',
+  host: { class: 'ion-page' },
   imports: [
     ReactiveFormsModule,
     RouterLink,
     IonInput,
-    IonButton
+    IonButton,
+    PageShell
   ]
 })
 export class Login {
