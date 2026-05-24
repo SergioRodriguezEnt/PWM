@@ -75,13 +75,13 @@
           }
         </section>
       </div>
-      @if (isLoggedIn()) {
-        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-          <ion-fab-button (click)="toggleFavorite()" color="danger">
-            <ion-icon [name]="isFavorite() ? 'heart' : 'heart-outline'"/>
-          </ion-fab-button>
-        </ion-fab>
-      }
     </article>
+    @if (isLoggedIn()) {
+      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button (click)="toggleFavorite()" color="danger">
+          <ion-icon [name]="isFavorite() ? 'heart' : 'heart-outline'"/>
+        </ion-fab-button>
+      </ion-fab>
+    }
   }
 </app-page-shell>
