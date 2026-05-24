@@ -16,5 +16,6 @@ ion-content.page-shell-content {
 }
 
 .page-shell-inner > * {
+  width: 100%;
   min-width: 0;
 }
