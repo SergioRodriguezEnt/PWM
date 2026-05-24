@@ -14,7 +14,7 @@
 
 ---
 
-## Descripción del Sprint 3
+## Descripción del Sprint 4
 
 El objetivo de este Sprint es portar la aplicación web Angular a una aplicación híbrida con *Ionic 8* y *Capacitor 8*, de forma que pueda ejecutarse tanto en navegador como compilada nativamente para Android (e iOS), e incorporar un nuevo servicio de favoritos con persistencia local. A continuación se describen los requisitos implementados:
 
