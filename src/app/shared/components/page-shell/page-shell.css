@@ -15,7 +15,3 @@ ion-content.page-shell-content {
   flex-direction: column;
 }
 
-.page-shell-inner > * {
-  width: 100%;
-  min-width: 0;
-}

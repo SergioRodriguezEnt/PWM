@@ -471,3 +471,15 @@ ion-item {
   --border-color: var(--color-border-soft);
   font-family: var(--font-body), serif;
 }
+
+/*
+ * page-shell-inner is a flex column with projected children from other components.
+ * Angular's emulated view encapsulation prevents page-shell.css from styling
+ * projected children, so the cross-axis stretch rule lives here in global styles.
+ * Without width: 100%, pages using margin: 0 auto for desktop centering collapse
+ * to their intrinsic content width on mobile (auto cross-margins disable stretch).
+ */
+.page-shell-inner > * {
+  width: 100%;
+  min-width: 0;
+}
