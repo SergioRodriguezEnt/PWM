@@ -10,21 +10,27 @@
 ---
 
 # IMPORTANTE
-### El proyecto usa angular 20. Se debe ejecutar mediante el comando "ng serve".
+### El proyecto usa Angular 20, Ionic 8 y Capacitor 8. Para ejecutarlo en web se usa `npm start` (o `ng serve`). Para compilarlo como app nativa Android: `ng build && npx cap sync android` y abrir el proyecto `android/` en Android Studio.
 
 ---
 
 ## Descripción del Sprint 3
 
-El objetivo de este Sprint es adaptar el sitio web a *Angular* como framework de desarrollo web e integrar *Firebase* como backend. A continuación se describen los requisitos implementados:
+El objetivo de este Sprint es portar la aplicación web Angular a una aplicación híbrida con *Ionic 8* y *Capacitor 8*, de forma que pueda ejecutarse tanto en navegador como compilada nativamente para Android (e iOS), e incorporar un nuevo servicio de favoritos con persistencia local. A continuación se describen los requisitos implementados:
 
-1. *Formularios con Angular*: Se han implementado formularios usando las facilidades de Angular (Reactive Forms / Template-driven Forms) con validaciones integradas. El caso obligatorio implementado es el de registro y autenticación de usuarios, que permite mostrar contenido diferenciado según si el usuario está autenticado y según su rol (administrador / usuario registrado).
+1. *Migración a componentes Ionic*: Se han sustituido los elementos HTML nativos y componentes personalizados por sus equivalentes de Ionic — `IonButton`, `IonInput`, `IonTextarea`, `IonList`, `IonItem`, `IonChip`, `IonIcon`, `IonFab`. Toda la aplicación se ha encapsulado dentro de `IonApp` + `IonRouterOutlet`, y cada página se ha convertido en una `ion-page` con su propio `IonContent` (a través del componente reutilizable `PageShell`). Se ha configurado `IonicRouteStrategy` como `RouteReuseStrategy` para integrar la navegación con el ciclo de vida de Ionic.
 
-2. *Diseño Responsive (RWD): Para conseguir que los diseños sean adaptables a distintos dispositivos se ha utilizado **Flexbox* y *CSS Grid* nativos, junto con un sistema de variables CSS personalizadas que define la paleta de color, tipografía, espaciados y radios de manera global.
+2. *Empaquetado nativo con Capacitor*: Se ha integrado Capacitor 8 para empaquetar la aplicación como app nativa Android:
+    - Sincronización de los assets web al proyecto Android mediante `npx cap sync android`.
+    - Manejo del botón de retroceso hardware en Android usando `Platform.backButton` y `@capacitor/app`: si hay historial de navegación se vuelve atrás dentro del router; si no, se cierra la app.
 
-3. *Integración con Firebase*:
-- *Firebase Authentication*: gestión de registro y login de usuarios.
-- *Firestore*: almacenamiento y sincronización en tiempo real del contenido dinámico.
+3. *Servicio de Favoritos (FavoritesService)*: Se ha implementado un sistema de favoritos persistente que funciona tanto en nativo como en web, usando `@capacitor-community/sqlite`:
+    - En Android/iOS, persiste en una base de datos SQLite local del dispositivo.
+    - En web, persiste en IndexedDB mediante el mismo plugin (fallback automático).
+    - Los favoritos están aislados por usuario gracias a una tabla con clave compuesta `(userId, outfitId)`, de forma que distintas cuentas en el mismo dispositivo no comparten favoritos.
+    - Se ha añadido la página `/favorites` y un botón en cada outfit (`IonFab` con icono corazón) para añadir o quitar el outfit de favoritos.
+
+4. *Diseño Responsive con shell nativa*: Se ha mantenido el sistema de variables CSS y los breakpoints del sprint anterior, pero adaptando el shell a la estructura `IonApp` + `IonRouterOutlet`. La `SideBar` sigue siendo barra lateral en escritorio y barra inferior de navegación en móvil/tablet.
 
 ---
 
@@ -32,16 +38,17 @@ El objetivo de este Sprint es adaptar el sitio web a *Angular* como framework de
 
 ### Páginas
 
-| Componente | Ruta      | Descripción                                                            |
-|------------|-----------|------------------------------------------------------------------------|
-| Home       | /home     | Página de inicio. Muestra outfits destacados cargados desde Firebase.  |
-| Login      | /login    | Formulario de autenticación contra Firebase Authentication.            |
-| Register   | /register | Formulario de registro. Crea el usuario en Firebase Auth.              |
-| Search     | /search   | Búsqueda de outfits por nombre, descripción, tags o usuarios.          |
-| Outfit     | /outfit   | Vista de detalles y comentarios de un outfit.                          |
-| Profile    | /profile  | Perfil del usuario: foto, datos y grid de sus outfits.                 |
-| Update     | /update   | Formulario de edición de perfil con validaciones Angular.              |
-| Upload     | /upload   | Formulario de subida y actualización de outfit con imagen a Firestore. |
+| Componente | Ruta       | Descripción                                                                                  |
+|------------|------------|----------------------------------------------------------------------------------------------|
+| Home       | /home      | Página de inicio. Muestra outfits destacados cargados desde Firebase.                        |
+| Login      | /login     | Formulario de autenticación contra Firebase Authentication.                                  |
+| Register   | /register  | Formulario de registro. Crea el usuario en Firebase Auth.                                    |
+| Search     | /search    | Búsqueda de outfits por nombre, descripción, tags o usuarios.                                |
+| Outfit     | /outfit    | Vista de detalles y comentarios de un outfit, con botón para añadir/quitar de favoritos.     |
+| Profile    | /profile   | Perfil del usuario: foto, datos y grid de sus outfits.                                       |
+| Update     | /update    | Formulario de edición de perfil con validaciones Angular.                                    |
+| Upload     | /upload    | Formulario de subida y actualización de outfit con imagen a Firestore.                       |
+| Favorites  | /favorites | Listado de outfits marcados como favoritos por el usuario actual (persistencia local).       |
 
 ---
 
@@ -61,14 +68,15 @@ El objetivo de este Sprint es adaptar el sitio web a *Angular* como framework de
 
 ### Servicios
 
-| Servicio            | Descripción                                                                                                                                 |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| AuthService         | Gestiona el registro, login y logout de usuarios contra Firebase Authentication. Expone el usuario actualmente autenticado como Observable. |
-| CrudService         | Interfaz de CRUD genérica que permita la reimplementacion.                                                                                  |
-| OutfitService       | CRUD de outfits.                                                                                                                            |
-| UserService         | CRUD de usuarios con IDs basados en el servicio de autenticación.                                                                           |
-| CommentService      | CRUD de comentarios en outfits.                                                                                                             |
-| NotificationService | CRUD de notificaciones por comentarios nuevos en outfits.                                                                                   |
+| Servicio            | Descripción                                                                                                                                                                |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AuthService         | Gestiona el registro, login y logout de usuarios contra Firebase Authentication. Expone el usuario actualmente autenticado como Observable.                                |
+| CrudService         | Interfaz de CRUD genérica que permita la reimplementacion.                                                                                                                 |
+| OutfitService       | CRUD de outfits.                                                                                                                                                           |
+| UserService         | CRUD de usuarios con IDs basados en el servicio de autenticación.                                                                                                          |
+| CommentService      | CRUD de comentarios en outfits.                                                                                                                                            |
+| NotificationService | CRUD de notificaciones por comentarios nuevos en outfits.                                                                                                                  |
+| FavoritesService    | Gestión de outfits favoritos del usuario actual con persistencia local vía `@capacitor-community/sqlite` (SQLite en nativo, IndexedDB en web). Aislamiento por `userId`.   |
 
 ---
 
@@ -199,7 +207,7 @@ Almacena los comentarios creados en outfits.
 
 ## Diseño Responsive
 
-El diseño responsive está implementado con un sistema de variables CSS personalizadas (definidas en :root) que centraliza la paleta de color, tipografía, espaciados y radios. No se utiliza ningún framework externo de estilos.
+El diseño responsive está implementado con un sistema de variables CSS personalizadas (definidas en :root) que centraliza la paleta de color, tipografía, espaciados y radios, complementadas con los tokens CSS de Ionic en `src/theme/variables.css`. Más allá de los componentes de Ionic, no se utiliza ningún framework externo de estilos.
 
 | Breakpoint   | Ancho    | Comportamiento principal                              |
 |--------------|----------|-------------------------------------------------------|
