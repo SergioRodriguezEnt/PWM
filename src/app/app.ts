@@ -1,5 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {IonApp, IonRouterOutlet} from '@ionic/angular/standalone';
+import {IonApp, IonRouterOutlet, Platform} from '@ionic/angular/standalone';
+import {App as CapApp} from '@capacitor/app';
 import {TopBar} from './shared/components/top-bar/top-bar';
 import {SideBar} from './shared/components/side-bar/side-bar';
 import {AuthService} from './core/services/auth.service';
@@ -16,6 +17,13 @@ export class App implements OnInit {
   isLoggedIn = this.authService.isLoggedIn;
 
   private favoritesService = inject(FavoritesService);
+  private platform = inject(Platform);
+
+  constructor() {
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      CapApp.exitApp();
+    });
+  }
 
   async ngOnInit() {
     await this.favoritesService.init();
