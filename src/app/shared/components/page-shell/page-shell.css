@@ -9,6 +9,12 @@ ion-content.page-shell-content {
 
 .page-shell-inner {
   min-height: 100%;
+  min-width: 0;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
+}
+
+.page-shell-inner > * {
+  min-width: 0;
 }

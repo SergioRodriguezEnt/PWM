@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, viewChild} from '@angular/core';
 import {IonApp, IonRouterOutlet, Platform} from '@ionic/angular/standalone';
 import {App as CapApp} from '@capacitor/app';
 import {TopBar} from './shared/components/top-bar/top-bar';
@@ -18,8 +18,18 @@ export class App implements OnInit {
 
   private favoritesService = inject(FavoritesService);
   private platform = inject(Platform);
+  private routerOutlet = viewChild.required(IonRouterOutlet);
 
   constructor() {
+    this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+      const outlet = this.routerOutlet();
+      if (outlet.canGoBack()) {
+        outlet.pop();
+      } else {
+        processNextHandler();
+      }
+    });
+
     this.platform.backButton.subscribeWithPriority(-1, () => {
       CapApp.exitApp();
     });
